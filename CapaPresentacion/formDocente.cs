@@ -195,6 +195,12 @@ namespace CapaPresentacion
         private void iconButton1_Click(object sender, EventArgs e)
         {
             limpiar();
+            //vgvvvvv
+        }
+
+        private void formDocente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

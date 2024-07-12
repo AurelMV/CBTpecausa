@@ -40,6 +40,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNombreDocente = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIdDocente = new System.Windows.Forms.TextBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.rbtnFemenino = new System.Windows.Forms.RadioButton();
             this.rbtnMasculino = new System.Windows.Forms.RadioButton();
             this.cboxEstadoDocente = new System.Windows.Forms.ComboBox();
@@ -53,8 +55,6 @@
             this.txtApaternoDocente = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtIdDocente = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -203,6 +203,28 @@
             this.panel1.Size = new System.Drawing.Size(295, 561);
             this.panel1.TabIndex = 0;
             // 
+            // txtIdDocente
+            // 
+            this.txtIdDocente.Enabled = false;
+            this.txtIdDocente.Location = new System.Drawing.Point(215, 262);
+            this.txtIdDocente.Name = "txtIdDocente";
+            this.txtIdDocente.Size = new System.Drawing.Size(52, 20);
+            this.txtIdDocente.TabIndex = 27;
+            this.txtIdDocente.Visible = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(224, 13);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 36);
+            this.iconButton1.TabIndex = 26;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // rbtnFemenino
             // 
             this.rbtnFemenino.AutoSize = true;
@@ -339,28 +361,6 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Docentes registrados: ";
             // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(224, 13);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 36);
-            this.iconButton1.TabIndex = 26;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // txtIdDocente
-            // 
-            this.txtIdDocente.Enabled = false;
-            this.txtIdDocente.Location = new System.Drawing.Point(215, 262);
-            this.txtIdDocente.Name = "txtIdDocente";
-            this.txtIdDocente.Size = new System.Drawing.Size(52, 20);
-            this.txtIdDocente.TabIndex = 27;
-            this.txtIdDocente.Visible = false;
-            // 
             // formDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +372,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formDocente";
             this.Text = "FormularioDocente";
+            this.Load += new System.EventHandler(this.formDocente_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
