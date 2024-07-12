@@ -61,6 +61,7 @@ namespace CapaPresentacion
                 {
                     CN_CicloInscripcion cicloNuevo = new CN_CicloInscripcion();
                     cicloNuevo.actualizarCiclos(ciclo);
+                    //fcfgvghgh
                 }
             }
         }
