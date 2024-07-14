@@ -12,5 +12,6 @@ namespace CapaEntidad
         public string nombreCiclo { get; set; }
         public DateTime fechainicio { get; set; }
         public DateTime fechafin { get; set; }
+        public bool Estado { get; set; }
     }
 }

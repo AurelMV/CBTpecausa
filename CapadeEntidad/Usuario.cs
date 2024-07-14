@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapadeEntidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,7 @@ namespace CapaEntidad
         public string nombre { get; set; }
         public string aPaterno { get; set; }
         public string aMaterno { get; set; }
+
+        public Rol oRol { get; set; }
     }
 }
