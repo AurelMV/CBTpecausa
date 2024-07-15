@@ -11,6 +11,6 @@ namespace CapadeEntidad
     {
         public int idprovincia { get; set; }
         public string nombreprovincia { get; set; }
-        public Departamento oRegion { get; set; }
+        public Departamento odepartamento { get; set; }
     }
 }

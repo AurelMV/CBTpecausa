@@ -11,7 +11,6 @@ namespace CapaEntidad
         public int IdGrupos { get; set; }
         public string NombreGrupo { get; set; }
         public int Aforo { get; set; }
-        public DateTime FechaGrupos { get; set; }
         public bool Estado { get; set; }
         public CicloInscripcion oCicloinscripcion { get; set; }
     }

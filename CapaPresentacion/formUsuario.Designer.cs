@@ -53,6 +53,8 @@
             this.ibtnEliminarUsuario = new FontAwesome.Sharp.IconButton();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.cborol = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,11 +333,31 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // cborol
+            // 
+            this.cborol.FormattingEnabled = true;
+            this.cborol.Location = new System.Drawing.Point(693, 136);
+            this.cborol.Name = "cborol";
+            this.cborol.Size = new System.Drawing.Size(121, 21);
+            this.cborol.TabIndex = 31;
+            this.cborol.SelectedIndexChanged += new System.EventHandler(this.cborol_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(639, 143);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Rol";
+            // 
             // formUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 515);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cborol);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.ibtnEliminarUsuario);
@@ -365,6 +387,7 @@
             this.Name = "formUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formUsuario";
+            this.Load += new System.EventHandler(this.formUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,5 +420,7 @@
         private FontAwesome.Sharp.IconButton ibtnEliminarUsuario;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.ComboBox cborol;
+        private System.Windows.Forms.Label label13;
     }
 }

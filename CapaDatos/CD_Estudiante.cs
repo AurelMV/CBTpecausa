@@ -38,13 +38,13 @@ namespace CapaDatos
                                     Nombres = dr["nombres"].ToString(),
                                     APaterno = dr["aPaterno"].ToString(),
                                     AMaterno = dr["aMaterno"].ToString(),
-                                    Dni = dr["dni"].ToString(),
+                                    Documneto = dr["dni"].ToString(),
                                     Sexo = Convert.ToChar(dr["sexo"]),
                                     Celular = dr["celular"].ToString(),
                                     FechaNacimiento = Convert.ToDateTime(dr["fechaNacimiento"]),
                                     Email = dr["email"].ToString(),
                                     Colegio = dr["colegio"].ToString(),
-                                    AnoCulminado = Convert.ToDateTime(dr["anoculminado"])
+                                    AnoCulminado = dr["anoculminado"].ToString()
                                 };
 
                                 lista.Add(estudiante);
@@ -93,7 +93,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@nombres", obj.Nombres);
                     cmd.Parameters.AddWithValue("@aPaterno", obj.APaterno);
                     cmd.Parameters.AddWithValue("@aMaterno", obj.AMaterno);
-                    cmd.Parameters.AddWithValue("@dni", obj.Dni);
+                    cmd.Parameters.AddWithValue("@dni", obj.Documneto);
                     cmd.Parameters.AddWithValue("@sexo", obj.Sexo);
                     cmd.Parameters.AddWithValue("@celular", obj.Celular);
                     cmd.Parameters.AddWithValue("@fechaNacimiento", obj.FechaNacimiento);
@@ -145,7 +145,7 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@nombres", nuevoEstudiante.Nombres);
                         cmd.Parameters.AddWithValue("@aPaterno", nuevoEstudiante.APaterno);
                         cmd.Parameters.AddWithValue("@aMaterno", nuevoEstudiante.AMaterno);
-                        cmd.Parameters.AddWithValue("@dni", nuevoEstudiante.Dni);
+                        cmd.Parameters.AddWithValue("@dni", nuevoEstudiante.Documneto);
                         cmd.Parameters.AddWithValue("@sexo", nuevoEstudiante.Sexo);
                         cmd.Parameters.AddWithValue("@celular", nuevoEstudiante.Celular);
                         cmd.Parameters.AddWithValue("@fechaNacimiento", nuevoEstudiante.FechaNacimiento);

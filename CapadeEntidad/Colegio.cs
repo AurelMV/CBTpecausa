@@ -11,6 +11,6 @@ namespace CapadeEntidad
     {
         public int idcolegio { get; set; }
         public string nombrecolegio { get; set; }
-        public Provincia oprovincia { get; set; }
+        public Distrito odistrito { get; set; }
     }
 }

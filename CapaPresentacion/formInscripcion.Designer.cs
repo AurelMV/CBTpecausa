@@ -79,15 +79,17 @@
             this.cbopago = new System.Windows.Forms.ComboBox();
             this.txtidestudiante = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbodistrito = new System.Windows.Forms.ComboBox();
+            this.cboprovincia = new System.Windows.Forms.ComboBox();
+            this.cbodepartamentos = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbocolegio = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -110,7 +112,7 @@
             // txtfechapago
             // 
             this.txtfechapago.Location = new System.Drawing.Point(11, 48);
-            this.txtfechapago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtfechapago.Margin = new System.Windows.Forms.Padding(2);
             this.txtfechapago.Name = "txtfechapago";
             this.txtfechapago.Size = new System.Drawing.Size(182, 20);
             this.txtfechapago.TabIndex = 30;
@@ -119,7 +121,7 @@
             // txtvoucher
             // 
             this.txtvoucher.Location = new System.Drawing.Point(230, 97);
-            this.txtvoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtvoucher.Margin = new System.Windows.Forms.Padding(2);
             this.txtvoucher.Name = "txtvoucher";
             this.txtvoucher.Size = new System.Drawing.Size(204, 20);
             this.txtvoucher.TabIndex = 29;
@@ -128,7 +130,7 @@
             // txtmediopago
             // 
             this.txtmediopago.Location = new System.Drawing.Point(230, 50);
-            this.txtmediopago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmediopago.Margin = new System.Windows.Forms.Padding(2);
             this.txtmediopago.Name = "txtmediopago";
             this.txtmediopago.Size = new System.Drawing.Size(204, 20);
             this.txtmediopago.TabIndex = 28;
@@ -137,7 +139,7 @@
             // txtmonto
             // 
             this.txtmonto.Location = new System.Drawing.Point(15, 104);
-            this.txtmonto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtmonto.Margin = new System.Windows.Forms.Padding(2);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(129, 20);
             this.txtmonto.TabIndex = 27;
@@ -212,7 +214,7 @@
             // 
             this.cboturno.FormattingEnabled = true;
             this.cboturno.Location = new System.Drawing.Point(10, 41);
-            this.cboturno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboturno.Margin = new System.Windows.Forms.Padding(2);
             this.cboturno.Name = "cboturno";
             this.cboturno.Size = new System.Drawing.Size(133, 21);
             this.cboturno.TabIndex = 44;
@@ -222,7 +224,7 @@
             // 
             this.cboprograma.FormattingEnabled = true;
             this.cboprograma.Location = new System.Drawing.Point(216, 137);
-            this.cboprograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboprograma.Margin = new System.Windows.Forms.Padding(2);
             this.cboprograma.Name = "cboprograma";
             this.cboprograma.Size = new System.Drawing.Size(306, 21);
             this.cboprograma.TabIndex = 43;
@@ -232,7 +234,7 @@
             // 
             this.cbogrupo.FormattingEnabled = true;
             this.cbogrupo.Location = new System.Drawing.Point(214, 88);
-            this.cbogrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbogrupo.Margin = new System.Windows.Forms.Padding(2);
             this.cbogrupo.Name = "cbogrupo";
             this.cbogrupo.Size = new System.Drawing.Size(212, 21);
             this.cbogrupo.TabIndex = 42;
@@ -242,7 +244,7 @@
             // 
             this.cbociclo.FormattingEnabled = true;
             this.cbociclo.Location = new System.Drawing.Point(214, 41);
-            this.cbociclo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbociclo.Margin = new System.Windows.Forms.Padding(2);
             this.cbociclo.Name = "cbociclo";
             this.cbociclo.Size = new System.Drawing.Size(212, 21);
             this.cbociclo.TabIndex = 41;
@@ -251,7 +253,7 @@
             // txtfecha
             // 
             this.txtfecha.Location = new System.Drawing.Point(10, 86);
-            this.txtfecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(182, 20);
             this.txtfecha.TabIndex = 40;
@@ -372,7 +374,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 55;
             this.iconButton1.Location = new System.Drawing.Point(544, 88);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(152, 72);
             this.iconButton1.TabIndex = 46;
@@ -384,7 +386,7 @@
             // txtidpago
             // 
             this.txtidpago.Location = new System.Drawing.Point(797, 57);
-            this.txtidpago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidpago.Margin = new System.Windows.Forms.Padding(2);
             this.txtidpago.Name = "txtidpago";
             this.txtidpago.Size = new System.Drawing.Size(130, 20);
             this.txtidpago.TabIndex = 47;
@@ -395,7 +397,7 @@
             // 
             this.txtidusuario.Enabled = false;
             this.txtidusuario.Location = new System.Drawing.Point(586, 581);
-            this.txtidusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtidusuario.Name = "txtidusuario";
             this.txtidusuario.Size = new System.Drawing.Size(138, 20);
             this.txtidusuario.TabIndex = 48;
@@ -417,7 +419,7 @@
             // 
             this.cbosexo.FormattingEnabled = true;
             this.cbosexo.Location = new System.Drawing.Point(279, 84);
-            this.cbosexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbosexo.Margin = new System.Windows.Forms.Padding(2);
             this.cbosexo.Name = "cbosexo";
             this.cbosexo.Size = new System.Drawing.Size(160, 21);
             this.cbosexo.TabIndex = 68;
@@ -426,7 +428,7 @@
             // txtañoculminado
             // 
             this.txtañoculminado.Location = new System.Drawing.Point(5, 180);
-            this.txtañoculminado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtañoculminado.Margin = new System.Windows.Forms.Padding(2);
             this.txtañoculminado.Name = "txtañoculminado";
             this.txtañoculminado.Size = new System.Drawing.Size(188, 20);
             this.txtañoculminado.TabIndex = 67;
@@ -448,7 +450,7 @@
             // txtcolegio
             // 
             this.txtcolegio.Location = new System.Drawing.Point(455, 126);
-            this.txtcolegio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcolegio.Margin = new System.Windows.Forms.Padding(2);
             this.txtcolegio.Name = "txtcolegio";
             this.txtcolegio.Size = new System.Drawing.Size(254, 20);
             this.txtcolegio.TabIndex = 65;
@@ -470,7 +472,7 @@
             // txtnacimiento
             // 
             this.txtnacimiento.Location = new System.Drawing.Point(455, 33);
-            this.txtnacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtnacimiento.Name = "txtnacimiento";
             this.txtnacimiento.Size = new System.Drawing.Size(178, 20);
             this.txtnacimiento.TabIndex = 63;
@@ -479,7 +481,7 @@
             // txtemail
             // 
             this.txtemail.Location = new System.Drawing.Point(455, 85);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(2);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(254, 20);
             this.txtemail.TabIndex = 62;
@@ -488,7 +490,7 @@
             // txtcelular
             // 
             this.txtcelular.Location = new System.Drawing.Point(277, 133);
-            this.txtcelular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcelular.Margin = new System.Windows.Forms.Padding(2);
             this.txtcelular.Name = "txtcelular";
             this.txtcelular.Size = new System.Drawing.Size(162, 20);
             this.txtcelular.TabIndex = 61;
@@ -497,7 +499,7 @@
             // txtdeni
             // 
             this.txtdeni.Location = new System.Drawing.Point(279, 33);
-            this.txtdeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdeni.Margin = new System.Windows.Forms.Padding(2);
             this.txtdeni.Name = "txtdeni";
             this.txtdeni.Size = new System.Drawing.Size(160, 20);
             this.txtdeni.TabIndex = 60;
@@ -506,7 +508,7 @@
             // txtamaterno
             // 
             this.txtamaterno.Location = new System.Drawing.Point(5, 126);
-            this.txtamaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtamaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtamaterno.Name = "txtamaterno";
             this.txtamaterno.Size = new System.Drawing.Size(242, 20);
             this.txtamaterno.TabIndex = 59;
@@ -515,7 +517,7 @@
             // txtapaterno
             // 
             this.txtapaterno.Location = new System.Drawing.Point(5, 85);
-            this.txtapaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtapaterno.Name = "txtapaterno";
             this.txtapaterno.Size = new System.Drawing.Size(242, 20);
             this.txtapaterno.TabIndex = 58;
@@ -524,7 +526,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(5, 33);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(242, 20);
             this.txtnombre.TabIndex = 57;
@@ -638,7 +640,7 @@
             // 
             this.txtnombreusuario.Enabled = false;
             this.txtnombreusuario.Location = new System.Drawing.Point(530, 41);
-            this.txtnombreusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombreusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombreusuario.Name = "txtnombreusuario";
             this.txtnombreusuario.Size = new System.Drawing.Size(134, 20);
             this.txtnombreusuario.TabIndex = 69;
@@ -648,7 +650,7 @@
             // 
             this.cbopago.FormattingEnabled = true;
             this.cbopago.Location = new System.Drawing.Point(10, 137);
-            this.cbopago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbopago.Margin = new System.Windows.Forms.Padding(2);
             this.cbopago.Name = "cbopago";
             this.cbopago.Size = new System.Drawing.Size(182, 21);
             this.cbopago.TabIndex = 70;
@@ -657,7 +659,7 @@
             // txtidestudiante
             // 
             this.txtidestudiante.Location = new System.Drawing.Point(797, 20);
-            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2);
             this.txtidestudiante.Name = "txtidestudiante";
             this.txtidestudiante.Size = new System.Drawing.Size(130, 20);
             this.txtidestudiante.TabIndex = 71;
@@ -668,9 +670,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.cbocolegio);
+            this.panel1.Controls.Add(this.cbodistrito);
+            this.panel1.Controls.Add(this.cboprovincia);
+            this.panel1.Controls.Add(this.cbodepartamentos);
             this.panel1.Controls.Add(this.label28);
             this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.label26);
@@ -695,10 +699,64 @@
             this.panel1.Controls.Add(this.txtcelular);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(50, 43);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 227);
             this.panel1.TabIndex = 72;
+            // 
+            // cbodistrito
+            // 
+            this.cbodistrito.FormattingEnabled = true;
+            this.cbodistrito.Location = new System.Drawing.Point(774, 145);
+            this.cbodistrito.Name = "cbodistrito";
+            this.cbodistrito.Size = new System.Drawing.Size(150, 21);
+            this.cbodistrito.TabIndex = 74;
+            this.cbodistrito.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // cboprovincia
+            // 
+            this.cboprovincia.FormattingEnabled = true;
+            this.cboprovincia.Location = new System.Drawing.Point(774, 100);
+            this.cboprovincia.Name = "cboprovincia";
+            this.cboprovincia.Size = new System.Drawing.Size(150, 21);
+            this.cboprovincia.TabIndex = 73;
+            this.cboprovincia.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // cbodepartamentos
+            // 
+            this.cbodepartamentos.FormattingEnabled = true;
+            this.cbodepartamentos.Location = new System.Drawing.Point(774, 50);
+            this.cbodepartamentos.Name = "cbodepartamentos";
+            this.cbodepartamentos.Size = new System.Drawing.Size(150, 21);
+            this.cbodepartamentos.TabIndex = 72;
+            this.cbodepartamentos.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(771, 129);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(39, 13);
+            this.label28.TabIndex = 71;
+            this.label28.Text = "Distrito";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(771, 83);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(51, 13);
+            this.label27.TabIndex = 70;
+            this.label27.Text = "Provincia";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(771, 33);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(74, 13);
+            this.label26.TabIndex = 69;
+            this.label26.Text = "Departamento";
             // 
             // panel2
             // 
@@ -713,7 +771,7 @@
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtvoucher);
             this.panel2.Location = new System.Drawing.Point(50, 283);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(730, 128);
             this.panel2.TabIndex = 73;
@@ -738,61 +796,10 @@
             this.panel3.Controls.Add(this.cbogrupo);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Location = new System.Drawing.Point(50, 433);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(724, 180);
             this.panel3.TabIndex = 74;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(771, 33);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(74, 13);
-            this.label26.TabIndex = 69;
-            this.label26.Text = "Departamento";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(771, 83);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(51, 13);
-            this.label27.TabIndex = 70;
-            this.label27.Text = "Provincia";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(771, 129);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(39, 13);
-            this.label28.TabIndex = 71;
-            this.label28.Text = "Distrito";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(774, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 72;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(774, 100);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 21);
-            this.comboBox2.TabIndex = 73;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(774, 145);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(150, 21);
-            this.comboBox3.TabIndex = 74;
             // 
             // pictureBox1
             // 
@@ -802,6 +809,24 @@
             this.pictureBox1.Size = new System.Drawing.Size(204, 260);
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
+            // 
+            // cbocolegio
+            // 
+            this.cbocolegio.FormattingEnabled = true;
+            this.cbocolegio.Location = new System.Drawing.Point(774, 201);
+            this.cbocolegio.Name = "cbocolegio";
+            this.cbocolegio.Size = new System.Drawing.Size(150, 21);
+            this.cbocolegio.TabIndex = 75;
+            this.cbocolegio.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(781, 188);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 76;
+            this.label29.Text = "Colegio";
             // 
             // formInscripcion
             // 
@@ -820,7 +845,7 @@
             this.Controls.Add(this.txtidusuario);
             this.Controls.Add(this.txtidpago);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formInscripcion";
             this.Text = "formInscripcion";
             this.Load += new System.EventHandler(this.formInscripcion_Load);
@@ -893,9 +918,11 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbodistrito;
+        private System.Windows.Forms.ComboBox cboprovincia;
+        private System.Windows.Forms.ComboBox cbodepartamentos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cbocolegio;
     }
 }

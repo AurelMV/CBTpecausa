@@ -32,10 +32,7 @@ namespace CapaNegocio
                 Mensaje += "Es nesesario ingresar un valor positivo  ";
 
             }
-            if (obj.FechaGrupos == null)
-            {
-                Mensaje += "Es nesesario elegir una fecha del Calendario  ";
-            }
+           
             if (Mensaje != string.Empty)
             {
                 return 0;

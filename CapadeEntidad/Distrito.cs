@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapadeEntidad
 {
-    internal class Distrito
+    public class Distrito
     {
         public int iddistrito { get; set; }
         public string nombredistrito { get; set; }

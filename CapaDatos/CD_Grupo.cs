@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CapaDatos
 {
@@ -21,7 +21,9 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT idGrupos, nombreGrupo, aforo, fechaGrupos, estado FROM Grupos");
+                    query.AppendLine("SELECT g.idGrupos, g.nombreGrupo, g.aforo, g.estado, c.idciclo, c.nombreCiclo");
+                    query.AppendLine("FROM Grupos g");
+                    query.AppendLine("INNER JOIN cicloInscripcion c ON g.idciclo = c.idciclo");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -31,14 +33,18 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-
                             Grupo grupo = new Grupo
                             {
                                 IdGrupos = Convert.ToInt32(dr["idGrupos"]),
                                 NombreGrupo = dr["nombreGrupo"].ToString(),
                                 Aforo = Convert.ToInt32(dr["aforo"]),
-                                FechaGrupos = Convert.ToDateTime(dr["fechaGrupos"]),
-                                Estado = Convert.ToBoolean(dr["estado"])
+                                Estado = Convert.ToBoolean(dr["estado"]),
+                                // Agregar datos del ciclo
+                                oCicloinscripcion = new CicloInscripcion
+                                {
+                                    idciclo = Convert.ToInt32(dr["idciclo"]),
+                                    nombreCiclo = dr["nombreCiclo"].ToString()
+                                }
                             };
 
                             lista.Add(grupo);
@@ -48,13 +54,13 @@ namespace CapaDatos
                 catch (Exception ex)
                 {
                     lista = new List<Grupo>();
-
-
+                    // Manejar la excepción según tu aplicación
                 }
             }
 
             return lista;
         }
+
         public List<Grupo> ListarGrupoActivo()
         {
             List<Grupo> lista = new List<Grupo>();
@@ -64,7 +70,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT idGrupos, nombreGrupo, aforo, fechaGrupos, estado FROM Grupos WHERE estado = 1");
+                    query.AppendLine("SELECT idGrupos, nombreGrupo, aforo, estado FROM Grupos WHERE estado = 1");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -80,7 +86,7 @@ namespace CapaDatos
                                 IdGrupos = Convert.ToInt32(dr["idGrupos"]),
                                 NombreGrupo = dr["nombreGrupo"].ToString(),
                                 Aforo = Convert.ToInt32(dr["aforo"]),
-                                FechaGrupos = Convert.ToDateTime(dr["fechaGrupos"]),
+                              
                                 Estado = Convert.ToBoolean(dr["estado"])
                             };
 
@@ -111,7 +117,7 @@ namespace CapaDatos
                     // Agregar parámetros de entrada
                     cmd.Parameters.AddWithValue("nombreGrupo", obj.NombreGrupo);
                     cmd.Parameters.AddWithValue("aforo", obj.Aforo);
-                    cmd.Parameters.AddWithValue("fechaGrupos", obj.FechaGrupos);
+           
                     cmd.Parameters.AddWithValue("estado", obj.Estado);
 
                     // Agregar parámetros de salida
@@ -155,7 +161,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("idGrupos", obj.IdGrupos);
                     cmd.Parameters.AddWithValue("nombreGrupo", obj.NombreGrupo);
                     cmd.Parameters.AddWithValue("aforo", obj.Aforo);
-                    cmd.Parameters.AddWithValue("fechaGrupos", obj.FechaGrupos);
+         
                     cmd.Parameters.AddWithValue("estado", obj.Estado);
 
                     // Agregar parámetros de salida
@@ -207,7 +213,7 @@ namespace CapaDatos
                                 IdGrupos = Convert.ToInt32(dr["idGrupos"]),
                                 NombreGrupo = dr["nombreGrupo"].ToString(),
                                 Aforo = Convert.ToInt32(dr["aforo"]),
-                                FechaGrupos = Convert.ToDateTime(dr["fechaGrupos"]),
+                           
                                 Estado = Convert.ToBoolean(dr["estado"])
                             };
 

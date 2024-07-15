@@ -47,14 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CD_CicloInscripcion.cs" />
+    <Compile Include="CD_Colegio.cs" />
     <Compile Include="CD_Curso.cs" />
     <Compile Include="CD_CursoDeDocente.cs" />
+    <Compile Include="CD_Departamento.cs" />
+    <Compile Include="CD_DIstrito.cs" />
     <Compile Include="CD_Docente.cs" />
     <Compile Include="CD_Estudiante.cs" />
     <Compile Include="CD_Grupo.cs" />
     <Compile Include="CD_Inscripcion.cs" />
     <Compile Include="CD_Pago.cs" />
     <Compile Include="CD_ProgramaEstudios.cs" />
+    <Compile Include="CD_Provincia.cs" />
+    <Compile Include="CD_Rol.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CD_Usuario.cs" />

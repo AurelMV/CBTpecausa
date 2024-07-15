@@ -1,5 +1,7 @@
-﻿using CapaEntidad;
+﻿using CapadeEntidad;
+using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utilidades;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -162,6 +164,27 @@ namespace CapaPresentacion
         private void iconButton1_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        private void formUsuario_Load(object sender, EventArgs e)
+        {
+            List<Rol> listaPrograma = new CN_Rol().Listar();
+            cborol.Items.Clear();
+            foreach (Rol item in listaPrograma)
+            {
+                cborol.Items.Add(new OpcionCombo() { Valor = item.idrol, Texto = item.nombrerol });
+            }
+            cborol.DisplayMember = "Texto";
+            cborol.ValueMember = "Valor";
+            if (cborol.Items.Count > 0)
+            {
+                cborol.SelectedIndex = 0;
+            }
+        }
+
+        private void cborol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,43 +47,44 @@ namespace CapaPresentacion
                     return;
                 }
 
-                // Validar fechaGrupos
-                if (!DateTime.TryParseExact(txtfecha.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaGrupos))
-                {
-                    MessageBox.Show("Formato de fecha inválido. Por favor, ingrese la fecha en formato yyyy-MM-dd.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 // Validar estado
                 if (cboestado.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor, seleccione un estado para el grupo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                int estadoValor = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor);
-                bool estado = estadoValor == 1;
+                bool estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1;
+
+
+                // Validar ciclo seleccionado
+                if (cbciclo.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un ciclo para el grupo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int idCiclo = (int)cbciclo.SelectedValue;
 
                 // Crear nuevo grupo
                 Grupo nuevoGrupo = new Grupo
                 {
                     NombreGrupo = nombreGrupo,
                     Aforo = aforo,
-                    FechaGrupos = fechaGrupos,
-                    Estado = estado
+                    Estado = estado,
+                    oCicloinscripcion = new CicloInscripcion { idciclo = idCiclo },
+                   
                 };
 
-                // Aquí asumimos que txtIdGrupo es el TextBox donde se ingresa el ID del grupo.
+                // Verificar si se está editando o registrando
                 if (int.TryParse(txtidgrupo.Text, out int idGrupo) && idGrupo != 0)
                 {
                     // Acción para actualización
-
                     nuevoGrupo.IdGrupos = idGrupo;
                     bool modificado = new CN_Grupo().Editar(nuevoGrupo, out mensaje);
                     if (modificado)
                     {
                         MessageBox.Show("Grupo actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarGrupos();
-                        limpiar();
+                    
                     }
                     else
                     {
@@ -93,19 +94,18 @@ namespace CapaPresentacion
                 else
                 {
                     // Acción para registro
-                    int idGrupogene = new CN_Grupo().Registrar(nuevoGrupo, out mensaje);
-                    if (idGrupogene != 0)
+                    int idNuevoGrupo = new CN_Grupo().Registrar(nuevoGrupo, out mensaje);
+                    if (idNuevoGrupo != 0)
                     {
-                        dataGridView1.Rows.Add(new object[] {
-                    "", idGrupogene, nombreGrupo, aforo, fechaGrupos.ToString("yyyy-MM-dd"), estado ? "Activo" : "No Activo", ""
-                });
+                        MessageBox.Show("Grupo registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarGrupos();
                         limpiar();
+    
                     }
                     else
                     {
                         MessageBox.Show("Error al registrar el grupo: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    CargarGrupos();
                 }
             }
             catch (FormatException ex)
@@ -125,6 +125,7 @@ namespace CapaPresentacion
 
 
 
+
         private void iconButton2_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -133,7 +134,18 @@ namespace CapaPresentacion
         //funcion para alimentar el combo box de estado 
         private void formGrupos_Load(object sender, EventArgs e)
         {
-          
+            List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
+            cbciclo.Items.Clear();
+            foreach (CicloInscripcion item in listaCiclo)
+            {
+                cbciclo.Items.Add(new OpcionCombo() { Valor = item.idciclo, Texto = item.nombreCiclo });
+            }
+            cbciclo.DisplayMember = "Texto";
+            cbciclo.ValueMember = "Valor";
+            if (cbciclo.Items.Count > 0)
+            {
+                cbciclo.SelectedIndex = 0;
+            }
 
 
 
@@ -165,7 +177,7 @@ namespace CapaPresentacion
             txtidgrupo.Text = "0";
             txtnombre.Text = "";
             txtaforo.Text = "";
-            txtfecha.Text = "";
+
 
             cboestado.SelectedIndex=0;
 
@@ -180,9 +192,7 @@ namespace CapaPresentacion
 
         private void txtfecha_DateSelected(object sender, DateRangeEventArgs e)
         {
-            DateTime fechaSeleccionada = calendario.SelectionStart;
-            txtfecha.Text = fechaSeleccionada.ToString("yyyy-MM-dd");
-            txtfechabus2.Text = fechaSeleccionada.ToString("yyyy-MM-dd");
+          
 
 
         }
@@ -244,7 +254,7 @@ namespace CapaPresentacion
                 int estadoValor = item.Estado ? 1 : 0;
 
                 dataGridView1.Rows.Add(new object[] {
-                    "", item.IdGrupos, item.NombreGrupo, item.Aforo, item.FechaGrupos.ToString("yyyy-MM-dd"), estadoValor, estadoTexto
+                    "", item.IdGrupos, item.NombreGrupo, item.Aforo, estadoValor, estadoTexto, item.oCicloinscripcion.idciclo, item.oCicloinscripcion.nombreCiclo
                 });
             }
         }
@@ -264,8 +274,7 @@ namespace CapaPresentacion
                         txtidgrupo.Text = dataGridView1.Rows[indice].Cells["id"].Value?.ToString() ?? string.Empty;
                         txtnombre.Text = dataGridView1.Rows[indice].Cells["Nombre"].Value?.ToString() ?? string.Empty;
                         txtaforo.Text = dataGridView1.Rows[indice].Cells["Aforo"].Value?.ToString() ?? string.Empty;
-                        txtfecha.Text = dataGridView1.Rows[indice].Cells["Fecha"].Value?.ToString() ?? string.Empty;
-
+                     
                         foreach (OpcionCombo oc in cboestado.Items)
                         {
                             var estadoValor = dataGridView1.Rows[indice].Cells["EstadoValor"].Value;
