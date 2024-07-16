@@ -49,6 +49,7 @@ namespace CapaPresentacion
 
             inicializarconbos();
             InicializarComboBox();
+            ListarDepartamento();
 
             txtnacimiento.Format = DateTimePickerFormat.Custom;
             txtnacimiento.CustomFormat = "yyyy-MM-dd";
@@ -62,7 +63,7 @@ namespace CapaPresentacion
             txtfechapago.Format = DateTimePickerFormat.Custom;
             txtfechapago.CustomFormat = "yyyy-MM-dd";
 
-            CargarComboBoxDepartamentos();
+           // CargarComboBoxDepartamentos();
 
         }
         private void inicializarconbos()
@@ -120,18 +121,7 @@ namespace CapaPresentacion
             }
 
             // Inicializar ComboBox de ciclos de inscripción
-            List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
-            cbociclo.Items.Clear();
-            foreach (CicloInscripcion item in listaCiclo)
-            {
-                cbociclo.Items.Add(new OpcionCombo() { Valor = item.idciclo, Texto = item.nombreCiclo });
-            }
-            cbociclo.DisplayMember = "Texto";
-            cbociclo.ValueMember = "Valor";
-            if (cbociclo.Items.Count > 0)
-            {
-                cbociclo.SelectedIndex = 0;
-            }
+  
 
 
             // Inicializar ComboBox de ciclos de inscripción
@@ -628,44 +618,44 @@ namespace CapaPresentacion
 
         }
 
-        private void CargarComboBoxDepartamentos()
-        {
-            List<Departamento> departamentos = DEPA.ObtenerDepartamentos();
-            cbodepartamentos.DataSource = departamentos;
-            cbodepartamentos.DisplayMember = "NombreDepartamento";
-            cbodepartamentos.ValueMember = "IdDepartamento";
-            cbodepartamentos.SelectedIndex = -1; // Limpiar selección
-        }
+        //private void CargarComboBoxDepartamentos()
+        //{
+        //    List<Departamento> departamentos = DEPA.ObtenerDepartamentos();
+        //    cbodepartamentos.DataSource = departamentos;
+        //    cbodepartamentos.DisplayMember = "NombreDepartamento";
+        //    cbodepartamentos.ValueMember = "IdDepartamento";
+        //    cbodepartamentos.SelectedIndex = -1; // Limpiar selección
+        //}
 
 
 
-        private void CargarComboBoxProvincias(int departamentoId)
-        {
-            List<Provincia> provincias = PROVI.ObtenerProvinciasPorDepartamento(departamentoId);
-            cboprovincia.DataSource = provincias;
-            cboprovincia.DisplayMember = "NombreProvincia";
-            cboprovincia.ValueMember = "IdProvincia";
-            cboprovincia.SelectedIndex = -1; // Limpiar selección
-        }
+        //private void CargarComboBoxProvincias(int departamentoId)
+        //{
+        //    List<Provincia> provincias = PROVI.ObtenerProvinciasPorDepartamento(departamentoId);
+        //    cboprovincia.DataSource = provincias;
+        //    cboprovincia.DisplayMember = "NombreProvincia";
+        //    cboprovincia.ValueMember = "IdProvincia";
+        //    cboprovincia.SelectedIndex = -1; // Limpiar selección
+        //}
 
 
-        private void CargarComboBoxDistritos(int provinciaId)
-        {
-            List<Distrito> distritos = DESTRI.ObtenerDistritosPorProvincia(provinciaId);
-            cbodistrito.DataSource = distritos;
-            cbodistrito.DisplayMember = "NombreDistrito";
-            cbodistrito.ValueMember = "IdDistritos";
-            cbodistrito.SelectedIndex = -1; // Limpiar selección
-        }
+        //private void CargarComboBoxDistritos(int provinciaId)
+        //{
+        //    List<Distrito> distritos = DESTRI.ObtenerDistritosPorProvincia(provinciaId);
+        //    cbodistrito.DataSource = distritos;
+        //    cbodistrito.DisplayMember = "NombreDistrito";
+        //    cbodistrito.ValueMember = "IdDistritos";
+        //    cbodistrito.SelectedIndex = -1; // Limpiar selección
+        //}
 
-        private void CargarComboBoxColegios(int distritoId)
-        {
-            List<Colegio> colegios = COLE.ObtenerColegiosPorDistrito(distritoId);
-            cbocolegio.DataSource = colegios;
-            cbocolegio.DisplayMember = "NombreColegio";
-            cbocolegio.ValueMember = "IdColegios";
-            cbocolegio.SelectedIndex = -1; // Limpiar selección
-        }
+        //private void CargarComboBoxColegios(int distritoId)
+        //{
+        //    List<Colegio> colegios = COLE.ObtenerColegiosPorDistrito(distritoId);
+        //    cbocolegio.DataSource = colegios;
+        //    cbocolegio.DisplayMember = "NombreColegio";
+        //    cbocolegio.ValueMember = "IdColegios";
+        //    cbocolegio.SelectedIndex = -1; // Limpiar selección
+        //}
 
         private void txtnombreusuario_TextChanged(object sender, EventArgs e)
         {
@@ -679,7 +669,13 @@ namespace CapaPresentacion
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Distrito oDistrito = (Distrito)cbodistrito.SelectedItem;
+            if (oDistrito != null)
+            {
+                cbocolegio.DataSource = new CN_Operaciones().ObtenerColegios(oDistrito.iddistrito);
+                cbocolegio.ValueMember = "idcolegio";
+                cbocolegio.DisplayMember = "nombrecolegio";
+            }
 
 
 
@@ -687,46 +683,65 @@ namespace CapaPresentacion
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbodistrito.SelectedValue != null && int.TryParse(cbodistrito.SelectedValue.ToString(), out int distritoId))
+            //if (cbodistrito.SelectedValue != null && int.TryParse(cbodistrito.SelectedValue.ToString(), out int distritoId))
+            //{
+            //    CargarComboBoxColegios(distritoId);
+            //}
+            //else
+            //{
+            //    // Limpiar ComboBox de Colegios si no hay selección de distrito
+            //    cbocolegio.DataSource = null;
+            //    cbocolegio.Items.Clear();
+            //}
+            Provincia oProvincia = (Provincia)cboprovincia.SelectedItem;
+            if (oProvincia != null)
             {
-                CargarComboBoxColegios(distritoId);
+                cbodistrito.DataSource = new CN_Operaciones().ObtenerDistritos(oProvincia.idprovincia);
+                cbodistrito.ValueMember = "iddistrito";
+                cbodistrito.DisplayMember = "nombredistrito";
             }
-            else
-            {
-                // Limpiar ComboBox de Colegios si no hay selección de distrito
-                cbocolegio.DataSource = null;
-                cbocolegio.Items.Clear();
-            }
+
+
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboprovincia.SelectedValue != null && int.TryParse(cboprovincia.SelectedValue.ToString(), out int provinciaId))
+            //if (cboprovincia.SelectedValue != null && int.TryParse(cboprovincia.SelectedValue.ToString(), out int provinciaId))
+            //{
+            //    CargarComboBoxDistritos(provinciaId);
+            //}
+            //else
+            //{
+            //    // Limpiar ComboBox de Distritos si no hay selección de provincia
+            //    cbodistrito.DataSource = null;
+            //    cbodistrito.Items.Clear();
+            //}
+            Departamento oDepartamento = (Departamento)cbodepartamentos.SelectedItem;
+            if (oDepartamento != null)
             {
-                CargarComboBoxDistritos(provinciaId);
+                cboprovincia.DataSource = new CN_Operaciones().ObtenerProvincias(oDepartamento.iddepartamento);
+                cboprovincia.ValueMember = "idprovincia";
+                cboprovincia.DisplayMember = "nombreprovincia";
             }
-            else
-            {
-                // Limpiar ComboBox de Distritos si no hay selección de provincia
-                cbodistrito.DataSource = null;
-                cbodistrito.Items.Clear();
-            }
+
+
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbodepartamentos.SelectedValue != null && int.TryParse(cbodepartamentos.SelectedValue.ToString(), out int departamentoId))
-            {
-                CargarComboBoxProvincias(departamentoId);
-            }
-            else
-            {
-                // Limpiar ComboBox de Provincias si no hay selección de departamento
-                cboprovincia.DataSource = null;
-                cboprovincia.Items.Clear();
-            }
+      
+
+
+
+        private void ListarDepartamento() {
+            cbodepartamentos.DataSource = new CN_Operaciones().ObtenerDepartamentos();
+            cbodepartamentos.ValueMember = "iddepartamento";
+            cbodepartamentos.DisplayMember = "nombredepartamento";
+
         }
+
+
+
 
 
     }

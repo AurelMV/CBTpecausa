@@ -79,6 +79,8 @@
             this.cbopago = new System.Windows.Forms.ComboBox();
             this.txtidestudiante = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cbocolegio = new System.Windows.Forms.ComboBox();
             this.cbodistrito = new System.Windows.Forms.ComboBox();
             this.cboprovincia = new System.Windows.Forms.ComboBox();
             this.cbodepartamentos = new System.Windows.Forms.ComboBox();
@@ -88,8 +90,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbocolegio = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -704,8 +704,28 @@
             this.panel1.Size = new System.Drawing.Size(1078, 227);
             this.panel1.TabIndex = 72;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(781, 188);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 13);
+            this.label29.TabIndex = 76;
+            this.label29.Text = "Colegio";
+            // 
+            // cbocolegio
+            // 
+            this.cbocolegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbocolegio.FormattingEnabled = true;
+            this.cbocolegio.Location = new System.Drawing.Point(774, 201);
+            this.cbocolegio.Name = "cbocolegio";
+            this.cbocolegio.Size = new System.Drawing.Size(150, 21);
+            this.cbocolegio.TabIndex = 75;
+            this.cbocolegio.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
             // cbodistrito
             // 
+            this.cbodistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbodistrito.FormattingEnabled = true;
             this.cbodistrito.Location = new System.Drawing.Point(774, 145);
             this.cbodistrito.Name = "cbodistrito";
@@ -715,6 +735,7 @@
             // 
             // cboprovincia
             // 
+            this.cboprovincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboprovincia.FormattingEnabled = true;
             this.cboprovincia.Location = new System.Drawing.Point(774, 100);
             this.cboprovincia.Name = "cboprovincia";
@@ -724,12 +745,12 @@
             // 
             // cbodepartamentos
             // 
+            this.cbodepartamentos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbodepartamentos.FormattingEnabled = true;
             this.cbodepartamentos.Location = new System.Drawing.Point(774, 50);
             this.cbodepartamentos.Name = "cbodepartamentos";
             this.cbodepartamentos.Size = new System.Drawing.Size(150, 21);
             this.cbodepartamentos.TabIndex = 72;
-            this.cbodepartamentos.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -809,24 +830,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(204, 260);
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
-            // 
-            // cbocolegio
-            // 
-            this.cbocolegio.FormattingEnabled = true;
-            this.cbocolegio.Location = new System.Drawing.Point(774, 201);
-            this.cbocolegio.Name = "cbocolegio";
-            this.cbocolegio.Size = new System.Drawing.Size(150, 21);
-            this.cbocolegio.TabIndex = 75;
-            this.cbocolegio.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(781, 188);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(42, 13);
-            this.label29.TabIndex = 76;
-            this.label29.Text = "Colegio";
             // 
             // formInscripcion
             // 
