@@ -119,7 +119,7 @@ namespace CapaPresentacion
             {
 
                 dataGridView1.Rows.Add(new object[] {
-            "", item.IdEstudiante, item.Nombres, item.APaterno, item.AMaterno, item.Documneto, item.Sexo, item.Celular,item.FechaNacimiento.ToString("yyyy-MM-dd"),item.Email
+            "", item.IdEstudiante, item.Nombres, item.APaterno, item.AMaterno, item.Documneto, item.Sexo, item.CelularEstudiante,item.FechaNacimiento.ToString("yyyy-MM-dd"),item.Email
             ,item.Colegio,item.AnoCulminado
         });
             }
@@ -192,7 +192,7 @@ namespace CapaPresentacion
                     AMaterno = aMaterno,
                     Documneto = dni,
                     Sexo = sexo,
-                    Celular = celular,
+                    CelularEstudiante = celular,
                     FechaNacimiento = DateTime.Parse(fechanacimiento),
                     Email = email,
                     Colegio = colegio,

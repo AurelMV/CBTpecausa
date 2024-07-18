@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapadeEntidad;
 
 namespace CapaDatos
 {
@@ -21,11 +22,15 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT e.idEstudiante, e.nombres, e.aPaterno, e.aMaterno, e.dni, e.sexo, e.celular, e.fechaNacimiento, e.email, e.colegio, e.anoculminado FROM estudiantes e");
+                    query.AppendLine("SELECT e.idEstudiante, e.nombres, e.aPaterno, e.aMaterno, e.sexo, e.celularestudiante, ");
+                    query.AppendLine("e.celularapoderado, e.fechaNacimiento, e.email, e.anoculminado, e.Nrodocumento, ");
+                    query.AppendLine("e.tipodocumento, e.direccion, e.foto, e.idcolegios, c.nombre AS nombrecolegio ");
+                    query.AppendLine("FROM estudiantes e ");
+                    query.AppendLine("INNER JOIN colegios c ON e.idcolegios = c.idcolegios");
 
                     using (SqlCommand cmd = new SqlCommand(query.ToString(), conexion))
                     {
-                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.CommandType = CommandType.Text;
                         conexion.Open();
 
                         using (SqlDataReader dr = cmd.ExecuteReader())
@@ -38,13 +43,18 @@ namespace CapaDatos
                                     Nombres = dr["nombres"].ToString(),
                                     APaterno = dr["aPaterno"].ToString(),
                                     AMaterno = dr["aMaterno"].ToString(),
-                                    Documneto = dr["dni"].ToString(),
                                     Sexo = Convert.ToChar(dr["sexo"]),
-                                    Celular = dr["celular"].ToString(),
+                                    CelularEstudiante = dr["celularestudiante"].ToString(),
+                                    CelularApoderado = dr["celularapoderado"].ToString(),
                                     FechaNacimiento = Convert.ToDateTime(dr["fechaNacimiento"]),
                                     Email = dr["email"].ToString(),
-                                    Colegio = dr["colegio"].ToString(),
-                                    AnoCulminado = dr["anoculminado"].ToString()
+                                    AnoCulminado = dr["anoculminado"].ToString(),
+                                    Documneto = dr["Nrodocumento"].ToString(),
+                                    TipoDocumento = dr["tipodocumento"].ToString(),
+                                    Direccion = dr["direccion"].ToString(),
+                                    Colegio = dr["nombrecolegio"].ToString(),
+                                    foto = dr["foto"] != DBNull.Value ? (byte[])dr["foto"] : null, 
+                                    oColegio = new Colegio { idcolegio = Convert.ToInt32(dr["idcolegios"]) }
                                 };
 
                                 lista.Add(estudiante);
@@ -54,19 +64,19 @@ namespace CapaDatos
                 }
                 catch (SqlException sqlEx)
                 {
-                    // Manejo específico para errores de SQL
+                   
                     Console.WriteLine($"Error de SQL: {sqlEx.Message}");
                     lista = new List<Estudiante>();
                 }
                 catch (InvalidOperationException invalidOpEx)
                 {
-                    // Manejo específico para errores de operación inválida
+                    
                     Console.WriteLine($"Operación inválida: {invalidOpEx.Message}");
                     lista = new List<Estudiante>();
                 }
                 catch (Exception ex)
                 {
-                    // Manejo general de errores
+                    
                     Console.WriteLine($"Error: {ex.Message}");
                     lista = new List<Estudiante>();
                 }
@@ -74,6 +84,8 @@ namespace CapaDatos
 
             return lista;
         }
+
+
 
 
         public bool Modificar(Estudiante obj, out string Mensaje)
@@ -85,7 +97,7 @@ namespace CapaDatos
             {
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_ModificarEstudiante", conexion);
+                    SqlCommand cmd = new SqlCommand("ModificarEstudiante", conexion);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
@@ -93,39 +105,38 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@nombres", obj.Nombres);
                     cmd.Parameters.AddWithValue("@aPaterno", obj.APaterno);
                     cmd.Parameters.AddWithValue("@aMaterno", obj.AMaterno);
-                    cmd.Parameters.AddWithValue("@dni", obj.Documneto);
                     cmd.Parameters.AddWithValue("@sexo", obj.Sexo);
-                    cmd.Parameters.AddWithValue("@celular", obj.Celular);
+                    cmd.Parameters.AddWithValue("@celularestudiante", obj.CelularEstudiante);
+                    cmd.Parameters.AddWithValue("@celularapoderado", obj.CelularApoderado);
                     cmd.Parameters.AddWithValue("@fechaNacimiento", obj.FechaNacimiento);
                     cmd.Parameters.AddWithValue("@email", obj.Email);
-                    cmd.Parameters.AddWithValue("@colegio", obj.Colegio);
                     cmd.Parameters.AddWithValue("@anoculminado", obj.AnoCulminado);
+                    cmd.Parameters.AddWithValue("@Nrodocumento", obj.Documneto);
+                    cmd.Parameters.AddWithValue("@tipodocumento", obj.TipoDocumento);
+                    cmd.Parameters.AddWithValue("@direccion", obj.Direccion);
+                    cmd.Parameters.AddWithValue("@foto", obj.foto);
+                    cmd.Parameters.AddWithValue("@idcolegios", obj.oColegio.idcolegio);
 
                     // Parámetros de salida
-                    SqlParameter paramExito = new SqlParameter("@exito", SqlDbType.Bit);
-                    paramExito.Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add(paramExito);
-
-                    SqlParameter paramMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 100);
+                    SqlParameter paramMensaje = new SqlParameter("@Mensaje", SqlDbType.NVarChar, 100);
                     paramMensaje.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(paramMensaje);
 
                     conexion.Open();
                     cmd.ExecuteNonQuery();
 
-                    exito = Convert.ToBoolean(cmd.Parameters["@exito"].Value);
-                    Mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    exito = true;
+                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
                 exito = false;
-                Mensaje = ex.Message;
+                Mensaje = "Error en el método Modificar: " + ex.Message;
             }
 
             return exito;
         }
-
 
         public bool Agregar(Estudiante nuevoEstudiante, out string mensaje)
         {
@@ -136,7 +147,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("sp_AgregarEstudiante", conexion))
+                    using (SqlCommand cmd = new SqlCommand("RegistrarEstudiante", conexion))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
@@ -145,32 +156,27 @@ namespace CapaDatos
                         cmd.Parameters.AddWithValue("@nombres", nuevoEstudiante.Nombres);
                         cmd.Parameters.AddWithValue("@aPaterno", nuevoEstudiante.APaterno);
                         cmd.Parameters.AddWithValue("@aMaterno", nuevoEstudiante.AMaterno);
-                        cmd.Parameters.AddWithValue("@dni", nuevoEstudiante.Documneto);
                         cmd.Parameters.AddWithValue("@sexo", nuevoEstudiante.Sexo);
-                        cmd.Parameters.AddWithValue("@celular", nuevoEstudiante.Celular);
+                        cmd.Parameters.AddWithValue("@celularestudiante", nuevoEstudiante.CelularEstudiante);
+                        cmd.Parameters.AddWithValue("@celularapoderado", nuevoEstudiante.CelularEstudiante);
                         cmd.Parameters.AddWithValue("@fechaNacimiento", nuevoEstudiante.FechaNacimiento);
                         cmd.Parameters.AddWithValue("@email", nuevoEstudiante.Email);
-                        cmd.Parameters.AddWithValue("@colegio", nuevoEstudiante.Colegio);
                         cmd.Parameters.AddWithValue("@anoculminado", nuevoEstudiante.AnoCulminado);
 
-                        // Parámetros de salida
-                        SqlParameter mensajeParam = new SqlParameter("@mensaje", SqlDbType.NVarChar, 100)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(mensajeParam);
+                        cmd.Parameters.AddWithValue("@Nrodocumento", nuevoEstudiante.Documneto);
+                      
+                        cmd.Parameters.AddWithValue("@tipodocumento", nuevoEstudiante.TipoDocumento);
+                        cmd.Parameters.AddWithValue("@direccion", nuevoEstudiante.Direccion);
+                       
+                        cmd.Parameters.AddWithValue("@foto", nuevoEstudiante.foto);
+                        cmd.Parameters.AddWithValue("@idcolegios", nuevoEstudiante.oColegio.idcolegio);
 
-                        SqlParameter exitoParam = new SqlParameter("@exito", SqlDbType.Bit)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        cmd.Parameters.Add(exitoParam);
+                        
 
                         conexion.Open();
                         cmd.ExecuteNonQuery();
 
-                        mensaje = mensajeParam.Value.ToString();
-                        exito = Convert.ToBoolean(exitoParam.Value);
+                       
                     }
                 }
                 catch (Exception ex)

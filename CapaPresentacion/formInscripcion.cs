@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,10 @@ namespace CapaPresentacion
             InitializeComponent();
             this.usuario = usuario;
 
+
+            inicializarconbos();
+            InicializarComboBox();
+
         }
      
 
@@ -47,9 +52,51 @@ namespace CapaPresentacion
             txtidusuario.Text = usuario.idusuarios;
             txtnombreusuario.Text = usuario.nombre;
 
-            inicializarconbos();
-            InicializarComboBox();
-          
+
+
+            List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
+            cbociclo.Items.Clear();
+            foreach (CicloInscripcion item in listaCiclo)
+            {
+                cbociclo.Items.Add(new OpcionCombo() { Valor = item.idciclo, Texto = item.nombreCiclo });
+            }
+            cbociclo.DisplayMember = "Texto";
+            cbociclo.ValueMember = "Valor";
+            if (cbociclo.Items.Count > 0)
+            {
+                cbociclo.SelectedIndex = 0;
+            }
+
+
+
+            List<ProgramaEstudios> listaPrograma = new CN_ProgramaEstudios().listar();
+            cboprograma.Items.Clear();
+            foreach (ProgramaEstudios item in listaPrograma)
+            {
+                cboprograma.Items.Add(new OpcionCombo() { Valor = item.idprogramaestudios, Texto = item.nombre });
+            }
+            cboprograma.DisplayMember = "Texto";
+            cboprograma.ValueMember = "Valor";
+            if (cboprograma.Items.Count > 0)
+            {
+                cboprograma.SelectedIndex = 0;
+            }
+
+
+            List<Grupo> listgrup = new CN_Grupo().Listar();
+            cbogrupo.Items.Clear();
+            foreach (Grupo item in listgrup)
+            {
+                cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
+            }
+            cbogrupo.DisplayMember = "Texto";
+            cbogrupo.ValueMember = "Valor";
+            if (cbogrupo.Items.Count > 0)
+            {
+                cbogrupo.SelectedIndex = 0;
+            }
+
+
 
             txtnacimiento.Format = DateTimePickerFormat.Custom;
             txtnacimiento.CustomFormat = "yyyy-MM-dd";
@@ -106,37 +153,10 @@ namespace CapaPresentacion
                 cboturno.SelectedIndex = 0;
             }
 
-            // Inicializar ComboBox de programas de estudio
-            List<ProgramaEstudios> listaPrograma = new CN_ProgramaEstudios().listar();
-            cboprograma.Items.Clear();
-            foreach (ProgramaEstudios item in listaPrograma)
-            {
-                cboprograma.Items.Add(new OpcionCombo() { Valor = item.idprogramaestudios, Texto = item.nombre });
-            }
-            cboprograma.DisplayMember = "Texto";
-            cboprograma.ValueMember = "Valor";
-            if (cboprograma.Items.Count > 0)
-            {
-                cboprograma.SelectedIndex = 0;
-            }
-
-            // Inicializar ComboBox de ciclos de inscripción
-  
+         
 
 
-            // Inicializar ComboBox de ciclos de inscripción
-            List<Grupo> listagrup = new CN_Grupo().Listar2();
-            cbogrupo.Items.Clear();
-            foreach (Grupo item in listagrup)
-            {
-                cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
-            }
-            cbogrupo.DisplayMember = "Texto";
-            cbogrupo.ValueMember = "Valor";
-            if (cbogrupo.Items.Count > 0)
-            {
-                cbogrupo.SelectedIndex = 0;
-            }
+         
 
 
 
@@ -230,7 +250,7 @@ namespace CapaPresentacion
                     AMaterno = aMaterno,
                     Documneto = dni,
                     Sexo = sexo,
-                    Celular = celular,
+                    CelularEstudiante = celular,
                     FechaNacimiento = DateTime.Parse(fechanacimiento),
                     Email = email,
                     Colegio = colegio,
@@ -705,5 +725,32 @@ namespace CapaPresentacion
 
         }
 
+        private void CargarImagen()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaImagen = openFileDialog.FileName;
+                pictureBox1.Image = System.Drawing.Image.FromFile(rutaImagen);  // Usa System.Drawing.Image
+            }
+        }
+
+        // Método para convertir Image a byte[]
+        private byte[] ConvertirImagenAByteArray(System.Drawing.Image imagen)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagen.Save(ms, imagen.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+CargarImagen();
+        }
     }
 }

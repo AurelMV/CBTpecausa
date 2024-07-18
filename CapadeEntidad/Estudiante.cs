@@ -15,16 +15,18 @@ namespace CapaEntidad
         public string APaterno { get; set; }
         public string AMaterno { get; set; }
         public string TipoDocumento { get; set; }
+      
         public string Documneto { get; set; }
         public char Sexo { get; set; }
-        public string Celular { get; set; }
+        public string CelularEstudiante { get; set; }
         public String CelularApoderado { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Email { get; set; }
         public string Colegio { get; set; }
         public String AnoCulminado { get; set; }
-        
-        public TypeVarBinarySchemaImporterExtension  foto { get; set; }
+        public String Direccion { get; set; }
+
+        public byte[] foto { get; set; }
         public Colegio oColegio { get; set; }
     }
 }
