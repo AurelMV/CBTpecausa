@@ -112,7 +112,7 @@ namespace CapaPresentacion
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(20, 67);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(151, 20);
             this.txtnombre.TabIndex = 7;
@@ -120,7 +120,7 @@ namespace CapaPresentacion
             // txtaforo
             // 
             this.txtaforo.Location = new System.Drawing.Point(20, 109);
-            this.txtaforo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtaforo.Margin = new System.Windows.Forms.Padding(2);
             this.txtaforo.Name = "txtaforo";
             this.txtaforo.Size = new System.Drawing.Size(151, 20);
             this.txtaforo.TabIndex = 8;
@@ -152,7 +152,7 @@ namespace CapaPresentacion
             this.Cicloins,
             this.Cicloval});
             this.dataGridView1.Location = new System.Drawing.Point(405, 94);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -192,7 +192,7 @@ namespace CapaPresentacion
             this.iconButton1.IconSize = 30;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.Location = new System.Drawing.Point(20, 436);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(294, 29);
             this.iconButton1.TabIndex = 14;
@@ -210,7 +210,7 @@ namespace CapaPresentacion
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 30;
             this.iconButton2.Location = new System.Drawing.Point(20, 484);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(294, 36);
             this.iconButton2.TabIndex = 15;
@@ -235,7 +235,7 @@ namespace CapaPresentacion
             // 
             this.cboestado.FormattingEnabled = true;
             this.cboestado.Location = new System.Drawing.Point(20, 162);
-            this.cboestado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboestado.Margin = new System.Windows.Forms.Padding(2);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(83, 21);
             this.cboestado.TabIndex = 17;
@@ -244,7 +244,7 @@ namespace CapaPresentacion
             // txtidgrupo
             // 
             this.txtidgrupo.Location = new System.Drawing.Point(252, 11);
-            this.txtidgrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidgrupo.Margin = new System.Windows.Forms.Padding(2);
             this.txtidgrupo.Name = "txtidgrupo";
             this.txtidgrupo.Size = new System.Drawing.Size(76, 20);
             this.txtidgrupo.TabIndex = 18;
@@ -255,7 +255,7 @@ namespace CapaPresentacion
             // txtindice
             // 
             this.txtindice.Location = new System.Drawing.Point(172, 11);
-            this.txtindice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtindice.Margin = new System.Windows.Forms.Padding(2);
             this.txtindice.Name = "txtindice";
             this.txtindice.Size = new System.Drawing.Size(49, 20);
             this.txtindice.TabIndex = 21;
@@ -269,7 +269,7 @@ namespace CapaPresentacion
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 30;
             this.iconButton3.Location = new System.Drawing.Point(752, 61);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(99, 30);
             this.iconButton3.TabIndex = 23;
@@ -292,7 +292,7 @@ namespace CapaPresentacion
             // txtfechabus2
             // 
             this.txtfechabus2.Location = new System.Drawing.Point(609, 68);
-            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2);
             this.txtfechabus2.Name = "txtfechabus2";
             this.txtfechabus2.Size = new System.Drawing.Size(112, 20);
             this.txtfechabus2.TabIndex = 25;
@@ -301,7 +301,7 @@ namespace CapaPresentacion
             // 
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(501, 67);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
             this.cbobusqueda.TabIndex = 26;
@@ -314,7 +314,7 @@ namespace CapaPresentacion
             this.iconButton4.IconSize = 30;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton4.Location = new System.Drawing.Point(855, 61);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(87, 30);
             this.iconButton4.TabIndex = 27;
@@ -397,6 +397,7 @@ namespace CapaPresentacion
             this.Cicloins.HeaderText = "Cicloins";
             this.Cicloins.Name = "Cicloins";
             this.Cicloins.ReadOnly = true;
+            this.Cicloins.Visible = false;
             // 
             // Cicloval
             // 
@@ -431,7 +432,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formGrupos";
             this.Text = "formGrupos";
             this.Load += new System.EventHandler(this.formGrupos_Load);
@@ -462,6 +463,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtfechabus2;
         private System.Windows.Forms.ComboBox cbobusqueda;
         private FontAwesome.Sharp.IconButton iconButton4;
+        private System.Windows.Forms.Label Ciclo;
+        private System.Windows.Forms.ComboBox cbciclo;
         private System.Windows.Forms.DataGridViewButtonColumn boton;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -470,7 +473,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cicloins;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cicloval;
-        private System.Windows.Forms.Label Ciclo;
-        private System.Windows.Forms.ComboBox cbciclo;
     }
 }

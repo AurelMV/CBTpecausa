@@ -32,6 +32,7 @@ namespace CapaPresentacion
             {
                 string mensaje = string.Empty;
 
+
                 // Validar nombreGrupo
                 string nombreGrupo = txtnombre.Text;
                 if (string.IsNullOrWhiteSpace(nombreGrupo))
@@ -59,10 +60,10 @@ namespace CapaPresentacion
                 // Validar ciclo seleccionado
                 if (cbciclo.SelectedItem == null)
                 {
-                    MessageBox.Show("Por favor, seleccione un ciclo para el grupo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor, seleccione un ciclo de inscripción.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                int idCiclo = (int)cbciclo.SelectedValue;
+                int idciclo = Convert.ToInt32(((OpcionCombo)cbciclo.SelectedItem).Valor);
 
                 // Crear nuevo grupo
                 Grupo nuevoGrupo = new Grupo
@@ -70,7 +71,7 @@ namespace CapaPresentacion
                     NombreGrupo = nombreGrupo,
                     Aforo = aforo,
                     Estado = estado,
-                    oCicloinscripcion = new CicloInscripcion { idciclo = idCiclo },
+                    oCicloinscripcion = new CicloInscripcion { idciclo = idciclo },
                    
                 };
 
@@ -282,6 +283,15 @@ namespace CapaPresentacion
                             {
                                 int indice_combo = cboestado.Items.IndexOf(oc);
                                 cboestado.SelectedIndex = indice_combo;
+                                break;
+                            }
+                        }
+                        foreach (OpcionCombo oc in cbciclo.Items)
+                        {
+                            if (dataGridView1.Rows[indice].Cells["Cicloins"].Value != null &&
+                                Convert.ToInt32(oc.Valor) == Convert.ToInt32(dataGridView1.Rows[indice].Cells["Cicloins"].Value))
+                            {
+                                cbciclo.SelectedIndex = cbciclo.Items.IndexOf(oc);
                                 break;
                             }
                         }

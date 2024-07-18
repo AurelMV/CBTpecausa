@@ -56,7 +56,6 @@
     <Compile Include="CD_Estudiante.cs" />
     <Compile Include="CD_Grupo.cs" />
     <Compile Include="CD_Inscripcion.cs" />
-    <Compile Include="CD_Operaciones.cs" />
     <Compile Include="CD_Pago.cs" />
     <Compile Include="CD_ProgramaEstudios.cs" />
     <Compile Include="CD_Provincia.cs" />

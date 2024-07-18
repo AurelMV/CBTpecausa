@@ -111,7 +111,7 @@ namespace CapaDatos
             {
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_RegistrarGrupo", conexion);
+                    SqlCommand cmd = new SqlCommand("sp_InsertarGrupo", conexion);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Agregar parámetros de entrada
@@ -119,6 +119,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("aforo", obj.Aforo);
            
                     cmd.Parameters.AddWithValue("estado", obj.Estado);
+                    cmd.Parameters.AddWithValue("idciclo",obj.oCicloinscripcion.idciclo);
 
                     // Agregar parámetros de salida
                     SqlParameter paramExito = new SqlParameter("exito", SqlDbType.Bit);
@@ -161,7 +162,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("idGrupos", obj.IdGrupos);
                     cmd.Parameters.AddWithValue("nombreGrupo", obj.NombreGrupo);
                     cmd.Parameters.AddWithValue("aforo", obj.Aforo);
-         
+                    cmd.Parameters.AddWithValue("idciclo", obj.oCicloinscripcion.idciclo);
+
                     cmd.Parameters.AddWithValue("estado", obj.Estado);
 
                     // Agregar parámetros de salida

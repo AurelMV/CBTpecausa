@@ -10,11 +10,12 @@ namespace CapaNegocio
 {
     public class CN_Colegio
     {
-      
-        private CD_Colegio datosColegio = new CD_Colegio();
-        public List<Colegio> ObtenerColegiosPorDistrito(int distritoId)
+
+        private CD_Colegio objCD_Colegio = new CD_Colegio();
+
+        public List<Colegio> ListarColegiosPorDistrito(int distritoId)
         {
-            return datosColegio.ListarColegiosPorDistrito(distritoId);
+            return objCD_Colegio.ListarColegiosPorDistrito(distritoId);
         }
     }
 }

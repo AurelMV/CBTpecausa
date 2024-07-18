@@ -751,6 +751,7 @@
             this.cbodepartamentos.Name = "cbodepartamentos";
             this.cbodepartamentos.Size = new System.Drawing.Size(150, 21);
             this.cbodepartamentos.TabIndex = 72;
+            this.cbodepartamentos.SelectedIndexChanged += new System.EventHandler(this.cbodepartamentos_SelectedIndexChanged);
             // 
             // label28
             // 

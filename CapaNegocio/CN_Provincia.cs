@@ -11,10 +11,11 @@ namespace CapaNegocio
     public class CN_Provincia
     {
 
-        private CD_Provincia datosProvincia = new CD_Provincia();
-        public List<Provincia> ObtenerProvinciasPorDepartamento(int departamentoId)
+        private CD_Provincia objCD_Provincia = new CD_Provincia();
+
+        public List<Provincia> ListarProvinciasPorDepartamento(int departamentoId)
         {
-            return datosProvincia.ListarProvinciasPorDepartamento(departamentoId);
+            return objCD_Provincia.ListarProvinciasPorDepartamento(departamentoId);
         }
 
 

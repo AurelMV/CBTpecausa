@@ -51,7 +51,6 @@
     <Compile Include="CN_Estudiante.cs" />
     <Compile Include="CN_Grupo.cs" />
     <Compile Include="CN_Inscripcion.cs" />
-    <Compile Include="CN_Operaciones.cs" />
     <Compile Include="CN_Pago.cs" />
     <Compile Include="CN_ProgramaEstudios.cs" />
     <Compile Include="CN_Provincia.cs" />

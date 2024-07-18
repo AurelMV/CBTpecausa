@@ -10,10 +10,11 @@ namespace CapaNegocio
 {
     public class CN_DIstrito
     {
-        private CD_DIstrito datosDistritos = new CD_DIstrito();
-        public List<Distrito> ObtenerDistritosPorProvincia(int provinciaId)
+        private CD_DIstrito objCD_Distrito = new CD_DIstrito();
+
+        public List<Distrito> ListarDistritosPorProvincia(int provinciaId)
         {
-            return datosDistritos.ListarDistritosPorProvincia(provinciaId);
+            return objCD_Distrito.ListarDistritosPorProvincia(provinciaId);
         }
 
     }

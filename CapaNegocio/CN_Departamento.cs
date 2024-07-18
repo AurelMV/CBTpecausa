@@ -10,11 +10,11 @@ namespace CapaNegocio
 {
     public class CN_Departamento
     {
-        private CD_Departamento datosDepartamento = new CD_Departamento();
+        private CD_Departamento objCD_Departamento = new CD_Departamento();
 
-        public List<Departamento> ObtenerDepartamentos()
+        public List<Departamento> ListarDepartamentos()
         {
-            return datosDepartamento.ListarDepartamentos();
+            return objCD_Departamento.ListarDepartamentos();
         }
     }
 }
