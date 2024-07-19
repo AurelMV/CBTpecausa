@@ -20,6 +20,7 @@ namespace CapaPresentacion
         public formEstudiantes()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,6 +28,9 @@ namespace CapaPresentacion
 
         }
 
+
+
+       
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
@@ -36,14 +40,19 @@ namespace CapaPresentacion
         {
             CargarGrupos();
             inicializarconbos();
-
+            cbodocumento.Items.Add(new OpcionCombo() { Valor = "DNI", Texto = "DNI" });
+            cbodocumento.Items.Add(new OpcionCombo() { Valor = "Pasaporte", Texto = "Pasaporte" });
+            cbodocumento.DisplayMember = "Texto";
+            cbodocumento.ValueMember = "Valor";
+            if (cbodocumento.Items.Count > 0)
+            {
+                cbodocumento.SelectedIndex = 0;
+            }
 
             txtnacimiento.Format = DateTimePickerFormat.Custom;
             txtnacimiento.CustomFormat = "yyyy-MM-dd";
 
 
-            txtañoculminado.Format = DateTimePickerFormat.Custom;
-            txtañoculminado.CustomFormat = "yyyy-MM-dd";
 
         }
 
@@ -67,15 +76,19 @@ namespace CapaPresentacion
 
                         // Obtener el objeto OpcionCombo seleccionado
                         OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
+                        OpcionCombo opcionSeleccionadadocu = (OpcionCombo)cbodocumento.SelectedItem;
 
                         // Acceder al valor 'Valor' y convertirlo a char
+                        String tipo = Convert.ToString(opcionSeleccionadadocu.Valor) ;
                         char sexo = Convert.ToChar(opcionSeleccionada.Valor);
 
                         // Asignar el valor de 'sexo' a la celda correspondiente en el DataGridView
                         dataGridView1.Rows[indice].Cells["Sexo"].Value = sexo.ToString();
+                        dataGridView1.Rows[indice].Cells["tipodocumento"].Value = tipo.ToString();
+
 
                         txtcelular.Text = dataGridView1.Rows[indice].Cells["Celular"].Value?.ToString() ?? string.Empty;
-
+                        txtcelularapoderado.Text = dataGridView1.Rows[indice].Cells["Celular_Apoderado"].Value?.ToString() ?? string.Empty;
                         // Manejo adecuado del campo de fecha de nacimiento
                         if (dataGridView1.Rows[indice].Cells["Nacimiento"].Value != null &&
                             DateTime.TryParse(dataGridView1.Rows[indice].Cells["Nacimiento"].Value.ToString(), out DateTime fechaNacimiento))
@@ -87,9 +100,10 @@ namespace CapaPresentacion
                             txtnacimiento.Value = DateTime.Today; // o cualquier valor por defecto que prefieras
                         }
 
+                        txtdireccion.Text = dataGridView1.Rows[indice].Cells["direccion"].Value?.ToString() ?? string.Empty;
                         txtemail.Text = dataGridView1.Rows[indice].Cells["Email"].Value?.ToString() ?? string.Empty;
                         txtcolegio.Text = dataGridView1.Rows[indice].Cells["Nombre_Colegio"].Value?.ToString() ?? string.Empty;
-                        txtañoculminado.Text = dataGridView1.Rows[indice].Cells["Año_Culminado"].Value?.ToString() ?? string.Empty;
+                        txtanoculminado.Text = dataGridView1.Rows[indice].Cells["Año_Culminado"].Value?.ToString() ?? string.Empty;
                     }
                     else
                     {
@@ -119,8 +133,7 @@ namespace CapaPresentacion
             {
 
                 dataGridView1.Rows.Add(new object[] {
-            "", item.IdEstudiante, item.Nombres, item.APaterno, item.AMaterno, item.Documneto, item.Sexo, item.CelularEstudiante,item.FechaNacimiento.ToString("yyyy-MM-dd"),item.Email
-            ,item.Colegio,item.AnoCulminado
+            "", item.IdEstudiante, item.Nombres, item.APaterno, item.AMaterno, item.Sexo ,item.CelularEstudiante, item.CelularApoderado,item.FechaNacimiento,item.Email,item.AnoCulminado,item.Documneto,item.TipoDocumento,item.Direccion,item.foto, item.oColegio.idcolegio,item.oColegio.nombrecolegio,
         });
             }
 
@@ -182,7 +195,7 @@ namespace CapaPresentacion
                 string fechanacimiento = txtnacimiento.Text;
                 string email = txtemail.Text;
                 string colegio = txtcolegio.Text;
-                string culminado = txtañoculminado.Text;
+                string culminado = txtanoculminado.Text;
 
              
                 Estudiante nuevoEstudiante = new Estudiante
@@ -228,5 +241,14 @@ namespace CapaPresentacion
             }
         }
 
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -102,7 +103,7 @@ namespace CapaPresentacion
             txtnacimiento.CustomFormat = "yyyy-MM-dd";
 
             txtañoculminado.Format = DateTimePickerFormat.Custom;
-            txtañoculminado.CustomFormat = "yyyy-MM-dd";
+            txtañoculminado.CustomFormat = "yyyy";
 
             txtfecha.Format = DateTimePickerFormat.Custom;
             txtfecha.CustomFormat = "yyyy-MM-dd";
@@ -142,6 +143,17 @@ namespace CapaPresentacion
             }
 
 
+            // Inicializar ComboBox de tipodocumento
+            cbodocumento.Items.Add(new OpcionCombo() { Valor = "DNI", Texto = "DNI" });
+            cbodocumento.Items.Add(new OpcionCombo() { Valor = "Pasaporte", Texto = "Pasaporte" });
+            cbodocumento.DisplayMember = "Texto";
+            cbodocumento.ValueMember = "Valor";
+            if (cbodocumento.Items.Count > 0)
+            {
+                cbodocumento.SelectedIndex = 0;
+            }
+
+
             //inicializar Combobox 
             cboturno.Items.Add(new OpcionCombo() { Valor = "dia", Texto = "dia" });
             cboturno.Items.Add(new OpcionCombo() { Valor = "tarde", Texto = "tarde" });
@@ -169,7 +181,7 @@ namespace CapaPresentacion
             string nombreParte = !string.IsNullOrEmpty(nombre) ? nombre.Substring(0, 1).ToUpper() : string.Empty;
             string aPaternoParte = !string.IsNullOrEmpty(aPaterno) ? aPaterno.Substring(0, 1).ToUpper() : string.Empty;
             string aMaternoParte = !string.IsNullOrEmpty(aMaterno) ? aMaterno.Substring(0, 1).ToUpper() : string.Empty;
-            string dniParte = !string.IsNullOrEmpty(Dni) && Dni.Length >= 3 ? Dni.Substring(0, 3).ToUpper() : string.Empty;
+            string dniParte = !string.IsNullOrEmpty(Dni) && Dni.Length >= 3 ? Dni.Substring(2, 3).ToUpper() : string.Empty;
 
             // Combinar las partes en un único ID dinámico
             string idDinamico = $"{nombreParte}{aPaternoParte}{aMaternoParte}{dniParte}";
@@ -207,23 +219,7 @@ namespace CapaPresentacion
                 string medioPago = txtmediopago.Text.Trim();
                 int monto;
 
-                string mensaje = string.Empty;
-
-                string nombres = txtnombre.Text;
-                string aPaterno = txtapaterno.Text;
-                string aMaterno = txtamaterno.Text;
-                string dni = txtdeni.Text;
-
-                OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
-                char sexo = (char)opcionSeleccionada.Valor;
-
-                string celular = txtcelular.Text;
-                string fechanacimiento = txtnacimiento.Text;
-                string email = txtemail.Text;
-                string colegio = txtcolegio.Text;
-                string culminado = txtañoculminado.Text;
-
-                // Validaciones de datos
+                // Validar campos de entrada
                 if (string.IsNullOrWhiteSpace(nroVoucher))
                 {
                     MessageBox.Show("El número de voucher no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -242,6 +238,100 @@ namespace CapaPresentacion
                     return;
                 }
 
+                byte[] foto = pictureBox1.Image != null ? ConvertirImagenAByteArray(pictureBox1.Image) : null;
+
+                string nombres = txtnombre.Text.Trim();
+                string aPaterno = txtapaterno.Text.Trim();
+                string aMaterno = txtamaterno.Text.Trim();
+                string dni = txtdeni.Text.Trim();
+                string direccion = txtdireccion.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(nombres) || string.IsNullOrWhiteSpace(aPaterno) || string.IsNullOrWhiteSpace(aMaterno) || string.IsNullOrWhiteSpace(dni))
+                {
+                    MessageBox.Show("Todos los campos de nombre y DNI deben estar completos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validación de fecha de nacimiento
+                if (!DateTime.TryParse(txtnacimiento.Text, out DateTime fechaNacimiento))
+                {
+                    MessageBox.Show("Formato de fecha de nacimiento inválido. Por favor, ingrese una fecha válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validación de datos opcionales
+                string celularapoderado = txtnroapoderado.Text.Trim();
+                string celular = txtcelular.Text.Trim();
+                string email = txtemail.Text.Trim();
+                string culminado = txtañoculminado.Text.Trim();
+
+                // Validación de ComboBoxes
+                if (cbosexo.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un sexo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (cbodocumento.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un tipo de documento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
+                OpcionCombo opcionselect = (OpcionCombo)cbodocumento.SelectedItem;
+                char sexo = (char)opcionSeleccionada.Valor;
+                string tipdocument = (string)opcionselect.Valor;
+
+                if (cbocolegio.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un colegio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int? idColegio = cbocolegio.SelectedValue as int?;
+
+                if (cboturno.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string turno = ((OpcionCombo)cboturno.SelectedItem).Texto;
+
+                if (cbopago.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un estado de pago.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                bool estadopago = Convert.ToBoolean(((OpcionCombo)cbopago.SelectedItem).Valor);
+
+                if (cbociclo.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un ciclo de inscripción.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int idciclo = Convert.ToInt32(((OpcionCombo)cbociclo.SelectedItem).Valor);
+
+                if (cboprograma.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un programa de estudios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int idprogramaestudios = Convert.ToInt32(((OpcionCombo)cboprograma.SelectedItem).Valor);
+
+                if (cbogrupo.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un grupo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int idGrupos = Convert.ToInt32(((OpcionCombo)cbogrupo.SelectedItem).Valor);
+
+                if (!DateTime.TryParseExact(txtfecha.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaInscripcion))
+                {
+                    MessageBox.Show("Formato de fecha inválido. Por favor, ingrese la fecha en formato yyyy-MM-dd.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Crear nuevo estudiante
                 Estudiante nuevoEstudiante = new Estudiante
                 {
@@ -251,10 +341,14 @@ namespace CapaPresentacion
                     Documneto = dni,
                     Sexo = sexo,
                     CelularEstudiante = celular,
-                    FechaNacimiento = DateTime.Parse(fechanacimiento),
+                    CelularApoderado = celularapoderado,
+                    FechaNacimiento = fechaNacimiento,
+                    TipoDocumento = tipdocument,
                     Email = email,
-                    Colegio = colegio,
-                    AnoCulminado = culminado
+                    Direccion = direccion,
+                    foto = foto,
+                    AnoCulminado = culminado,
+                    oColegio = idColegio.HasValue ? new Colegio { idcolegio = idColegio.Value } : null
                 };
 
                 // Generar y asignar ID dinámico para el estudiante
@@ -265,50 +359,9 @@ namespace CapaPresentacion
                 string mensajeEstudiante = string.Empty;
                 bool exitoEstudiante = new CN_Estudiante().Registrar(nuevoEstudiante, out mensajeEstudiante);
 
-
-                if (cboturno.SelectedItem == null)
+                if (!exitoEstudiante)
                 {
-                    MessageBox.Show("Por favor, seleccione un turno.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                string turno = ((OpcionCombo)cboturno.SelectedItem).Texto;
-
-                // Validar estado de pago
-                if (cbopago.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un estado de pago.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                bool estadopago = Convert.ToBoolean(((OpcionCombo)cbopago.SelectedItem).Valor);
-
-                // Validar ciclo de inscripción
-                if (cbociclo.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un ciclo de inscripción.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                int idciclo = Convert.ToInt32(((OpcionCombo)cbociclo.SelectedItem).Valor);
-
-                // Validar programa de estudios
-                if (cboprograma.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un programa de estudios.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                int idprogramaestudios = Convert.ToInt32(((OpcionCombo)cboprograma.SelectedItem).Valor);
-
-                // Validar grupo
-                if (cbogrupo.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un grupo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                int idGrupos = Convert.ToInt32(((OpcionCombo)cbogrupo.SelectedItem).Valor);
-
-                // Validar fecha de inscripción
-                if (!DateTime.TryParseExact(txtfecha.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaInscripcion))
-                {
-                    MessageBox.Show("Formato de fecha inválido. Por favor, ingrese la fecha en formato yyyy-MM-dd.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al registrar el estudiante: " + mensajeEstudiante, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -320,8 +373,7 @@ namespace CapaPresentacion
                     oCicloInscripcion = new CicloInscripcion { idciclo = idciclo },
                     oProgramaEstudios = new ProgramaEstudios { idprogramaestudios = idprogramaestudios },
                     oGrupo = new Grupo { IdGrupos = idGrupos },
-            
-                    oUsuario = new Usuario { idusuarios = txtidusuario.Text }, // Asegúrate de que txtusuario.Text contiene un ID válido
+                    oUsuario = new Usuario { idusuarios = txtidusuario.Text.Trim() },
                     oEstudiante = nuevoEstudiante
                 };
 
@@ -346,22 +398,21 @@ namespace CapaPresentacion
                     Monto = monto,
                     MedioPago = medioPago,
                     NroVoucher = nroVoucher,
-                    IdInscripcion = nuevaInscripcion.IdInscripcion // Asignar el ID de la inscripción generada automáticamente
+                    IdInscripcion = nuevaInscripcion.IdInscripcion
                 };
 
                 // Registrar pago
                 string mensajePago = string.Empty;
                 bool exitoPago = new CN_Pago().Registrar(nuevoPago, out mensajePago);
-                 LimpiarControles();
 
-                if (exitoPago)
+                if (!exitoPago)
                 {
-                    MessageBox.Show("Pago registrado/modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Error al registrar/modificar el pago: " + mensajePago, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Error al registrar/modificar el pago: " + mensajePago, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                LimpiarControles();
+                MessageBox.Show("Pago e Inscripción registradas correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException ex)
             {
@@ -371,11 +422,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
 
         }
         private void LimpiarControles()
@@ -391,7 +437,6 @@ namespace CapaPresentacion
             txtcelular.Text = string.Empty;
             txtnacimiento.Text = string.Empty;
             txtemail.Text = string.Empty;
-            txtcolegio.Text = string.Empty;
             txtañoculminado.Text = string.Empty;
 
           
@@ -732,13 +777,36 @@ namespace CapaPresentacion
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string rutaImagen = openFileDialog.FileName;
-                pictureBox1.Image = System.Drawing.Image.FromFile(rutaImagen);  // Usa System.Drawing.Image
+                try
+                {
+                    // Liberar la imagen anterior si existe
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                    }
+
+                    // Cargar la nueva imagen
+                    pictureBox1.Image = System.Drawing.Image.FromFile(rutaImagen);
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    MessageBox.Show("Error: Memoria insuficiente para cargar la imagen. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         // Método para convertir Image a byte[]
         private byte[] ConvertirImagenAByteArray(System.Drawing.Image imagen)
         {
+            if (imagen == null)
+            {
+                return null; // Devuelve null si no hay imagen
+            }
+
             using (MemoryStream ms = new MemoryStream())
             {
                 imagen.Save(ms, imagen.RawFormat);
@@ -751,6 +819,9 @@ namespace CapaPresentacion
         private void button1_Click_1(object sender, EventArgs e)
         {
 CargarImagen();
+         
         }
+
+       
     }
 }

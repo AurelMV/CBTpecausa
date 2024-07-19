@@ -58,8 +58,6 @@
             this.cbosexo = new System.Windows.Forms.ComboBox();
             this.txtañoculminado = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtcolegio = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtnacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtcelular = new System.Windows.Forms.TextBox();
@@ -79,6 +77,13 @@
             this.cbopago = new System.Windows.Forms.ComboBox();
             this.txtidestudiante = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtdireccion = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cbodocumento = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtnroapoderado = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cbocolegio = new System.Windows.Forms.ComboBox();
             this.cbodistrito = new System.Windows.Forms.ComboBox();
@@ -448,31 +453,9 @@
             this.label3.Text = "Culminacion de Estudios";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // txtcolegio
-            // 
-            this.txtcolegio.Location = new System.Drawing.Point(455, 126);
-            this.txtcolegio.Margin = new System.Windows.Forms.Padding(2);
-            this.txtcolegio.Name = "txtcolegio";
-            this.txtcolegio.Size = new System.Drawing.Size(254, 20);
-            this.txtcolegio.TabIndex = 65;
-            this.txtcolegio.TextChanged += new System.EventHandler(this.txtcolegio_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(452, 106);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 18);
-            this.label4.TabIndex = 64;
-            this.label4.Text = "Colegio de procedencia ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // txtnacimiento
             // 
-            this.txtnacimiento.Location = new System.Drawing.Point(455, 33);
+            this.txtnacimiento.Location = new System.Drawing.Point(457, 85);
             this.txtnacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtnacimiento.Name = "txtnacimiento";
             this.txtnacimiento.Size = new System.Drawing.Size(178, 20);
@@ -481,7 +464,7 @@
             // 
             // txtemail
             // 
-            this.txtemail.Location = new System.Drawing.Point(455, 85);
+            this.txtemail.Location = new System.Drawing.Point(457, 137);
             this.txtemail.Margin = new System.Windows.Forms.Padding(2);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(254, 20);
@@ -499,7 +482,7 @@
             // 
             // txtdeni
             // 
-            this.txtdeni.Location = new System.Drawing.Point(279, 33);
+            this.txtdeni.Location = new System.Drawing.Point(457, 33);
             this.txtdeni.Margin = new System.Windows.Forms.Padding(2);
             this.txtdeni.Name = "txtdeni";
             this.txtdeni.Size = new System.Drawing.Size(160, 20);
@@ -538,7 +521,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(452, 65);
+            this.label10.Location = new System.Drawing.Point(454, 117);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 18);
@@ -551,7 +534,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(452, 13);
+            this.label9.Location = new System.Drawing.Point(454, 65);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(148, 18);
@@ -603,7 +586,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(276, 13);
+            this.label5.Location = new System.Drawing.Point(454, 10);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 18);
@@ -671,6 +654,13 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtdireccion);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.cbodocumento);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label30);
+            this.panel1.Controls.Add(this.txtnroapoderado);
             this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.cbocolegio);
             this.panel1.Controls.Add(this.cbodistrito);
@@ -688,9 +678,7 @@
             this.panel1.Controls.Add(this.cbosexo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtcolegio);
             this.panel1.Controls.Add(this.txtamaterno);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtdeni);
             this.panel1.Controls.Add(this.txtemail);
             this.panel1.Controls.Add(this.txtnacimiento);
@@ -704,6 +692,63 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1078, 227);
             this.panel1.TabIndex = 72;
+            // 
+            // txtdireccion
+            // 
+            this.txtdireccion.Location = new System.Drawing.Point(457, 188);
+            this.txtdireccion.Name = "txtdireccion";
+            this.txtdireccion.Size = new System.Drawing.Size(145, 20);
+            this.txtdireccion.TabIndex = 84;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(675, 204);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 82;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(456, 172);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(50, 13);
+            this.label31.TabIndex = 81;
+            this.label31.Text = "direccion";
+            // 
+            // cbodocumento
+            // 
+            this.cbodocumento.FormattingEnabled = true;
+            this.cbodocumento.Location = new System.Drawing.Point(274, 28);
+            this.cbodocumento.Margin = new System.Windows.Forms.Padding(2);
+            this.cbodocumento.Name = "cbodocumento";
+            this.cbodocumento.Size = new System.Drawing.Size(160, 21);
+            this.cbodocumento.TabIndex = 80;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(277, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.TabIndex = 79;
+            this.label4.Text = "tipo de Documento";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(277, 172);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(116, 13);
+            this.label30.TabIndex = 78;
+            this.label30.Text = "Numero del Apoderado";
+            // 
+            // txtnroapoderado
+            // 
+            this.txtnroapoderado.Location = new System.Drawing.Point(279, 188);
+            this.txtnroapoderado.Name = "txtnroapoderado";
+            this.txtnroapoderado.Size = new System.Drawing.Size(155, 20);
+            this.txtnroapoderado.TabIndex = 77;
             // 
             // label29
             // 
@@ -907,8 +952,6 @@
         private System.Windows.Forms.ComboBox cbosexo;
         private System.Windows.Forms.DateTimePicker txtañoculminado;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtcolegio;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker txtnacimiento;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtcelular;
@@ -941,5 +984,12 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox cbocolegio;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbodocumento;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtnroapoderado;
+        private System.Windows.Forms.TextBox txtdireccion;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label31;
     }
 }

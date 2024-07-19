@@ -24,7 +24,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT e.idEstudiante, e.nombres, e.aPaterno, e.aMaterno, e.sexo, e.celularestudiante, ");
                     query.AppendLine("e.celularapoderado, e.fechaNacimiento, e.email, e.anoculminado, e.Nrodocumento, ");
-                    query.AppendLine("e.tipodocumento, e.direccion, e.foto, e.idcolegios, c.nombre AS nombrecolegio ");
+                    query.AppendLine("e.tipodocumento, e.direccion, e.foto, e.idcolegios, c.nombrecolegio AS nombrecolegio ");
                     query.AppendLine("FROM estudiantes e ");
                     query.AppendLine("INNER JOIN colegios c ON e.idcolegios = c.idcolegios");
 
@@ -52,9 +52,15 @@ namespace CapaDatos
                                     Documneto = dr["Nrodocumento"].ToString(),
                                     TipoDocumento = dr["tipodocumento"].ToString(),
                                     Direccion = dr["direccion"].ToString(),
-                                    Colegio = dr["nombrecolegio"].ToString(),
-                                    foto = dr["foto"] != DBNull.Value ? (byte[])dr["foto"] : null, 
-                                    oColegio = new Colegio { idcolegio = Convert.ToInt32(dr["idcolegios"]) }
+
+                                    foto = dr["foto"] != DBNull.Value ? (byte[])dr["foto"] : null,
+
+
+                                    oColegio = new Colegio { idcolegio = Convert.ToInt32(dr["idcolegios"]),
+                                        nombrecolegio = Convert.ToString(dr["nombrecolegio"])
+
+                                    }
+                                    
                                 };
 
                                 lista.Add(estudiante);
