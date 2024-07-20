@@ -18,7 +18,7 @@ namespace CapaDatos
             // Implementa la lógica para consultar y devolver la lista de colegios filtrados por distritoId
             using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
             {
-                string query = "SELECT idcolegios, nombrecolegio, Distritos_idDistritos FROM colegios WHERE Distritos_idDistritos = @DistritoId";
+                string query = "SELECT idcolegios, nombrecolegio, Distrito_idDistrito FROM colegios WHERE Distrito_idDistrito = @DistritoId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
@@ -34,7 +34,7 @@ namespace CapaDatos
                                 nombrecolegio = dr["nombrecolegio"].ToString(),
                                 odistrito= new Distrito { 
                                 
-                                iddistrito = Convert.ToInt32(dr["Distritos_idDistritos"])
+                                iddistrito = Convert.ToInt32(dr["Distrito_idDistrito"])
                                 }
 
                              

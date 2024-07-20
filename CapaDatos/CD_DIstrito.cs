@@ -18,7 +18,7 @@ namespace CapaDatos
             // Implementa la lógica para consultar y devolver la lista de distritos filtrados por provinciaId
             using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
             {
-                string query = "SELECT idDistritos, nombredistrito, Provincia_idProvincia FROM Distritos WHERE Provincia_idProvincia = @ProvinciaId";
+                string query = "SELECT idDistrito, nombredistrito, Provincia_idProvincia FROM Distritos WHERE Provincia_idProvincia = @ProvinciaId";
 
                 using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
@@ -30,7 +30,7 @@ namespace CapaDatos
                         {
                             Distrito distrito = new Distrito
                             {
-                                iddistrito = Convert.ToInt32(dr["idDistritos"]),
+                                iddistrito = Convert.ToInt32(dr["idDistrito"]),
                                 nombredistrito = dr["nombredistrito"].ToString(),
                                 oProvincia = new Provincia
                                 {
