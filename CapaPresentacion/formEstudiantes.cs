@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -73,6 +74,12 @@ namespace CapaPresentacion
                         txtapaterno.Text = dataGridView1.Rows[indice].Cells["APaterno"].Value?.ToString() ?? string.Empty;
                         txtamaterno.Text = dataGridView1.Rows[indice].Cells["AMaterno"].Value?.ToString() ?? string.Empty;
                         txtdeni.Text = dataGridView1.Rows[indice].Cells["DNI"].Value?.ToString() ?? string.Empty;
+                        var fotoData = dataGridView1.Rows[indice].Cells["Foto"].Value as byte[];
+                        if (fotoData != null && fotoData.Length > 0)
+                            using (var ms = new MemoryStream(fotoData))
+                            {
+                                pictureBox1.Image = Image.FromStream(ms);
+                            }
 
                         // Obtener el objeto OpcionCombo seleccionado
                         OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
@@ -85,7 +92,7 @@ namespace CapaPresentacion
                         // Asignar el valor de 'sexo' a la celda correspondiente en el DataGridView
                         dataGridView1.Rows[indice].Cells["Sexo"].Value = sexo.ToString();
                         dataGridView1.Rows[indice].Cells["tipodocumento"].Value = tipo.ToString();
-
+                        
 
                         txtcelular.Text = dataGridView1.Rows[indice].Cells["Celular"].Value?.ToString() ?? string.Empty;
                         txtcelularapoderado.Text = dataGridView1.Rows[indice].Cells["Celular_Apoderado"].Value?.ToString() ?? string.Empty;
@@ -218,6 +225,7 @@ namespace CapaPresentacion
                     bool modificado = new CN_Estudiante().Editar(nuevoEstudiante, out mensaje);
                     if (modificado)
                     {
+                        LimpiarCampos();
                         MessageBox.Show("Estudiante actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarGrupos();
                     }
@@ -239,6 +247,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -249,6 +258,88 @@ namespace CapaPresentacion
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        private byte[] ConvertirImagenAByteArray(System.Drawing.Image imagen)
+        {
+            if (imagen == null)
+            {
+                return null; // Devuelve null si no hay imagen
+            }
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                imagen.Save(ms, imagen.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+
+        private void CargarImagen()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaImagen = openFileDialog.FileName;
+                try
+                {
+                    // Liberar la imagen anterior si existe
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                    }
+
+                    // Cargar la nueva imagen
+                    pictureBox1.Image = System.Drawing.Image.FromFile(rutaImagen);
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    MessageBox.Show("Error: Memoria insuficiente para cargar la imagen. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CargarImagen();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtindice.Text = string.Empty;
+            txtidestudiante.Text = string.Empty;
+            txtnombre.Text = string.Empty;
+            txtapaterno.Text = string.Empty;
+            txtamaterno.Text = string.Empty;
+            txtdeni.Text = string.Empty;
+            pictureBox1.Image = null;
+            cbosexo.SelectedIndex = -1;
+            cbodocumento.SelectedIndex = -1;
+            txtcelular.Text = string.Empty;
+            txtcelularapoderado.Text = string.Empty;
+            txtnacimiento.Value = DateTime.Today; // o cualquier valor por defecto que prefieras
+            txtdireccion.Text = string.Empty;
+            txtemail.Text = string.Empty;
+            txtcolegio.Text = string.Empty;
+            txtanoculminado.Text = string.Empty;
+        }
+        public void MostrarImagen(int indice)
+        {
+            var fotoData = dataGridView1.Rows[indice].Cells["Foto"].Value as byte[];
+            if (fotoData != null && fotoData.Length > 0)
+            {
+                using (var ms = new MemoryStream(fotoData))
+                {
+                    pictureBox1.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                pictureBox1.Image = null; 
+            }
         }
     }
 }

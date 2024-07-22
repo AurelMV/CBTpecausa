@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,13 +55,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cbosexo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.cbobusqueda = new System.Windows.Forms.ComboBox();
-            this.txtfechabus2 = new System.Windows.Forms.TextBox();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.txtindice = new System.Windows.Forms.TextBox();
-            this.txtidestudiante = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +72,13 @@
             this.foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_colegio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Colegio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.cbobusqueda = new System.Windows.Forms.ComboBox();
+            this.txtfechabus2 = new System.Windows.Forms.TextBox();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.txtindice = new System.Windows.Forms.TextBox();
+            this.txtidestudiante = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtcelularapoderado = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -87,6 +87,7 @@
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtanoculminado = new System.Windows.Forms.TextBox();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +206,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(32, 53);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(134, 20);
             this.txtnombre.TabIndex = 12;
@@ -213,7 +214,7 @@
             // txtapaterno
             // 
             this.txtapaterno.Location = new System.Drawing.Point(35, 91);
-            this.txtapaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtapaterno.Name = "txtapaterno";
             this.txtapaterno.Size = new System.Drawing.Size(134, 20);
             this.txtapaterno.TabIndex = 13;
@@ -221,7 +222,7 @@
             // txtamaterno
             // 
             this.txtamaterno.Location = new System.Drawing.Point(35, 130);
-            this.txtamaterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtamaterno.Margin = new System.Windows.Forms.Padding(2);
             this.txtamaterno.Name = "txtamaterno";
             this.txtamaterno.Size = new System.Drawing.Size(134, 20);
             this.txtamaterno.TabIndex = 14;
@@ -229,7 +230,7 @@
             // txtdeni
             // 
             this.txtdeni.Location = new System.Drawing.Point(37, 205);
-            this.txtdeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdeni.Margin = new System.Windows.Forms.Padding(2);
             this.txtdeni.Name = "txtdeni";
             this.txtdeni.Size = new System.Drawing.Size(134, 20);
             this.txtdeni.TabIndex = 15;
@@ -237,7 +238,7 @@
             // txtcelular
             // 
             this.txtcelular.Location = new System.Drawing.Point(35, 247);
-            this.txtcelular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcelular.Margin = new System.Windows.Forms.Padding(2);
             this.txtcelular.Name = "txtcelular";
             this.txtcelular.Size = new System.Drawing.Size(134, 20);
             this.txtcelular.TabIndex = 16;
@@ -245,7 +246,7 @@
             // txtemail
             // 
             this.txtemail.Location = new System.Drawing.Point(32, 375);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(2);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(232, 20);
             this.txtemail.TabIndex = 17;
@@ -254,7 +255,7 @@
             // txtnacimiento
             // 
             this.txtnacimiento.Location = new System.Drawing.Point(34, 326);
-            this.txtnacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtnacimiento.Name = "txtnacimiento";
             this.txtnacimiento.Size = new System.Drawing.Size(185, 20);
             this.txtnacimiento.TabIndex = 19;
@@ -265,7 +266,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.Location = new System.Drawing.Point(34, 600);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(188, 32);
             this.iconButton1.TabIndex = 20;
@@ -297,7 +298,7 @@
             // txtcolegio
             // 
             this.txtcolegio.Location = new System.Drawing.Point(32, 473);
-            this.txtcolegio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcolegio.Margin = new System.Windows.Forms.Padding(2);
             this.txtcolegio.Name = "txtcolegio";
             this.txtcolegio.Size = new System.Drawing.Size(134, 20);
             this.txtcolegio.TabIndex = 25;
@@ -316,27 +317,27 @@
             // 
             this.cbosexo.FormattingEnabled = true;
             this.cbosexo.Location = new System.Drawing.Point(35, 167);
-            this.cbosexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbosexo.Margin = new System.Windows.Forms.Padding(2);
             this.cbosexo.Name = "cbosexo";
             this.cbosexo.Size = new System.Drawing.Size(92, 21);
             this.cbosexo.TabIndex = 28;
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.boton,
@@ -357,100 +358,23 @@
             this.id_colegio,
             this.Nombre_Colegio});
             this.dataGridView1.Location = new System.Drawing.Point(294, 289);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(824, 315);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(690, 257);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(87, 30);
-            this.iconButton4.TabIndex = 33;
-            this.iconButton4.Text = "Recargar Tablero";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // cbobusqueda
-            // 
-            this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(336, 263);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
-            this.cbobusqueda.TabIndex = 32;
-            // 
-            // txtfechabus2
-            // 
-            this.txtfechabus2.Location = new System.Drawing.Point(494, 263);
-            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtfechabus2.Name = "txtfechabus2";
-            this.txtfechabus2.Size = new System.Drawing.Size(76, 20);
-            this.txtfechabus2.TabIndex = 31;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 30;
-            this.iconButton3.Location = new System.Drawing.Point(586, 257);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(99, 30);
-            this.iconButton3.TabIndex = 30;
-            this.iconButton3.Text = "Buscar";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // txtindice
-            // 
-            this.txtindice.Location = new System.Drawing.Point(170, 38);
-            this.txtindice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtindice.Name = "txtindice";
-            this.txtindice.Size = new System.Drawing.Size(49, 20);
-            this.txtindice.TabIndex = 35;
-            this.txtindice.Text = "-1";
-            this.txtindice.Visible = false;
-            // 
-            // txtidestudiante
-            // 
-            this.txtidestudiante.Location = new System.Drawing.Point(249, 38);
-            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtidestudiante.Name = "txtidestudiante";
-            this.txtidestudiante.Size = new System.Drawing.Size(44, 20);
-            this.txtidestudiante.TabIndex = 34;
-            this.txtidestudiante.Text = "0";
-            this.txtidestudiante.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(317, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(199, 214);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
             // 
             // boton
             // 
@@ -581,6 +505,84 @@
             this.Nombre_Colegio.ReadOnly = true;
             this.Nombre_Colegio.Width = 125;
             // 
+            // iconButton4
+            // 
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(690, 257);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(87, 30);
+            this.iconButton4.TabIndex = 33;
+            this.iconButton4.Text = "Recargar Tablero";
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            // 
+            // cbobusqueda
+            // 
+            this.cbobusqueda.FormattingEnabled = true;
+            this.cbobusqueda.Location = new System.Drawing.Point(336, 263);
+            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.cbobusqueda.Name = "cbobusqueda";
+            this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
+            this.cbobusqueda.TabIndex = 32;
+            // 
+            // txtfechabus2
+            // 
+            this.txtfechabus2.Location = new System.Drawing.Point(494, 263);
+            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfechabus2.Name = "txtfechabus2";
+            this.txtfechabus2.Size = new System.Drawing.Size(76, 20);
+            this.txtfechabus2.TabIndex = 31;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 30;
+            this.iconButton3.Location = new System.Drawing.Point(586, 257);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(99, 30);
+            this.iconButton3.TabIndex = 30;
+            this.iconButton3.Text = "Buscar";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // txtindice
+            // 
+            this.txtindice.Location = new System.Drawing.Point(170, 38);
+            this.txtindice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtindice.Name = "txtindice";
+            this.txtindice.Size = new System.Drawing.Size(49, 20);
+            this.txtindice.TabIndex = 35;
+            this.txtindice.Text = "-1";
+            this.txtindice.Visible = false;
+            // 
+            // txtidestudiante
+            // 
+            this.txtidestudiante.Location = new System.Drawing.Point(249, 38);
+            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidestudiante.Name = "txtidestudiante";
+            this.txtidestudiante.Size = new System.Drawing.Size(44, 20);
+            this.txtidestudiante.TabIndex = 34;
+            this.txtidestudiante.Text = "0";
+            this.txtidestudiante.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(317, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 214);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtcelularapoderado
             // 
             this.txtcelularapoderado.Location = new System.Drawing.Point(34, 289);
@@ -643,6 +645,7 @@
             this.button1.TabIndex = 43;
             this.button1.Text = "subir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtanoculminado
             // 
@@ -651,11 +654,23 @@
             this.txtanoculminado.Size = new System.Drawing.Size(100, 20);
             this.txtanoculminado.TabIndex = 44;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(540, 51);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(75, 23);
+            this.iconButton2.TabIndex = 45;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
             // formEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 652);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.txtanoculminado);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtdireccion);
@@ -695,7 +710,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formEstudiantes";
             this.Text = "formEstudiantes";
             this.Load += new System.EventHandler(this.formEstudiantes_Load);
@@ -764,5 +779,6 @@
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtanoculminado;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
