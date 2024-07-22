@@ -86,9 +86,7 @@ namespace CapaPresentacion
             }
             cboxCurso.DisplayMember = "Texto";
             cboxCurso.ValueMember = "Valor";
-            cboxCurso.SelectedIndex = 0;
-            OpcionCombo opcionSeleccionada = (OpcionCombo)cboxCurso.SelectedItem;
-            txtIdCurso.Text = opcionSeleccionada.Valor.ToString();
+            cboxCurso.SelectedIndex = -1;
 
             List<Grupo> grupos = new CN_Grupo().ListarGrupoActivo();
             foreach (Grupo item in grupos)
@@ -97,9 +95,7 @@ namespace CapaPresentacion
             }
             cboxGrupo.DisplayMember = "Texto";
             cboxGrupo.ValueMember = "Valor";
-            cboxGrupo.SelectedIndex = 0;
-            OpcionCombo opcionSeleccionada2 = (OpcionCombo)cboxGrupo.SelectedItem;
-            txtIdGrupo.Text = opcionSeleccionada2.Valor.ToString();
+            cboxGrupo.SelectedIndex = -1;
 
         }
         private void configurarDataGridView1()
