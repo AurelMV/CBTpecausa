@@ -113,7 +113,6 @@
             this.label2.Size = new System.Drawing.Size(264, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Ingrese los datos del Estudiante : ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtfechapago
             // 
@@ -122,7 +121,6 @@
             this.txtfechapago.Name = "txtfechapago";
             this.txtfechapago.Size = new System.Drawing.Size(182, 20);
             this.txtfechapago.TabIndex = 30;
-            this.txtfechapago.ValueChanged += new System.EventHandler(this.txtfechapago_ValueChanged);
             // 
             // txtvoucher
             // 
@@ -131,7 +129,6 @@
             this.txtvoucher.Name = "txtvoucher";
             this.txtvoucher.Size = new System.Drawing.Size(204, 20);
             this.txtvoucher.TabIndex = 29;
-            this.txtvoucher.TextChanged += new System.EventHandler(this.txtvoucher_TextChanged);
             // 
             // txtmediopago
             // 
@@ -140,7 +137,6 @@
             this.txtmediopago.Name = "txtmediopago";
             this.txtmediopago.Size = new System.Drawing.Size(204, 20);
             this.txtmediopago.TabIndex = 28;
-            this.txtmediopago.TextChanged += new System.EventHandler(this.txtmediopago_TextChanged);
             // 
             // txtmonto
             // 
@@ -149,7 +145,6 @@
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(129, 20);
             this.txtmonto.TabIndex = 27;
-            this.txtmonto.TextChanged += new System.EventHandler(this.txtmonto_TextChanged);
             // 
             // label11
             // 
@@ -162,7 +157,6 @@
             this.label11.Size = new System.Drawing.Size(140, 18);
             this.label11.TabIndex = 26;
             this.label11.Text = "Numero de boucher";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -175,7 +169,6 @@
             this.label12.Size = new System.Drawing.Size(108, 18);
             this.label12.TabIndex = 25;
             this.label12.Text = "Medio de Pago";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -188,7 +181,6 @@
             this.label13.Size = new System.Drawing.Size(110, 18);
             this.label13.TabIndex = 24;
             this.label13.Text = "Monto de Pago";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -201,7 +193,6 @@
             this.label14.Size = new System.Drawing.Size(108, 18);
             this.label14.TabIndex = 23;
             this.label14.Text = "Fecha de Pago";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
             // 
@@ -214,7 +205,6 @@
             this.label15.Size = new System.Drawing.Size(125, 18);
             this.label15.TabIndex = 22;
             this.label15.Text = "Datos de Pago:";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // cboturno
             // 
@@ -224,7 +214,6 @@
             this.cboturno.Name = "cboturno";
             this.cboturno.Size = new System.Drawing.Size(133, 21);
             this.cboturno.TabIndex = 44;
-            this.cboturno.SelectedIndexChanged += new System.EventHandler(this.cboturno_SelectedIndexChanged);
             // 
             // cboprograma
             // 
@@ -234,7 +223,6 @@
             this.cboprograma.Name = "cboprograma";
             this.cboprograma.Size = new System.Drawing.Size(306, 21);
             this.cboprograma.TabIndex = 43;
-            this.cboprograma.SelectedIndexChanged += new System.EventHandler(this.cboprograma_SelectedIndexChanged);
             // 
             // cbogrupo
             // 
@@ -244,7 +232,6 @@
             this.cbogrupo.Name = "cbogrupo";
             this.cbogrupo.Size = new System.Drawing.Size(212, 21);
             this.cbogrupo.TabIndex = 42;
-            this.cbogrupo.SelectedIndexChanged += new System.EventHandler(this.cbogrupo_SelectedIndexChanged);
             // 
             // cbociclo
             // 
@@ -254,7 +241,6 @@
             this.cbociclo.Name = "cbociclo";
             this.cbociclo.Size = new System.Drawing.Size(212, 21);
             this.cbociclo.TabIndex = 41;
-            this.cbociclo.SelectedIndexChanged += new System.EventHandler(this.cbociclo_SelectedIndexChanged);
             // 
             // txtfecha
             // 
@@ -263,7 +249,6 @@
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(182, 20);
             this.txtfecha.TabIndex = 40;
-            this.txtfecha.ValueChanged += new System.EventHandler(this.txtfecha_ValueChanged);
             // 
             // label17
             // 
@@ -276,7 +261,6 @@
             this.label17.Size = new System.Drawing.Size(60, 18);
             this.label17.TabIndex = 38;
             this.label17.Text = "Usuario";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -289,7 +273,6 @@
             this.label18.Size = new System.Drawing.Size(146, 18);
             this.label18.TabIndex = 37;
             this.label18.Text = "Programa de estudio";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -302,7 +285,6 @@
             this.label19.Size = new System.Drawing.Size(122, 18);
             this.label19.TabIndex = 36;
             this.label19.Text = "Grupo de estudio";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -315,7 +297,6 @@
             this.label20.Size = new System.Drawing.Size(42, 18);
             this.label20.TabIndex = 35;
             this.label20.Text = "Ciclo";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -328,7 +309,6 @@
             this.label21.Size = new System.Drawing.Size(114, 18);
             this.label21.TabIndex = 34;
             this.label21.Text = "Estado de Pago";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -341,7 +321,6 @@
             this.label22.Size = new System.Drawing.Size(144, 18);
             this.label22.TabIndex = 33;
             this.label22.Text = "Fecha de inscripcion";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label23
             // 
@@ -354,7 +333,6 @@
             this.label23.Size = new System.Drawing.Size(47, 18);
             this.label23.TabIndex = 32;
             this.label23.Text = "Turno";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label24
             // 
@@ -367,7 +345,6 @@
             this.label24.Size = new System.Drawing.Size(168, 18);
             this.label24.TabIndex = 31;
             this.label24.Text = "Datos de Inscripcion:";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // iconButton1
             // 
@@ -419,7 +396,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1164, 784);
             this.label1.TabIndex = 1;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cbosexo
             // 
@@ -429,7 +405,6 @@
             this.cbosexo.Name = "cbosexo";
             this.cbosexo.Size = new System.Drawing.Size(160, 21);
             this.cbosexo.TabIndex = 68;
-            this.cbosexo.SelectedIndexChanged += new System.EventHandler(this.cbosexo_SelectedIndexChanged);
             // 
             // txtañoculminado
             // 
@@ -439,7 +414,6 @@
             this.txtañoculminado.Name = "txtañoculminado";
             this.txtañoculminado.Size = new System.Drawing.Size(188, 20);
             this.txtañoculminado.TabIndex = 67;
-            this.txtañoculminado.ValueChanged += new System.EventHandler(this.txtañoculminado_ValueChanged);
             // 
             // label3
             // 
@@ -452,7 +426,6 @@
             this.label3.Size = new System.Drawing.Size(172, 18);
             this.label3.TabIndex = 66;
             this.label3.Text = "Culminacion de Estudios";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtnacimiento
             // 
@@ -462,7 +435,6 @@
             this.txtnacimiento.Name = "txtnacimiento";
             this.txtnacimiento.Size = new System.Drawing.Size(178, 20);
             this.txtnacimiento.TabIndex = 63;
-            this.txtnacimiento.ValueChanged += new System.EventHandler(this.txtnacimiento_ValueChanged);
             // 
             // txtemail
             // 
@@ -471,7 +443,6 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(254, 20);
             this.txtemail.TabIndex = 62;
-            this.txtemail.TextChanged += new System.EventHandler(this.txtemail_TextChanged);
             // 
             // txtcelular
             // 
@@ -480,7 +451,6 @@
             this.txtcelular.Name = "txtcelular";
             this.txtcelular.Size = new System.Drawing.Size(162, 20);
             this.txtcelular.TabIndex = 61;
-            this.txtcelular.TextChanged += new System.EventHandler(this.txtcelular_TextChanged);
             // 
             // txtdeni
             // 
@@ -489,7 +459,6 @@
             this.txtdeni.Name = "txtdeni";
             this.txtdeni.Size = new System.Drawing.Size(160, 20);
             this.txtdeni.TabIndex = 60;
-            this.txtdeni.TextChanged += new System.EventHandler(this.txtdeni_TextChanged);
             // 
             // txtamaterno
             // 
@@ -498,7 +467,6 @@
             this.txtamaterno.Name = "txtamaterno";
             this.txtamaterno.Size = new System.Drawing.Size(242, 20);
             this.txtamaterno.TabIndex = 59;
-            this.txtamaterno.TextChanged += new System.EventHandler(this.txtamaterno_TextChanged);
             // 
             // txtapaterno
             // 
@@ -507,7 +475,6 @@
             this.txtapaterno.Name = "txtapaterno";
             this.txtapaterno.Size = new System.Drawing.Size(242, 20);
             this.txtapaterno.TabIndex = 58;
-            this.txtapaterno.TextChanged += new System.EventHandler(this.txtapaterno_TextChanged);
             // 
             // txtnombre
             // 
@@ -516,7 +483,6 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(242, 20);
             this.txtnombre.TabIndex = 57;
-            this.txtnombre.TextChanged += new System.EventHandler(this.txtnombre_TextChanged);
             // 
             // label10
             // 
@@ -529,7 +495,6 @@
             this.label10.Size = new System.Drawing.Size(45, 18);
             this.label10.TabIndex = 56;
             this.label10.Text = "Email";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -542,7 +507,6 @@
             this.label9.Size = new System.Drawing.Size(148, 18);
             this.label9.TabIndex = 55;
             this.label9.Text = "Fecha de Nacimiento";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -555,7 +519,6 @@
             this.label8.Size = new System.Drawing.Size(129, 18);
             this.label8.TabIndex = 54;
             this.label8.Text = "Numero de celular";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -568,7 +531,6 @@
             this.label7.Size = new System.Drawing.Size(42, 18);
             this.label7.TabIndex = 53;
             this.label7.Text = "Sexo";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -581,7 +543,6 @@
             this.label6.Size = new System.Drawing.Size(118, 18);
             this.label6.TabIndex = 52;
             this.label6.Text = "Apellido materno";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -594,7 +555,6 @@
             this.label5.Size = new System.Drawing.Size(33, 18);
             this.label5.TabIndex = 51;
             this.label5.Text = "DNI";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label16
             // 
@@ -607,7 +567,6 @@
             this.label16.Size = new System.Drawing.Size(115, 18);
             this.label16.TabIndex = 50;
             this.label16.Text = "Apellido Paterno";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label25
             // 
@@ -620,7 +579,6 @@
             this.label25.Size = new System.Drawing.Size(62, 18);
             this.label25.TabIndex = 49;
             this.label25.Text = "Nombre";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // txtnombreusuario
             // 
@@ -630,7 +588,6 @@
             this.txtnombreusuario.Name = "txtnombreusuario";
             this.txtnombreusuario.Size = new System.Drawing.Size(134, 20);
             this.txtnombreusuario.TabIndex = 69;
-            this.txtnombreusuario.TextChanged += new System.EventHandler(this.txtnombreusuario_TextChanged);
             // 
             // cbopago
             // 
@@ -640,7 +597,6 @@
             this.cbopago.Name = "cbopago";
             this.cbopago.Size = new System.Drawing.Size(182, 21);
             this.cbopago.TabIndex = 70;
-            this.cbopago.SelectedIndexChanged += new System.EventHandler(this.cbopago_SelectedIndexChanged);
             // 
             // txtidestudiante
             // 
@@ -650,7 +606,6 @@
             this.txtidestudiante.Size = new System.Drawing.Size(130, 20);
             this.txtidestudiante.TabIndex = 71;
             this.txtidestudiante.Visible = false;
-            this.txtidestudiante.TextChanged += new System.EventHandler(this.txtidestudiante_TextChanged);
             // 
             // panel1
             // 
@@ -752,7 +707,7 @@
             // 
             this.txtnroapoderado.Location = new System.Drawing.Point(274, 188);
             this.txtnroapoderado.Name = "txtnroapoderado";
-            this.txtnroapoderado.Size = new System.Drawing.Size(155, 20);
+            this.txtnroapoderado.Size = new System.Drawing.Size(162, 20);
             this.txtnroapoderado.TabIndex = 77;
             // 
             // label29

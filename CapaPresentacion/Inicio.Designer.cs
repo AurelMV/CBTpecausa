@@ -34,6 +34,7 @@
             this.sudmenuinscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.sudmenuestudiantes = new System.Windows.Forms.ToolStripMenuItem();
             this.sudmenupagos = new System.Windows.Forms.ToolStripMenuItem();
+            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menudocentes = new FontAwesome.Sharp.IconMenuItem();
             this.inscripcionDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.inscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,13 @@
             this.sudmenupagos.Text = "Pagos";
             this.sudmenupagos.Click += new System.EventHandler(this.sudmenupagos_Click);
             // 
+            // inscripcionesToolStripMenuItem
+            // 
+            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
+            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
+            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
+            // 
             // menudocentes
             // 
             this.menudocentes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -130,21 +137,21 @@
             // inscripcionDocentesToolStripMenuItem
             // 
             this.inscripcionDocentesToolStripMenuItem.Name = "inscripcionDocentesToolStripMenuItem";
-            this.inscripcionDocentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscripcionDocentesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.inscripcionDocentesToolStripMenuItem.Text = "Registrar";
             this.inscripcionDocentesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionDocentesToolStripMenuItem_Click);
             // 
             // datosDocentesToolStripMenuItem
             // 
             this.datosDocentesToolStripMenuItem.Name = "datosDocentesToolStripMenuItem";
-            this.datosDocentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datosDocentesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.datosDocentesToolStripMenuItem.Text = "Datos";
             this.datosDocentesToolStripMenuItem.Click += new System.EventHandler(this.datosDocentesToolStripMenuItem_Click);
             // 
             // relacionesToolStripMenuItem
             // 
             this.relacionesToolStripMenuItem.Name = "relacionesToolStripMenuItem";
-            this.relacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relacionesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.relacionesToolStripMenuItem.Text = "Relaciones";
             this.relacionesToolStripMenuItem.Click += new System.EventHandler(this.relacionesToolStripMenuItem_Click);
             // 
@@ -260,6 +267,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Brown;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,13 +278,6 @@
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "lduser";
-            // 
-            // inscripcionesToolStripMenuItem
-            // 
-            this.inscripcionesToolStripMenuItem.Name = "inscripcionesToolStripMenuItem";
-            this.inscripcionesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.inscripcionesToolStripMenuItem.Text = "Inscripciones";
-            this.inscripcionesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesToolStripMenuItem_Click);
             // 
             // Inicio
             // 

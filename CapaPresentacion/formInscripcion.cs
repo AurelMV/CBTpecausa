@@ -40,13 +40,6 @@ namespace CapaPresentacion
             InicializarComboBox();
 
         }
-     
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ///dffdgfgdassdfg
-           
-        }
 
         private void formInscripcion_Load(object sender, EventArgs e)
         {
@@ -453,244 +446,12 @@ namespace CapaPresentacion
             txtvoucher.Focus();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtidestudiante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtapaterno_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtnombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtamaterno_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtdeni_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbosexo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtcelular_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtnacimiento_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtemail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtcolegio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtañoculminado_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtvoucher_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtmediopago_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtmonto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtfechapago_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtidpago_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void cboturno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbopago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbociclo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbogrupo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboprograma_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtidusuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void txtnombreusuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtfecha_ValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -818,10 +579,7 @@ namespace CapaPresentacion
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-CargarImagen();
-         
+            CargarImagen();
         }
-
-       
     }
 }
