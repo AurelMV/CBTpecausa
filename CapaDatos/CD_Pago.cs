@@ -112,7 +112,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return exito;
+            return exito=true;
         }
 
 
@@ -159,7 +159,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return exito;
+            return exito = true;
         }
     }
 }

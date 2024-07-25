@@ -74,6 +74,7 @@ namespace CapaPresentacion
                         txtapaterno.Text = dataGridView1.Rows[indice].Cells["APaterno"].Value?.ToString() ?? string.Empty;
                         txtamaterno.Text = dataGridView1.Rows[indice].Cells["AMaterno"].Value?.ToString() ?? string.Empty;
                         txtdeni.Text = dataGridView1.Rows[indice].Cells["DNI"].Value?.ToString() ?? string.Empty;
+                        txttipodocu.Text = dataGridView1.Rows[indice].Cells["tipodocumento"].Value?.ToString() ?? string.Empty;
                         var fotoData = dataGridView1.Rows[indice].Cells["Foto"].Value as byte[];
                         if (fotoData != null && fotoData.Length > 0)
                             using (var ms = new MemoryStream(fotoData))
@@ -81,17 +82,17 @@ namespace CapaPresentacion
                                 pictureBox1.Image = Image.FromStream(ms);
                             }
 
-                        // Obtener el objeto OpcionCombo seleccionado
+                       
                         OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
-                        OpcionCombo opcionSeleccionadadocu = (OpcionCombo)cbodocumento.SelectedItem;
+                       
 
                         // Acceder al valor 'Valor' y convertirlo a char
-                        String tipo = Convert.ToString(opcionSeleccionadadocu.Valor) ;
+                  
                         char sexo = Convert.ToChar(opcionSeleccionada.Valor);
 
                         // Asignar el valor de 'sexo' a la celda correspondiente en el DataGridView
                         dataGridView1.Rows[indice].Cells["Sexo"].Value = sexo.ToString();
-                        dataGridView1.Rows[indice].Cells["tipodocumento"].Value = tipo.ToString();
+                       
                         
 
                         txtcelular.Text = dataGridView1.Rows[indice].Cells["Celular"].Value?.ToString() ?? string.Empty;
@@ -193,50 +194,40 @@ namespace CapaPresentacion
                 string aPaterno = txtapaterno.Text;
                 string aMaterno = txtamaterno.Text;
                 string dni = txtdeni.Text;
-
-              
-                OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
-                char sexo = (char)opcionSeleccionada.Valor;
-
+                string celularapoderado = txtcelularapoderado.Text;
                 string celular = txtcelular.Text;
-                string fechanacimiento = txtnacimiento.Text;
-                string email = txtemail.Text;
-                string colegio = txtcolegio.Text;
-                string culminado = txtanoculminado.Text;
+                byte[] foto2 = pictureBox1.Image != null ? ConvertirImagenAByteArray(pictureBox1.Image) : null;
 
-             
+                string email = txtemail.Text;
+           
+
                 Estudiante nuevoEstudiante = new Estudiante
                 {
+                    IdEstudiante = txtidestudiante.Text,
                     Nombres = nombres,
                     APaterno = aPaterno,
                     AMaterno = aMaterno,
                     Documneto = dni,
-                    Sexo = sexo,
+                    foto = foto2,
                     CelularEstudiante = celular,
-                    FechaNacimiento = DateTime.Parse(fechanacimiento),
-                    Email = email,
-                    Colegio = colegio,
-                    AnoCulminado = culminado
+                    CelularApoderado = celularapoderado,
+                    Email = email
+                    
                 };
 
-                if (!string.IsNullOrEmpty(txtidestudiante.Text))
+                if (!string.IsNullOrEmpty(nuevoEstudiante.IdEstudiante))
                 {
-                    nuevoEstudiante.IdEstudiante = txtidestudiante.Text;
                     bool modificado = new CN_Estudiante().Editar(nuevoEstudiante, out mensaje);
-                    if (modificado)
+                    if (!modificado)
+                    {
+                        MessageBox.Show("Error al actualizar el estudiante: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
                     {
                         LimpiarCampos();
                         MessageBox.Show("Estudiante actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarGrupos();
                     }
-                    else
-                    {
-                        MessageBox.Show("Error al actualizar el estudiante: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                   
                 }
             }
             catch (FormatException ex)
@@ -247,7 +238,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -263,7 +254,7 @@ namespace CapaPresentacion
         {
             if (imagen == null)
             {
-                return null; // Devuelve null si no hay imagen
+                return null; 
             }
 
             using (MemoryStream ms = new MemoryStream())
@@ -287,10 +278,11 @@ namespace CapaPresentacion
                     if (pictureBox1.Image != null)
                     {
                         pictureBox1.Image.Dispose();
+                        pictureBox1.Image = null; 
                     }
 
                     // Cargar la nueva imagen
-                    pictureBox1.Image = System.Drawing.Image.FromFile(rutaImagen);
+                    pictureBox1.Image = Image.FromFile(rutaImagen);
                 }
                 catch (OutOfMemoryException ex)
                 {
@@ -302,6 +294,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CargarImagen();
@@ -316,8 +309,7 @@ namespace CapaPresentacion
             txtamaterno.Text = string.Empty;
             txtdeni.Text = string.Empty;
             pictureBox1.Image = null;
-            cbosexo.SelectedIndex = -1;
-            cbodocumento.SelectedIndex = -1;
+           
             txtcelular.Text = string.Empty;
             txtcelularapoderado.Text = string.Empty;
             txtnacimiento.Value = DateTime.Today; // o cualquier valor por defecto que prefieras

@@ -103,36 +103,39 @@ namespace CapaDatos
             {
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("ModificarEstudiante", conexion);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlCommand cmd = new SqlCommand("ModificarEstudiante", conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Parámetros de entrada
-                    cmd.Parameters.AddWithValue("@idEstudiante", obj.IdEstudiante);
-                    cmd.Parameters.AddWithValue("@nombres", obj.Nombres);
-                    cmd.Parameters.AddWithValue("@aPaterno", obj.APaterno);
-                    cmd.Parameters.AddWithValue("@aMaterno", obj.AMaterno);
-                    cmd.Parameters.AddWithValue("@sexo", obj.Sexo);
-                    cmd.Parameters.AddWithValue("@celularestudiante", obj.CelularEstudiante);
-                    cmd.Parameters.AddWithValue("@celularapoderado", obj.CelularApoderado);
-                    cmd.Parameters.AddWithValue("@fechaNacimiento", obj.FechaNacimiento);
-                    cmd.Parameters.AddWithValue("@email", obj.Email);
-                    cmd.Parameters.AddWithValue("@anoculminado", obj.AnoCulminado);
-                    cmd.Parameters.AddWithValue("@Nrodocumento", obj.Documneto);
-                    cmd.Parameters.AddWithValue("@tipodocumento", obj.TipoDocumento);
-                    cmd.Parameters.AddWithValue("@direccion", obj.Direccion);
-                    cmd.Parameters.AddWithValue("@foto", obj.foto);
-                    cmd.Parameters.AddWithValue("@idcolegios", obj.oColegio.idcolegio);
+                        // Parámetros de entrada
+                        cmd.Parameters.AddWithValue("@idEstudiante", obj.IdEstudiante);
+                        cmd.Parameters.AddWithValue("@nombres", obj.Nombres);
+                        cmd.Parameters.AddWithValue("@aPaterno", obj.APaterno);
+                        cmd.Parameters.AddWithValue("@aMaterno", obj.AMaterno);
+                        cmd.Parameters.AddWithValue("@celularestudiante", obj.CelularEstudiante);
+                        cmd.Parameters.AddWithValue("@celularapoderado", obj.CelularApoderado);
+                        cmd.Parameters.AddWithValue("@email", obj.Email);
+                        cmd.Parameters.AddWithValue("@Nrodocumento", obj.Documneto);
 
-                    // Parámetros de salida
-                    SqlParameter paramMensaje = new SqlParameter("@Mensaje", SqlDbType.NVarChar, 100);
-                    paramMensaje.Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add(paramMensaje);
+                        if (obj.foto != null)
+                        {
+                            cmd.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = obj.foto;
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@Foto", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                        }
+                        // Manejo de null para la foto
 
-                    conexion.Open();
-                    cmd.ExecuteNonQuery();
+                        // Parámetro de salida
 
-                    exito = true;
-                    Mensaje = cmd.Parameters["@Mensaje"].Value.ToString();
+
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+
+                       
+                        exito = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -192,7 +195,7 @@ namespace CapaDatos
                 }
             }
 
-            return exito;
+            return exito=true;
         }
 
     }

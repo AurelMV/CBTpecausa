@@ -201,6 +201,12 @@
     <Compile Include="formCiclos.Designer.cs">
       <DependentUpon>formCiclos.cs</DependentUpon>
     </Compile>
+    <Compile Include="formColegios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formColegios.Designer.cs">
+      <DependentUpon>formColegios.cs</DependentUpon>
+    </Compile>
     <Compile Include="formCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,9 @@
     <None Include="Resources\icon1.jpeg" />
     <EmbeddedResource Include="formCiclos.resx">
       <DependentUpon>formCiclos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formColegios.resx">
+      <DependentUpon>formColegios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCurso.resx">
       <DependentUpon>formCurso.cs</DependentUpon>

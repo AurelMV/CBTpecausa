@@ -109,14 +109,26 @@ namespace CapaPresentacion
         }
         private void inicializarconbos()
         {
+
+            
             cbosexo.Items.Add(new OpcionCombo() { Valor = 'M', Texto = "Masculino" });
             cbosexo.Items.Add(new OpcionCombo() { Valor = 'F', Texto = "Femenino" });
-
+            cbosexo.SelectedIndex = -1;
             cbosexo.DisplayMember = "Texto";
             cbosexo.ValueMember = "Valor";
             if (cbosexo.Items.Count > 0)
             {
                 cbosexo.SelectedIndex = 0;
+            }
+
+            cbomedio.Items.Add(new OpcionCombo() { Valor = "Caja central", Texto = "Caja central" });
+            cbomedio.Items.Add(new OpcionCombo() { Valor = "Banco de la Nacion", Texto = "Banco de la Nacion" });
+            cbomedio.SelectedIndex = -1;
+            cbomedio.DisplayMember = "Texto";
+            cbomedio.ValueMember = "Valor";
+            if (cbomedio.Items.Count > 0)
+            {
+                cbomedio.SelectedIndex = 0;
             }
 
 
@@ -209,7 +221,7 @@ namespace CapaPresentacion
                 // Obtener datos del formulario
                 string nroVoucher = txtvoucher.Text.Trim();
                 DateTime fecha = txtfecha.Value;
-                string medioPago = txtmediopago.Text.Trim();
+              
                 int monto;
 
                 // Validar campos de entrada
@@ -219,11 +231,7 @@ namespace CapaPresentacion
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(medioPago))
-                {
-                    MessageBox.Show("El medio de pago no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+               
 
                 if (!int.TryParse(txtmonto.Text, out monto))
                 {
@@ -270,10 +278,16 @@ namespace CapaPresentacion
                     MessageBox.Show("Por favor, seleccione un tipo de documento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+                if (cbomedio.SelectedItem == null)
+                {
+                    MessageBox.Show("Por favor, seleccione el medio de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                OpcionCombo opcionCombo3 =(OpcionCombo)cbomedio.SelectedItem;
                 OpcionCombo opcionSeleccionada = (OpcionCombo)cbosexo.SelectedItem;
                 OpcionCombo opcionselect = (OpcionCombo)cbodocumento.SelectedItem;
                 char sexo = (char)opcionSeleccionada.Valor;
+                string medio =(string)opcionCombo3.Valor;
                 string tipdocument = (string)opcionselect.Valor;
 
                 if (cbocolegio.SelectedItem == null)
@@ -389,7 +403,7 @@ namespace CapaPresentacion
                     IdPago = idPago,
                     Fecha = fecha,
                     Monto = monto,
-                    MedioPago = medioPago,
+                    MedioPago = medio,
                     NroVoucher = nroVoucher,
                     IdInscripcion = nuevaInscripcion.IdInscripcion
                 };
@@ -421,7 +435,7 @@ namespace CapaPresentacion
         {
           
             txtvoucher.Text = string.Empty;
-            txtmediopago.Text = string.Empty;
+            
             txtmonto.Text = string.Empty;
             txtnombre.Text = string.Empty;
             txtapaterno.Text = string.Empty;
@@ -439,6 +453,7 @@ namespace CapaPresentacion
             cbociclo.SelectedIndex = -1;
             cboprograma.SelectedIndex = -1; 
             cbogrupo.SelectedIndex = -1;
+            cbomedio.SelectedIndex = -1;
 
            
             txtfecha.Value = DateTime.Now; 
@@ -580,6 +595,17 @@ namespace CapaPresentacion
         private void button1_Click_1(object sender, EventArgs e)
         {
             CargarImagen();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formColegios formularioInterfaz = new formColegios();
+
+            // Configurar la ventana para que se muestre por encima del formulario principal
+            formularioInterfaz.StartPosition = FormStartPosition.CenterParent;
+
+            // Mostrar el nuevo formulario
+            formularioInterfaz.ShowDialog(); // Usa S
         }
     }
 }

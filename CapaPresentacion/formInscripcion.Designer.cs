@@ -31,7 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtfechapago = new System.Windows.Forms.DateTimePicker();
             this.txtvoucher = new System.Windows.Forms.TextBox();
-            this.txtmediopago = new System.Windows.Forms.TextBox();
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -93,9 +92,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbomedio = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -129,14 +130,6 @@
             this.txtvoucher.Name = "txtvoucher";
             this.txtvoucher.Size = new System.Drawing.Size(204, 20);
             this.txtvoucher.TabIndex = 29;
-            // 
-            // txtmediopago
-            // 
-            this.txtmediopago.Location = new System.Drawing.Point(230, 50);
-            this.txtmediopago.Margin = new System.Windows.Forms.Padding(2);
-            this.txtmediopago.Name = "txtmediopago";
-            this.txtmediopago.Size = new System.Drawing.Size(204, 20);
-            this.txtmediopago.TabIndex = 28;
             // 
             // txtmonto
             // 
@@ -244,6 +237,7 @@
             // 
             // txtfecha
             // 
+            this.txtfecha.Enabled = false;
             this.txtfecha.Location = new System.Drawing.Point(10, 86);
             this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtfecha.Name = "txtfecha";
@@ -394,7 +388,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1164, 784);
+            this.label1.Size = new System.Drawing.Size(1249, 784);
             this.label1.TabIndex = 1;
             // 
             // cbosexo
@@ -611,6 +605,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.txtdireccion);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label31);
@@ -794,12 +789,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbomedio);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.txtfechapago);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.txtmonto);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.txtmediopago);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.txtvoucher);
             this.panel2.Location = new System.Drawing.Point(50, 283);
@@ -807,6 +802,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(730, 128);
             this.panel2.TabIndex = 73;
+            // 
+            // cbomedio
+            // 
+            this.cbomedio.FormattingEnabled = true;
+            this.cbomedio.Location = new System.Drawing.Point(230, 47);
+            this.cbomedio.Name = "cbomedio";
+            this.cbomedio.Size = new System.Drawing.Size(180, 21);
+            this.cbomedio.TabIndex = 31;
             // 
             // panel3
             // 
@@ -853,12 +856,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(951, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 53);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "Agregar Nuevo Colegio";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // formInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1164, 784);
+            this.ClientSize = new System.Drawing.Size(1249, 784);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label24);
@@ -891,7 +904,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker txtfechapago;
         private System.Windows.Forms.TextBox txtvoucher;
-        private System.Windows.Forms.TextBox txtmediopago;
         private System.Windows.Forms.TextBox txtmonto;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -956,5 +968,7 @@
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox cbomedio;
+        private System.Windows.Forms.Button button2;
     }
 }
