@@ -40,6 +40,14 @@ namespace CapaPresentacion
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtaforo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aforo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cicloins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cicloval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -54,14 +62,6 @@ namespace CapaPresentacion
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.Ciclo = new System.Windows.Forms.Label();
             this.cbciclo = new System.Windows.Forms.ComboBox();
-            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aforo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cicloins = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cicloval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +132,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +170,65 @@ namespace CapaPresentacion
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
+            // 
+            // boton
+            // 
+            this.boton.HeaderText = "";
+            this.boton.MinimumWidth = 6;
+            this.boton.Name = "boton";
+            this.boton.ReadOnly = true;
+            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "idGrupo";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Aforo
+            // 
+            this.Aforo.HeaderText = "Aforo";
+            this.Aforo.MinimumWidth = 6;
+            this.Aforo.Name = "Aforo";
+            this.Aforo.ReadOnly = true;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.MinimumWidth = 6;
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cicloins
+            // 
+            this.Cicloins.HeaderText = "Cicloins";
+            this.Cicloins.Name = "Cicloins";
+            this.Cicloins.ReadOnly = true;
+            this.Cicloins.Visible = false;
+            // 
+            // Cicloval
+            // 
+            this.Cicloval.HeaderText = "cicloval";
+            this.Cicloval.Name = "Cicloval";
+            this.Cicloval.ReadOnly = true;
             // 
             // label7
             // 
@@ -339,71 +399,6 @@ namespace CapaPresentacion
             this.cbciclo.Name = "cbciclo";
             this.cbciclo.Size = new System.Drawing.Size(177, 21);
             this.cbciclo.TabIndex = 29;
-            // 
-            // boton
-            // 
-            this.boton.HeaderText = "";
-            this.boton.MinimumWidth = 6;
-            this.boton.Name = "boton";
-            this.boton.ReadOnly = true;
-            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.boton.Width = 50;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "idGrupo";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
-            // 
-            // Aforo
-            // 
-            this.Aforo.HeaderText = "Aforo";
-            this.Aforo.MinimumWidth = 6;
-            this.Aforo.Name = "Aforo";
-            this.Aforo.ReadOnly = true;
-            this.Aforo.Width = 125;
-            // 
-            // EstadoValor
-            // 
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.MinimumWidth = 6;
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            this.EstadoValor.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
-            // 
-            // Cicloins
-            // 
-            this.Cicloins.HeaderText = "Cicloins";
-            this.Cicloins.Name = "Cicloins";
-            this.Cicloins.ReadOnly = true;
-            this.Cicloins.Visible = false;
-            // 
-            // Cicloval
-            // 
-            this.Cicloval.HeaderText = "cicloval";
-            this.Cicloval.Name = "Cicloval";
-            this.Cicloval.ReadOnly = true;
             // 
             // formGrupos
             // 

@@ -85,7 +85,7 @@
             this.cboxCurso.Location = new System.Drawing.Point(415, 76);
             this.cboxCurso.Name = "cboxCurso";
             this.cboxCurso.Size = new System.Drawing.Size(201, 21);
-            this.cboxCurso.TabIndex = 3;
+            this.cboxCurso.TabIndex = 1;
             this.cboxCurso.SelectedIndexChanged += new System.EventHandler(this.cboxCurso_SelectedIndexChanged);
             // 
             // cboxGrupo
@@ -94,7 +94,7 @@
             this.cboxGrupo.Location = new System.Drawing.Point(415, 133);
             this.cboxGrupo.Name = "cboxGrupo";
             this.cboxGrupo.Size = new System.Drawing.Size(201, 21);
-            this.cboxGrupo.TabIndex = 4;
+            this.cboxGrupo.TabIndex = 2;
             this.cboxGrupo.SelectedIndexChanged += new System.EventHandler(this.cboxGrupo_SelectedIndexChanged);
             // 
             // label2
@@ -130,7 +130,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(415, 220);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(201, 48);
-            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,29 +159,37 @@
             // 
             this.txtIdDocente.Location = new System.Drawing.Point(12, 24);
             this.txtIdDocente.Name = "txtIdDocente";
+            this.txtIdDocente.ReadOnly = true;
             this.txtIdDocente.Size = new System.Drawing.Size(49, 20);
             this.txtIdDocente.TabIndex = 10;
+            this.txtIdDocente.Visible = false;
             // 
             // txtIdCurso
             // 
             this.txtIdCurso.Location = new System.Drawing.Point(67, 24);
             this.txtIdCurso.Name = "txtIdCurso";
+            this.txtIdCurso.ReadOnly = true;
             this.txtIdCurso.Size = new System.Drawing.Size(49, 20);
             this.txtIdCurso.TabIndex = 11;
+            this.txtIdCurso.Visible = false;
             // 
             // txtIdGrupo
             // 
             this.txtIdGrupo.Location = new System.Drawing.Point(122, 24);
             this.txtIdGrupo.Name = "txtIdGrupo";
+            this.txtIdGrupo.ReadOnly = true;
             this.txtIdGrupo.Size = new System.Drawing.Size(49, 20);
             this.txtIdGrupo.TabIndex = 12;
+            this.txtIdGrupo.Visible = false;
             // 
             // txtIdDocenteCursoGrupo
             // 
             this.txtIdDocenteCursoGrupo.Location = new System.Drawing.Point(676, 24);
             this.txtIdDocenteCursoGrupo.Name = "txtIdDocenteCursoGrupo";
+            this.txtIdDocenteCursoGrupo.ReadOnly = true;
             this.txtIdDocenteCursoGrupo.Size = new System.Drawing.Size(49, 20);
             this.txtIdDocenteCursoGrupo.TabIndex = 13;
+            this.txtIdDocenteCursoGrupo.Visible = false;
             // 
             // label5
             // 

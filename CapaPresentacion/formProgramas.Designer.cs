@@ -33,7 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombrePrograma = new System.Windows.Forms.TextBox();
             this.btnGuardarPrograma = new FontAwesome.Sharp.IconButton();
-            this.btnEliminarPrograma = new FontAwesome.Sharp.IconButton();
             this.txtIdPrograma = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,7 +77,7 @@
             // txtNombrePrograma
             // 
             this.txtNombrePrograma.Location = new System.Drawing.Point(183, 47);
-            this.txtNombrePrograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombrePrograma.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombrePrograma.Name = "txtNombrePrograma";
             this.txtNombrePrograma.Size = new System.Drawing.Size(340, 20);
             this.txtNombrePrograma.TabIndex = 4;
@@ -96,7 +95,7 @@
             this.btnGuardarPrograma.IconSize = 30;
             this.btnGuardarPrograma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardarPrograma.Location = new System.Drawing.Point(68, 89);
-            this.btnGuardarPrograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarPrograma.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarPrograma.Name = "btnGuardarPrograma";
             this.btnGuardarPrograma.Size = new System.Drawing.Size(150, 40);
             this.btnGuardarPrograma.TabIndex = 5;
@@ -104,31 +103,11 @@
             this.btnGuardarPrograma.UseVisualStyleBackColor = false;
             this.btnGuardarPrograma.Click += new System.EventHandler(this.btnGuardarPrograma_Click);
             // 
-            // btnEliminarPrograma
-            // 
-            this.btnEliminarPrograma.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarPrograma.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarPrograma.FlatAppearance.BorderSize = 0;
-            this.btnEliminarPrograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarPrograma.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPrograma.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarPrograma.IconColor = System.Drawing.Color.Black;
-            this.btnEliminarPrograma.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarPrograma.IconSize = 30;
-            this.btnEliminarPrograma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarPrograma.Location = new System.Drawing.Point(373, 89);
-            this.btnEliminarPrograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnEliminarPrograma.Name = "btnEliminarPrograma";
-            this.btnEliminarPrograma.Size = new System.Drawing.Size(150, 40);
-            this.btnEliminarPrograma.TabIndex = 6;
-            this.btnEliminarPrograma.Text = "Eliminar";
-            this.btnEliminarPrograma.UseVisualStyleBackColor = false;
-            // 
             // txtIdPrograma
             // 
             this.txtIdPrograma.Enabled = false;
             this.txtIdPrograma.Location = new System.Drawing.Point(11, 103);
-            this.txtIdPrograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdPrograma.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdPrograma.Name = "txtIdPrograma";
             this.txtIdPrograma.Size = new System.Drawing.Size(29, 20);
             this.txtIdPrograma.TabIndex = 8;
@@ -138,7 +117,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 166);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -181,13 +160,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtIdPrograma);
-            this.Controls.Add(this.btnEliminarPrograma);
             this.Controls.Add(this.btnGuardarPrograma);
             this.Controls.Add(this.txtNombrePrograma);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formProgramas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formularioProgramas";
@@ -204,7 +182,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombrePrograma;
         private FontAwesome.Sharp.IconButton btnGuardarPrograma;
-        private FontAwesome.Sharp.IconButton btnEliminarPrograma;
         private System.Windows.Forms.TextBox txtIdPrograma;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;

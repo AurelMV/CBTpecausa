@@ -304,11 +304,11 @@ namespace CapaPresentacion
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show("Error: El índice de la fila está fuera del rango válido.", "Error de Rango", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: El índice de la fila está fuera del rango válido." + ex.Message, "Error de Rango", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("Error: Un valor necesario no está disponible.", "Error de Referencia Nula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Un valor necesario no está disponible." + ex.Message, "Error de Referencia Nula", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

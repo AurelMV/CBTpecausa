@@ -32,29 +32,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtUserUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
             this.txtConfirContra = new System.Windows.Forms.TextBox();
-            this.btnGuardarUsuario = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.cboxEstadoUsuario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboxTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtApaternoUsuario = new System.Windows.Forms.TextBox();
             this.txtAmaternoUsuario = new System.Windows.Forms.TextBox();
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.ibtnEliminarUsuario = new FontAwesome.Sharp.IconButton();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.cborol = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.ibtnEliminarUsuario = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarUsuario = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,22 +100,11 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Confirmar contraseña:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(642, 49);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Tipo:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(642, 79);
+            this.label7.Location = new System.Drawing.Point(642, 49);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
@@ -149,27 +136,6 @@
             this.txtConfirContra.Size = new System.Drawing.Size(159, 20);
             this.txtConfirContra.TabIndex = 9;
             this.txtConfirContra.UseSystemPasswordChar = true;
-            // 
-            // btnGuardarUsuario
-            // 
-            this.btnGuardarUsuario.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnGuardarUsuario.FlatAppearance.BorderSize = 0;
-            this.btnGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarUsuario.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarUsuario.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.btnGuardarUsuario.IconColor = System.Drawing.Color.Black;
-            this.btnGuardarUsuario.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnGuardarUsuario.IconSize = 30;
-            this.btnGuardarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarUsuario.Location = new System.Drawing.Point(11, 145);
-            this.btnGuardarUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardarUsuario.Name = "btnGuardarUsuario";
-            this.btnGuardarUsuario.Size = new System.Drawing.Size(150, 40);
-            this.btnGuardarUsuario.TabIndex = 12;
-            this.btnGuardarUsuario.Text = "Guardar";
-            this.btnGuardarUsuario.UseVisualStyleBackColor = false;
-            this.btnGuardarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
             // 
             // label8
             // 
@@ -212,7 +178,7 @@
             this.cboxEstadoUsuario.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoUsuario.Location = new System.Drawing.Point(689, 76);
+            this.cboxEstadoUsuario.Location = new System.Drawing.Point(690, 45);
             this.cboxEstadoUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.cboxEstadoUsuario.Name = "cboxEstadoUsuario";
             this.cboxEstadoUsuario.Size = new System.Drawing.Size(124, 21);
@@ -228,17 +194,6 @@
             this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 20;
             this.label1.Text = "GESTIONAR USUARIOS";
-            // 
-            // cboxTipoUsuario
-            // 
-            this.cboxTipoUsuario.FormattingEnabled = true;
-            this.cboxTipoUsuario.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.cboxTipoUsuario.Location = new System.Drawing.Point(689, 46);
-            this.cboxTipoUsuario.Name = "cboxTipoUsuario";
-            this.cboxTipoUsuario.Size = new System.Drawing.Size(124, 21);
-            this.cboxTipoUsuario.TabIndex = 21;
             // 
             // label10
             // 
@@ -291,6 +246,46 @@
             this.txtNombreUsuario.Size = new System.Drawing.Size(187, 20);
             this.txtNombreUsuario.TabIndex = 27;
             // 
+            // txtIdUsuario
+            // 
+            this.txtIdUsuario.Enabled = false;
+            this.txtIdUsuario.Location = new System.Drawing.Point(212, 12);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(67, 20);
+            this.txtIdUsuario.TabIndex = 29;
+            this.txtIdUsuario.Visible = false;
+            // 
+            // cborol
+            // 
+            this.cborol.FormattingEnabled = true;
+            this.cborol.Location = new System.Drawing.Point(690, 77);
+            this.cborol.Name = "cborol";
+            this.cborol.Size = new System.Drawing.Size(124, 21);
+            this.cborol.TabIndex = 31;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(642, 80);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Rol:";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(771, 4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 36);
+            this.iconButton1.TabIndex = 30;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // ibtnEliminarUsuario
             // 
             this.ibtnEliminarUsuario.BackColor = System.Drawing.Color.Crimson;
@@ -311,45 +306,26 @@
             this.ibtnEliminarUsuario.Text = "Eliminar";
             this.ibtnEliminarUsuario.UseVisualStyleBackColor = false;
             // 
-            // txtIdUsuario
+            // btnGuardarUsuario
             // 
-            this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(689, 110);
-            this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(67, 20);
-            this.txtIdUsuario.TabIndex = 29;
-            this.txtIdUsuario.Visible = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(771, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 36);
-            this.iconButton1.TabIndex = 30;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // cborol
-            // 
-            this.cborol.FormattingEnabled = true;
-            this.cborol.Location = new System.Drawing.Point(693, 136);
-            this.cborol.Name = "cborol";
-            this.cborol.Size = new System.Drawing.Size(121, 21);
-            this.cborol.TabIndex = 31;
-            this.cborol.SelectedIndexChanged += new System.EventHandler(this.cborol_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(639, 143);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 13);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Rol";
+            this.btnGuardarUsuario.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnGuardarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarUsuario.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarUsuario.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarUsuario.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnGuardarUsuario.IconColor = System.Drawing.Color.Black;
+            this.btnGuardarUsuario.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnGuardarUsuario.IconSize = 30;
+            this.btnGuardarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarUsuario.Location = new System.Drawing.Point(11, 145);
+            this.btnGuardarUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardarUsuario.Name = "btnGuardarUsuario";
+            this.btnGuardarUsuario.Size = new System.Drawing.Size(150, 40);
+            this.btnGuardarUsuario.TabIndex = 12;
+            this.btnGuardarUsuario.Text = "Guardar";
+            this.btnGuardarUsuario.UseVisualStyleBackColor = false;
+            this.btnGuardarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
             // 
             // formUsuario
             // 
@@ -367,7 +343,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.cboxTipoUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboxEstadoUsuario);
             this.Controls.Add(this.label9);
@@ -378,7 +353,6 @@
             this.Controls.Add(this.txtContrasenia);
             this.Controls.Add(this.txtUserUsuario);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -399,7 +373,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtUserUsuario;
         private System.Windows.Forms.TextBox txtContrasenia;
@@ -410,7 +383,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboxEstadoUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboxTipoUsuario;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

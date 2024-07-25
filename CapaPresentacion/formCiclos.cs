@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using CapaPresentacion.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace CapaPresentacion
         public formCiclos()
         {
             InitializeComponent();
+            configurarDataGridView();
             cargarCiclos();
             datetpFechaInicio.Format = DateTimePickerFormat.Custom;
             datetpFechaInicio.CustomFormat = "dd/MM/yyyy";
@@ -26,13 +28,27 @@ namespace CapaPresentacion
 
         private void btnRegistrarCiclo_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtNombreCiclo.Text))
+            {
+                MessageBox.Show("Complete todos los campos.");
+                return;
+            }
             CicloInscripcion nuevociclo = new CicloInscripcion { 
                 nombreCiclo = txtNombreCiclo.Text,
                 fechainicio = datetpFechaInicio.Value.Date,
                 fechafin = datetpFechaFin.Value.Date
             };
             CN_CicloInscripcion o_ciclo = new CN_CicloInscripcion();
-            o_ciclo.registrarCiclos(nuevociclo);
+            if (txtIdCiclo.Text == "0")
+            {
+                o_ciclo.registrarCiclos(nuevociclo);
+                MessageBox.Show("Ciclo registrado correctamente.");
+            } 
+            else 
+            {
+                o_ciclo.actualizarCiclos(nuevociclo);
+                MessageBox.Show("Ciclo modificado correctamente.");
+            }
             cargarCiclos();
             limpiar();
         }
@@ -40,15 +56,22 @@ namespace CapaPresentacion
         private void cargarCiclos() {
             List<CicloInscripcion> listaciclos = new CN_CicloInscripcion().listar();
             dataGridView1.DataSource = listaciclos;
+        }
 
-            dataGridView1.Columns["idciclo"].HeaderText = "ID";
-            dataGridView1.Columns["nombreCiclo"].HeaderText = "Nombre de Ciclo";
-            dataGridView1.Columns["fechainicio"].HeaderText = "Fecha Inicio";
-            dataGridView1.Columns["fechafin"].HeaderText = "Fecha Fin";
+        private void configurarDataGridView()
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            var nombre = new DataGridViewTextBoxColumn { DataPropertyName = "nombreCiclo", HeaderText = "Nombre", ReadOnly = true };
+            var fechaInicio = new DataGridViewTextBoxColumn { DataPropertyName = "fechainicio", HeaderText = "Fecha Inicio", ReadOnly = true };
+            var fechaFin = new DataGridViewTextBoxColumn { DataPropertyName = "fechafin", HeaderText = "Fecha Fin", ReadOnly = true };
+            dataGridView1.Columns.Add(nombre);
+            dataGridView1.Columns.Add(fechaInicio);
+            dataGridView1.Columns.Add(fechaFin);
         }
 
         private void limpiar() {
-            txtNombreCiclo.Text = "";
+            txtNombreCiclo.Text = string.Empty;
+            txtIdCiclo.Text = "0";
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -70,12 +93,21 @@ namespace CapaPresentacion
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow filaSeleccionada = dataGridView1.Rows[e.RowIndex];
-                txtNombreCiclo.Text = filaSeleccionada.Cells["nombreCiclo"].Value.ToString();
-                datetpFechaInicio.Value = Convert.ToDateTime(filaSeleccionada.Cells["fechainicio"].Value);
-                datetpFechaFin.Value = Convert.ToDateTime(filaSeleccionada.Cells["fechafin"].Value);
-
+                var filaSeleccionada = dataGridView1.Rows[e.RowIndex];
+                var ciclo = filaSeleccionada.DataBoundItem as CicloInscripcion;
+                if (ciclo != null)
+                {
+                    txtIdCiclo.Text = ciclo.idciclo.ToString();
+                    txtNombreCiclo.Text = ciclo.nombreCiclo;
+                    datetpFechaInicio.Value = ciclo.fechainicio;
+                    datetpFechaFin.Value = ciclo.fechafin;
+                }
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }
