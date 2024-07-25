@@ -56,6 +56,33 @@ namespace CapaPresentacion
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
+            string nombrecole = txtnombrecle.Text;
+
+            int? idDistrito = cbodistrito.SelectedValue != null ?
+                       (int?)Convert.ToInt32(cbodistrito.SelectedValue) : (int?)null;
+            Colegio colegio = new Colegio
+            {
+                nombrecolegio = txtnombrecle.Text,
+
+
+                odistrito = idDistrito.HasValue ? new Distrito { iddistrito = idDistrito.Value } : null
+
+            };
+
+            CN_Colegio cnColegio = new CN_Colegio();
+            bool resultado = cnColegio.AgregarColegio(colegio);
+
+            if (resultado)
+            {
+                MessageBox.Show("Colegio agregado con éxito.");
+                // Limpia los campos o cierra el formulario según sea necesario
+            }
+            else
+            {
+                MessageBox.Show("Error al agregar el colegio.");
+            }
+
+
 
 
         }
@@ -81,7 +108,11 @@ namespace CapaPresentacion
 
         private void cbodistrito_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            if (cbodistrito.SelectedItem != null)
+            {
+                Distrito distritoSeleccionado = (Distrito)cbodistrito.SelectedItem;
+                txtDistritoSeleccionado.Text =  Convert.ToString(distritoSeleccionado.iddistrito) ;
+            }
 
         }
     }

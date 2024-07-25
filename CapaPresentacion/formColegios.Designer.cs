@@ -35,9 +35,10 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtnombrecle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.txtDistritoSeleccionado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbodistrito
@@ -110,12 +111,12 @@
             this.label1.TabIndex = 81;
             this.label1.Text = "Agregar un nuevo Colegio";
             // 
-            // textBox1
+            // txtnombrecle
             // 
-            this.textBox1.Location = new System.Drawing.Point(227, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 82;
+            this.txtnombrecle.Location = new System.Drawing.Point(227, 89);
+            this.txtnombrecle.Name = "txtnombrecle";
+            this.txtnombrecle.Size = new System.Drawing.Size(220, 20);
+            this.txtnombrecle.TabIndex = 82;
             // 
             // label2
             // 
@@ -140,15 +141,23 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // txtDistritoSeleccionado
+            // 
+            this.txtDistritoSeleccionado.Location = new System.Drawing.Point(12, 258);
+            this.txtDistritoSeleccionado.Name = "txtDistritoSeleccionado";
+            this.txtDistritoSeleccionado.Size = new System.Drawing.Size(100, 20);
+            this.txtDistritoSeleccionado.TabIndex = 85;
+            // 
             // formColegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(492, 450);
+            this.Controls.Add(this.txtDistritoSeleccionado);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtnombrecle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbodistrito);
             this.Controls.Add(this.cboprovincia);
@@ -173,8 +182,9 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnombrecle;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.TextBox txtDistritoSeleccionado;
     }
 }

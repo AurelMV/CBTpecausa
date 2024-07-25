@@ -2,6 +2,8 @@
 using CapadeEntidad;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,12 +34,13 @@ namespace CapaDatos
                             {
                                 idcolegio = Convert.ToInt32(dr["idcolegios"]),
                                 nombrecolegio = dr["nombrecolegio"].ToString(),
-                                odistrito= new Distrito { 
-                                
-                                iddistrito = Convert.ToInt32(dr["Distrito_idDistrito"])
+                                odistrito = new Distrito
+                                {
+
+                                    iddistrito = Convert.ToInt32(dr["Distrito_idDistrito"])
                                 }
 
-                             
+
                             };
                             colegios.Add(colegio);
                         }
@@ -46,6 +49,26 @@ namespace CapaDatos
             }
 
             return colegios;
+        }
+
+
+      
+
+        public bool AgregarColegio(Colegio colegio)
+        {
+            using (SqlConnection conn = new SqlConnection(Conexion.cadena))
+            {
+                SqlCommand cmd = new SqlCommand("SP_AgregarColegio", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Nombre", colegio.nombrecolegio);
+                cmd.Parameters.AddWithValue("@IdDistrito", colegio.odistrito.iddistrito);
+
+                conn.Open();
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                return rowsAffected > 0;
+            }
         }
     }
 }

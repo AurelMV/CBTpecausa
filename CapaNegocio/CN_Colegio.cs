@@ -17,5 +17,12 @@ namespace CapaNegocio
         {
             return objCD_Colegio.ListarColegiosPorDistrito(distritoId);
         }
+
+        
+
+        public bool AgregarColegio(Colegio colegio)
+        {
+            return objCD_Colegio.AgregarColegio(colegio);
+        }
     }
 }
