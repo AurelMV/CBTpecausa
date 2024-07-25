@@ -127,7 +127,6 @@ namespace CapaPresentacion
 
         private void configurarDataGridView() 
         {
-            var id = new DataGridViewTextBoxColumn {DataPropertyName = "idDocente", HeaderText = "ID", ReadOnly = true};
             var nombre = new DataGridViewTextBoxColumn { DataPropertyName = "nombre", HeaderText = "Nombre", ReadOnly = true };
             var aPaterno = new DataGridViewTextBoxColumn { DataPropertyName = "aPaterno", HeaderText = "Apellido P.", ReadOnly = true };
             var aMaterno = new DataGridViewTextBoxColumn { DataPropertyName = "aMaterno", HeaderText = "Apellido M.", ReadOnly = true };
@@ -137,7 +136,6 @@ namespace CapaPresentacion
             var fechaNacimiento = new DataGridViewTextBoxColumn { DataPropertyName = "fechaNacimiento", HeaderText = "Fecha Nacimiento", ReadOnly = true };
             var email = new DataGridViewTextBoxColumn { DataPropertyName = "email", HeaderText = "Email", ReadOnly = true };
             var estado = new DataGridViewTextBoxColumn { DataPropertyName = "estadoTexto", HeaderText = "Estado", ReadOnly = true };
-            dataGridView1.Columns.Add(id);
             dataGridView1.Columns.Add(nombre);
             dataGridView1.Columns.Add(aPaterno);
             dataGridView1.Columns.Add(aMaterno);

@@ -27,6 +27,10 @@ namespace CapaPresentacion
         private void Inicio_Load(object sender, EventArgs e)
         {
             label3.Text = "Usuario: "+usuarioActual.nombre+" "+usuarioActual.aPaterno+" "+usuarioActual.aMaterno;
+            if (usuarioActual.oRol.idrol == 2)
+            {
+                menuusuario.Visible = false;
+            }
         }
 
         private void iconMenuItem1_Click(object sender, EventArgs e)

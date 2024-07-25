@@ -35,9 +35,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.txtcontra = new System.Windows.Forms.TextBox();
+            this.lblCerrar = new System.Windows.Forms.Label();
             this.btnIngresar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblMinimizar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +52,9 @@
             this.label1.Size = new System.Drawing.Size(370, 446);
             this.label1.TabIndex = 0;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
             // 
             // label2
             // 
@@ -63,7 +67,7 @@
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(185, 26);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 4;
             this.label2.Text = "SISTEMA DE  CBT ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -71,22 +75,22 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(400, 49);
+            this.label3.Location = new System.Drawing.Point(399, 55);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(168, 20);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Nombre de Usuario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(408, 124);
+            this.label4.Location = new System.Drawing.Point(399, 129);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 6;
             this.label4.Text = "Contraseña ";
             // 
             // txtusuario
@@ -95,7 +99,7 @@
             this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(150, 20);
-            this.txtusuario.TabIndex = 5;
+            this.txtusuario.TabIndex = 1;
             // 
             // txtcontra
             // 
@@ -103,49 +107,48 @@
             this.txtcontra.Margin = new System.Windows.Forms.Padding(2);
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.Size = new System.Drawing.Size(150, 20);
-            this.txtcontra.TabIndex = 6;
+            this.txtcontra.TabIndex = 2;
             this.txtcontra.UseSystemPasswordChar = true;
             this.txtcontra.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // lblCerrar
+            // 
+            this.lblCerrar.AutoSize = true;
+            this.lblCerrar.BackColor = System.Drawing.Color.DarkRed;
+            this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrar.ForeColor = System.Drawing.Color.White;
+            this.lblCerrar.Location = new System.Drawing.Point(686, 0);
+            this.lblCerrar.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCerrar.Name = "lblCerrar";
+            this.lblCerrar.Size = new System.Drawing.Size(20, 20);
+            this.lblCerrar.TabIndex = 10;
+            this.lblCerrar.Text = "X";
+            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
+            this.lblCerrar.MouseEnter += new System.EventHandler(this.lblCerrar_MouseEnter);
+            this.lblCerrar.MouseLeave += new System.EventHandler(this.lblCerrar_MouseLeave);
             // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.btnIngresar.IconColor = System.Drawing.Color.Black;
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIngresar.IconSize = 30;
-            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresar.Location = new System.Drawing.Point(397, 211);
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngresar.Location = new System.Drawing.Point(437, 222);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(86, 41);
-            this.btnIngresar.TabIndex = 7;
-            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.Size = new System.Drawing.Size(199, 58);
+            this.btnIngresar.TabIndex = 3;
+            this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 30;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(496, 211);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 41);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // pictureBox1
             // 
@@ -158,14 +161,32 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // lblMinimizar
+            // 
+            this.lblMinimizar.BackColor = System.Drawing.Color.DimGray;
+            this.lblMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimizar.ForeColor = System.Drawing.Color.White;
+            this.lblMinimizar.Location = new System.Drawing.Point(666, 0);
+            this.lblMinimizar.Margin = new System.Windows.Forms.Padding(0);
+            this.lblMinimizar.Name = "lblMinimizar";
+            this.lblMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.lblMinimizar.TabIndex = 11;
+            this.lblMinimizar.Text = "-";
+            this.lblMinimizar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMinimizar.Click += new System.EventHandler(this.lblMinimizar_Click);
+            this.lblMinimizar.MouseEnter += new System.EventHandler(this.lblMinimizar_MouseEnter);
+            this.lblMinimizar.MouseLeave += new System.EventHandler(this.lblMinimizar_MouseLeave);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 446);
+            this.Controls.Add(this.lblMinimizar);
+            this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtcontra);
             this.Controls.Add(this.txtusuario);
@@ -180,6 +201,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,7 +219,8 @@
         private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.TextBox txtcontra;
         private FontAwesome.Sharp.IconButton btnIngresar;
-        private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCerrar;
+        private System.Windows.Forms.Label lblMinimizar;
     }
 }

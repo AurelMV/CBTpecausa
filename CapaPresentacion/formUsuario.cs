@@ -21,7 +21,6 @@ namespace CapaPresentacion
         public formUsuario()
         {
             InitializeComponent();
-            dataGridView1.AutoGenerateColumns = false;
             configurarDataGridView();
             cargarUsuarios();
         }
@@ -33,6 +32,7 @@ namespace CapaPresentacion
 
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
+            string idDinamico = txtIdUsuario.Text;
             try
             {
                 string clave = string.Empty;
@@ -45,22 +45,26 @@ namespace CapaPresentacion
                     MessageBox.Show("La contraseña no coincide.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (string.IsNullOrEmpty(txtNombreUsuario.Text) || string.IsNullOrEmpty(txtApaternoUsuario.Text) || string.IsNullOrEmpty(txtAmaternoUsuario.Text) || string.IsNullOrEmpty(txtUserUsuario.Text))
+                if (string.IsNullOrEmpty(txtNombreUsuario.Text) || string.IsNullOrEmpty(txtApaternoUsuario.Text) || string.IsNullOrEmpty(txtAmaternoUsuario.Text) || string.IsNullOrEmpty(txtUserUsuario.Text) || cborol.SelectedIndex == -1 || cboxEstadoUsuario.SelectedIndex == -1)
                 {
                     MessageBox.Show("Por favor, ingrese datos en todos los campos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string idDinamico = GenerarIdDinamico(txtNombreUsuario.Text, txtApaternoUsuario.Text, txtAmaternoUsuario.Text, txtUserUsuario.Text);
+                if (string.IsNullOrEmpty(txtIdUsuario.Text)) 
+                {
+                    idDinamico = GenerarIdDinamico(txtNombreUsuario.Text, txtApaternoUsuario.Text, txtAmaternoUsuario.Text, txtUserUsuario.Text);
+                }
                 Usuario nuevoUsuario = new Usuario
                 {
                     idusuarios = idDinamico,
                     user = txtUserUsuario.Text,
                     password = clave,
-                    tipo = cboxTipoUsuario.Text,
+                    tipo = cborol.Text,
                     estado = cboxEstadoUsuario.Text,
                     nombre = txtNombreUsuario.Text,
                     aPaterno = txtApaternoUsuario.Text,
-                    aMaterno = txtAmaternoUsuario.Text
+                    aMaterno = txtAmaternoUsuario.Text,
+                    oRol = new Rol { idrol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) }
                 };
                 CN_Usuario user = new CN_Usuario();
                 if (string.IsNullOrEmpty(txtIdUsuario.Text))
@@ -119,8 +123,8 @@ namespace CapaPresentacion
             txtUserUsuario.Text = string.Empty;
             txtContrasenia.Text = string.Empty;
             txtConfirContra.Text = string.Empty;
-            cboxTipoUsuario.SelectedIndex = -1;
             cboxEstadoUsuario.SelectedIndex = -1;
+            cborol.SelectedIndex = -1;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -138,25 +142,31 @@ namespace CapaPresentacion
                     txtUserUsuario.Text = usuario.user;
                     txtContrasenia.Text = usuario.password;
                     txtConfirContra.Text = usuario.password;
-                    cboxTipoUsuario.SelectedItem = usuario.tipo;
                     cboxEstadoUsuario.SelectedItem = usuario.estado;
+                    foreach (OpcionCombo oc in cborol.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == usuario.oRol.idrol)
+                        {
+                            int indice = cborol.Items.IndexOf(oc);
+                            cborol.SelectedIndex = indice;
+                        }
+                    }
                 }
             }
         }
         private void configurarDataGridView()
         {
+            dataGridView1.AutoGenerateColumns = false;
             var nombre = new DataGridViewTextBoxColumn { DataPropertyName = "nombre", HeaderText = "Nombre", ReadOnly = true };
             var aPaterno = new DataGridViewTextBoxColumn { DataPropertyName = "aPaterno", HeaderText = "Apellido P.", ReadOnly = true };
             var aMaterno = new DataGridViewTextBoxColumn { DataPropertyName = "aMaterno", HeaderText = "Apellido M.", ReadOnly = true };
             var user = new DataGridViewTextBoxColumn { DataPropertyName = "user", HeaderText = "Usuario", ReadOnly = true };
-            var password = new DataGridViewTextBoxColumn { DataPropertyName = "password", HeaderText = "Clave", ReadOnly = true };
             var tipo = new DataGridViewTextBoxColumn { DataPropertyName = "tipo", HeaderText = "Tipo", ReadOnly = true };
             var estado = new DataGridViewTextBoxColumn { DataPropertyName = "estado", HeaderText = "Estado", ReadOnly = true };
             dataGridView1.Columns.Add(nombre);
             dataGridView1.Columns.Add(aPaterno);
             dataGridView1.Columns.Add(aMaterno);
             dataGridView1.Columns.Add(user);
-            dataGridView1.Columns.Add(password);
             dataGridView1.Columns.Add(tipo);
             dataGridView1.Columns.Add(estado);
         }
@@ -180,11 +190,6 @@ namespace CapaPresentacion
             {
                 cborol.SelectedIndex = 0;
             }
-        }
-
-        private void cborol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

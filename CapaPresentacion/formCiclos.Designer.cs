@@ -34,13 +34,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombreCiclo = new System.Windows.Forms.TextBox();
             this.datetpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.btnRegistrarCiclo = new FontAwesome.Sharp.IconButton();
-            this.btnModificarCiclo = new FontAwesome.Sharp.IconButton();
-            this.btnEliminarCiclo = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.datetpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.btnRegistrarCiclo = new FontAwesome.Sharp.IconButton();
+            this.txtIdCiclo = new System.Windows.Forms.TextBox();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,66 +107,9 @@
             this.datetpFechaInicio.Size = new System.Drawing.Size(200, 20);
             this.datetpFechaInicio.TabIndex = 5;
             // 
-            // btnRegistrarCiclo
-            // 
-            this.btnRegistrarCiclo.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnRegistrarCiclo.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarCiclo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarCiclo.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.btnRegistrarCiclo.IconColor = System.Drawing.Color.Black;
-            this.btnRegistrarCiclo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRegistrarCiclo.IconSize = 40;
-            this.btnRegistrarCiclo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarCiclo.Location = new System.Drawing.Point(38, 227);
-            this.btnRegistrarCiclo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegistrarCiclo.Name = "btnRegistrarCiclo";
-            this.btnRegistrarCiclo.Size = new System.Drawing.Size(150, 40);
-            this.btnRegistrarCiclo.TabIndex = 6;
-            this.btnRegistrarCiclo.Text = "Registrar";
-            this.btnRegistrarCiclo.UseVisualStyleBackColor = false;
-            this.btnRegistrarCiclo.Click += new System.EventHandler(this.btnRegistrarCiclo_Click);
-            // 
-            // btnModificarCiclo
-            // 
-            this.btnModificarCiclo.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnModificarCiclo.FlatAppearance.BorderSize = 0;
-            this.btnModificarCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarCiclo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarCiclo.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.btnModificarCiclo.IconColor = System.Drawing.Color.Black;
-            this.btnModificarCiclo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificarCiclo.IconSize = 40;
-            this.btnModificarCiclo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarCiclo.Location = new System.Drawing.Point(38, 271);
-            this.btnModificarCiclo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnModificarCiclo.Name = "btnModificarCiclo";
-            this.btnModificarCiclo.Size = new System.Drawing.Size(150, 40);
-            this.btnModificarCiclo.TabIndex = 7;
-            this.btnModificarCiclo.Text = "Modificar";
-            this.btnModificarCiclo.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarCiclo
-            // 
-            this.btnEliminarCiclo.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminarCiclo.FlatAppearance.BorderSize = 0;
-            this.btnEliminarCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCiclo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCiclo.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarCiclo.IconColor = System.Drawing.Color.Black;
-            this.btnEliminarCiclo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarCiclo.IconSize = 40;
-            this.btnEliminarCiclo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarCiclo.Location = new System.Drawing.Point(38, 315);
-            this.btnEliminarCiclo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarCiclo.Name = "btnEliminarCiclo";
-            this.btnEliminarCiclo.Size = new System.Drawing.Size(150, 40);
-            this.btnEliminarCiclo.TabIndex = 8;
-            this.btnEliminarCiclo.Text = "Eliminar";
-            this.btnEliminarCiclo.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(247, 36);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -207,18 +150,62 @@
             this.datetpFechaFin.Size = new System.Drawing.Size(200, 20);
             this.datetpFechaFin.TabIndex = 12;
             // 
+            // btnRegistrarCiclo
+            // 
+            this.btnRegistrarCiclo.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRegistrarCiclo.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarCiclo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarCiclo.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnRegistrarCiclo.IconColor = System.Drawing.Color.Black;
+            this.btnRegistrarCiclo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarCiclo.IconSize = 40;
+            this.btnRegistrarCiclo.Location = new System.Drawing.Point(46, 234);
+            this.btnRegistrarCiclo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegistrarCiclo.Name = "btnRegistrarCiclo";
+            this.btnRegistrarCiclo.Size = new System.Drawing.Size(150, 40);
+            this.btnRegistrarCiclo.TabIndex = 6;
+            this.btnRegistrarCiclo.Text = "Guardar";
+            this.btnRegistrarCiclo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrarCiclo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegistrarCiclo.UseVisualStyleBackColor = false;
+            this.btnRegistrarCiclo.Click += new System.EventHandler(this.btnRegistrarCiclo_Click);
+            // 
+            // txtIdCiclo
+            // 
+            this.txtIdCiclo.Location = new System.Drawing.Point(71, 335);
+            this.txtIdCiclo.Name = "txtIdCiclo";
+            this.txtIdCiclo.ReadOnly = true;
+            this.txtIdCiclo.Size = new System.Drawing.Size(69, 20);
+            this.txtIdCiclo.TabIndex = 13;
+            this.txtIdCiclo.Text = "0";
+            this.txtIdCiclo.Visible = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 20;
+            this.iconButton1.Location = new System.Drawing.Point(189, 45);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(30, 30);
+            this.iconButton1.TabIndex = 14;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // formCiclos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(745, 366);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.txtIdCiclo);
             this.Controls.Add(this.datetpFechaFin);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnEliminarCiclo);
-            this.Controls.Add(this.btnModificarCiclo);
             this.Controls.Add(this.btnRegistrarCiclo);
             this.Controls.Add(this.datetpFechaInicio);
             this.Controls.Add(this.txtNombreCiclo);
@@ -244,11 +231,11 @@
         private System.Windows.Forms.TextBox txtNombreCiclo;
         private System.Windows.Forms.DateTimePicker datetpFechaInicio;
         private FontAwesome.Sharp.IconButton btnRegistrarCiclo;
-        private FontAwesome.Sharp.IconButton btnModificarCiclo;
-        private FontAwesome.Sharp.IconButton btnEliminarCiclo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker datetpFechaFin;
+        private System.Windows.Forms.TextBox txtIdCiclo;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

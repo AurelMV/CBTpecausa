@@ -45,7 +45,6 @@
             this.rbtnFemenino = new System.Windows.Forms.RadioButton();
             this.rbtnMasculino = new System.Windows.Forms.RadioButton();
             this.cboxEstadoDocente = new System.Windows.Forms.ComboBox();
-            this.btnEliminarDocente = new FontAwesome.Sharp.IconButton();
             this.btnGuardarDocente = new FontAwesome.Sharp.IconButton();
             this.fechaNacimientoDocente = new System.Windows.Forms.DateTimePicker();
             this.txtEmailDocente = new System.Windows.Forms.TextBox();
@@ -177,7 +176,6 @@
             this.panel1.Controls.Add(this.rbtnFemenino);
             this.panel1.Controls.Add(this.rbtnMasculino);
             this.panel1.Controls.Add(this.cboxEstadoDocente);
-            this.panel1.Controls.Add(this.btnEliminarDocente);
             this.panel1.Controls.Add(this.btnGuardarDocente);
             this.panel1.Controls.Add(this.fechaNacimientoDocente);
             this.panel1.Controls.Add(this.txtEmailDocente);
@@ -256,32 +254,17 @@
             this.cboxEstadoDocente.Size = new System.Drawing.Size(240, 21);
             this.cboxEstadoDocente.TabIndex = 23;
             // 
-            // btnEliminarDocente
-            // 
-            this.btnEliminarDocente.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminarDocente.IconColor = System.Drawing.Color.Black;
-            this.btnEliminarDocente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarDocente.IconSize = 30;
-            this.btnEliminarDocente.Location = new System.Drawing.Point(27, 512);
-            this.btnEliminarDocente.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminarDocente.Name = "btnEliminarDocente";
-            this.btnEliminarDocente.Size = new System.Drawing.Size(240, 38);
-            this.btnEliminarDocente.TabIndex = 22;
-            this.btnEliminarDocente.Text = "Eliminar";
-            this.btnEliminarDocente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminarDocente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarDocente.UseVisualStyleBackColor = true;
-            // 
             // btnGuardarDocente
             // 
+            this.btnGuardarDocente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarDocente.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             this.btnGuardarDocente.IconColor = System.Drawing.Color.Black;
             this.btnGuardarDocente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardarDocente.IconSize = 30;
-            this.btnGuardarDocente.Location = new System.Drawing.Point(27, 470);
+            this.btnGuardarDocente.Location = new System.Drawing.Point(27, 479);
             this.btnGuardarDocente.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarDocente.Name = "btnGuardarDocente";
-            this.btnGuardarDocente.Size = new System.Drawing.Size(240, 38);
+            this.btnGuardarDocente.Size = new System.Drawing.Size(240, 48);
             this.btnGuardarDocente.TabIndex = 20;
             this.btnGuardarDocente.Text = "Guardar";
             this.btnGuardarDocente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,13 +323,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(305, 44);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(553, 506);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -400,7 +387,6 @@
         private System.Windows.Forms.TextBox txtDniDocente;
         private System.Windows.Forms.TextBox txtAmaternoDocente;
         private System.Windows.Forms.TextBox txtApaternoDocente;
-        private FontAwesome.Sharp.IconButton btnEliminarDocente;
         private FontAwesome.Sharp.IconButton btnGuardarDocente;
         private System.Windows.Forms.ComboBox cboxEstadoDocente;
         private System.Windows.Forms.DataGridView dataGridView1;

@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
 using System.Collections;
+using CapadeEntidad;
 
 namespace CapaDatos1
 {
@@ -32,6 +33,7 @@ namespace CapaDatos1
                         cmd.Parameters.AddWithValue("@nombre", DBNull.Value);
                         cmd.Parameters.AddWithValue("@aPaterno", DBNull.Value);
                         cmd.Parameters.AddWithValue("@aMaterno", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@idRol", DBNull.Value);
                         conexion.Open();
                         cmd.ExecuteNonQuery();
 
@@ -48,6 +50,7 @@ namespace CapaDatos1
                                 usuario.nombre = dr["nombre"].ToString();
                                 usuario.aPaterno = dr["aPaterno"].ToString();
                                 usuario.aMaterno = dr["aMaterno"].ToString();
+                                usuario.oRol = new Rol { idrol = Convert.ToInt32(dr["idRol"]) };
 
                                 lista.Add(usuario);
                             }
@@ -77,6 +80,7 @@ namespace CapaDatos1
                         cmd.Parameters.AddWithValue("@nombre", usuario.nombre);
                         cmd.Parameters.AddWithValue("@aPaterno", usuario.aPaterno);
                         cmd.Parameters.AddWithValue("@aMaterno", usuario.aMaterno);
+                        cmd.Parameters.AddWithValue("@idRol", usuario.oRol.idrol);
                         conexion.Open();
                         cmd.ExecuteNonQuery();
                     } catch (Exception ex) {
@@ -102,6 +106,7 @@ namespace CapaDatos1
                         cmd.Parameters.AddWithValue("@nombre", usuario.nombre);
                         cmd.Parameters.AddWithValue("@aPaterno", usuario.aPaterno);
                         cmd.Parameters.AddWithValue("@aMaterno", usuario.aMaterno);
+                        cmd.Parameters.AddWithValue("@idRol", usuario.oRol.idrol);
                         conexion.Open();
                         cmd.ExecuteNonQuery();
                     }
@@ -120,7 +125,7 @@ namespace CapaDatos1
             {
                 try
                 {
-                    string query = "SELECT idusuarios, [user], password, tipo, estado, nombre, aPaterno, aMaterno " +
+                    string query = "SELECT idusuarios, [user], password, tipo, estado, nombre, aPaterno, aMaterno, idRol " +
                                    "FROM usuarios " +
                                    "WHERE [user] = @Usuario AND password = @Contraseña";
 
@@ -142,7 +147,8 @@ namespace CapaDatos1
                                 estado = dr["estado"].ToString(),
                                 nombre = dr["nombre"].ToString(),
                                 aPaterno = dr["aPaterno"].ToString(),
-                                aMaterno = dr["aMaterno"].ToString()
+                                aMaterno = dr["aMaterno"].ToString(),
+                                oRol = new Rol { idrol = Convert.ToInt32(dr["idRol"]) }
                             };
                         }
                     }
