@@ -76,6 +76,7 @@
             this.cbopago = new System.Windows.Forms.ComboBox();
             this.txtidestudiante = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtdireccion = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -225,6 +225,7 @@
             this.cbogrupo.Name = "cbogrupo";
             this.cbogrupo.Size = new System.Drawing.Size(212, 21);
             this.cbogrupo.TabIndex = 42;
+            this.cbogrupo.SelectedIndexChanged += new System.EventHandler(this.cbogrupo_SelectedIndexChanged);
             // 
             // cbociclo
             // 
@@ -234,6 +235,7 @@
             this.cbociclo.Name = "cbociclo";
             this.cbociclo.Size = new System.Drawing.Size(212, 21);
             this.cbociclo.TabIndex = 41;
+            this.cbociclo.SelectedIndexChanged += new System.EventHandler(this.cbociclo_SelectedIndexChanged);
             // 
             // txtfecha
             // 
@@ -645,6 +647,16 @@
             this.panel1.Size = new System.Drawing.Size(1078, 227);
             this.panel1.TabIndex = 72;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(951, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 53);
+            this.button2.TabIndex = 85;
+            this.button2.Text = "Agregar Nuevo Colegio";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // txtdireccion
             // 
             this.txtdireccion.Location = new System.Drawing.Point(457, 188);
@@ -855,16 +867,6 @@
             this.button1.Text = "Subir Imagen";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(951, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 53);
-            this.button2.TabIndex = 85;
-            this.button2.Text = "Agregar Nuevo Colegio";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // formInscripcion
             // 

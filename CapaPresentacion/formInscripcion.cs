@@ -28,6 +28,9 @@ namespace CapaPresentacion
         private CN_Provincia cnProvincia = new CN_Provincia();
         private CN_DIstrito cnDistrito = new CN_DIstrito();
         private CN_Colegio cnColegio = new CN_Colegio();
+        private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
+
+        private CN_Grupo cngrupo = new CN_Grupo();
 
         private Usuario usuario;
         public formInscripcion(Usuario usuario)
@@ -38,6 +41,7 @@ namespace CapaPresentacion
 
             inicializarconbos();
             InicializarComboBox();
+            cargarciclos();
 
         }
 
@@ -48,18 +52,18 @@ namespace CapaPresentacion
 
 
 
-            List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
-            cbociclo.Items.Clear();
-            foreach (CicloInscripcion item in listaCiclo)
-            {
-                cbociclo.Items.Add(new OpcionCombo() { Valor = item.idciclo, Texto = item.nombreCiclo });
-            }
-            cbociclo.DisplayMember = "Texto";
-            cbociclo.ValueMember = "Valor";
-            if (cbociclo.Items.Count > 0)
-            {
-                cbociclo.SelectedIndex = 0;
-            }
+            //List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
+            //cbociclo.Items.Clear();
+            //foreach (CicloInscripcion item in listaCiclo)
+            //{
+            //    cbociclo.Items.Add(new OpcionCombo() { Valor = item.idciclo, Texto = item.nombreCiclo });
+            //}
+            //cbociclo.DisplayMember = "Texto";
+            //cbociclo.ValueMember = "Valor";
+            //if (cbociclo.Items.Count > 0)
+            //{
+            //    cbociclo.SelectedIndex = 0;
+            //}
 
 
 
@@ -77,18 +81,18 @@ namespace CapaPresentacion
             }
 
 
-            List<Grupo> listgrup = new CN_Grupo().Listar();
-            cbogrupo.Items.Clear();
-            foreach (Grupo item in listgrup)
-            {
-                cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
-            }
-            cbogrupo.DisplayMember = "Texto";
-            cbogrupo.ValueMember = "Valor";
-            if (cbogrupo.Items.Count > 0)
-            {
-                cbogrupo.SelectedIndex = 0;
-            }
+            //List<Grupo> listgrup = new CN_Grupo().Listar();
+            //cbogrupo.Items.Clear();
+            //foreach (Grupo item in listgrup)
+            //{
+            //    cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
+            //}
+            //cbogrupo.DisplayMember = "Texto";
+            //cbogrupo.ValueMember = "Valor";
+            //if (cbogrupo.Items.Count > 0)
+            //{
+            //    cbogrupo.SelectedIndex = 0;
+            //}
 
 
 
@@ -317,7 +321,8 @@ namespace CapaPresentacion
                     MessageBox.Show("Por favor, seleccione un ciclo de inscripción.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                int idciclo = Convert.ToInt32(((OpcionCombo)cbociclo.SelectedItem).Valor);
+                int idciclo = Convert.ToInt32(cbociclo.SelectedValue)  ;
+
 
                 if (cboprograma.SelectedItem == null)
                 {
@@ -331,7 +336,8 @@ namespace CapaPresentacion
                     MessageBox.Show("Por favor, seleccione un grupo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                int idGrupos = Convert.ToInt32(((OpcionCombo)cbogrupo.SelectedItem).Valor);
+                int idGrupos = Convert.ToInt32(cbogrupo.SelectedValue)  ;
+
 
                 if (!DateTime.TryParseExact(txtfecha.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaInscripcion))
                 {
@@ -606,6 +612,45 @@ namespace CapaPresentacion
 
             // Mostrar el nuevo formulario
             formularioInterfaz.ShowDialog(); // Usa S
+        }
+
+        private void cbociclo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbociclo.SelectedValue != null && cbociclo.SelectedValue is int)
+            {
+                int idciclo = Convert.ToInt32(cbociclo.SelectedValue);
+                cargargrupos(idciclo);
+              
+            }
+
+
+
+
+        }
+
+        private void cargargrupos(int idciclo)
+        {
+            List<Grupo> grup = cngrupo.Listargrupconcicloyactivo(idciclo);
+            cbogrupo.DataSource = grup;
+            cbogrupo.DisplayMember = "nombreGrupo";
+            cbogrupo.ValueMember = "idGrupos";
+            cbogrupo.SelectedIndex = -1;
+        }
+
+        private void cargarciclos()
+        {
+            List<CicloInscripcion> ciclo = cnciclo.listar();
+            cbociclo.DataSource = ciclo;
+            cbociclo.DisplayMember = "nombreCiclo";
+            cbociclo.ValueMember = "idciclo";
+            cbociclo.SelectedIndex = -1;
+
+        }
+
+        private void cbogrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
+using CapadeEntidad;
 
 namespace CapaNegocio
 {
@@ -50,6 +51,15 @@ namespace CapaNegocio
         public List<Grupo> Listar2()
         {
             return objcd_grupo.Listar2();
+        }
+        public List<Grupo> Listargrupconcicloyactivo(int idciclo)
+        {
+            return objcd_grupo.Listargrupconcicloyactivo(idciclo);
+        }
+        public bool IncrementarAforo(int idgrupo, int aforo) { 
+        
+        return objcd_grupo.IncrementarAforo(idgrupo, aforo);
+        
         }
     }
 }

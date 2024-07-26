@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
+using CapadeEntidad;
 
 
 namespace CapaDatos
@@ -21,7 +22,8 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT g.idGrupos, g.nombreGrupo, g.aforo, g.estado, c.idciclo, c.nombreCiclo");
+                    query.AppendLine("SELECT g.idGrupos, g.nombreGrupo, g.aforo, g.estado, c.idciclo, c.nombreCiclo,");
+                    query.AppendLine("(SELECT COUNT(*) FROM Inscripcion i WHERE i.idGrupos = g.idGrupos) AS inscripcionesRealizadas");
                     query.AppendLine("FROM Grupos g");
                     query.AppendLine("INNER JOIN cicloInscripcion c ON g.idciclo = c.idciclo");
 
@@ -44,7 +46,9 @@ namespace CapaDatos
                                 {
                                     idciclo = Convert.ToInt32(dr["idciclo"]),
                                     nombreCiclo = dr["nombreCiclo"].ToString()
-                                }
+                                },
+                                // Capturar el nuevo campo inscripcionesRealizadas
+                                InscripcionesRealizadas = Convert.ToInt32(dr["inscripcionesRealizadas"])
                             };
 
                             lista.Add(grupo);
@@ -55,6 +59,44 @@ namespace CapaDatos
                 {
                     lista = new List<Grupo>();
                     // Manejar la excepción según tu aplicación
+                }
+            }
+
+            return lista;
+        }
+
+
+
+
+        public List<Grupo> Listargrupconcicloyactivo(int idciclo)
+        {
+            List<Grupo> lista = new List<Grupo>();
+
+
+            // Implementa la lógica para consultar y devolver la lista de provincias filtradas por departamentoId
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                string query = "SELECT g.idGrupos, g.nombreGrupo, g.aforo, g.estado, c.idciclo, c.nombreCiclo FROM Grupos g INNER JOIN cicloInscripcion c ON g.idciclo = c.idciclo WHERE c.idciclo= @idciclo and  g.estado=1";
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.Parameters.AddWithValue("@idciclo", idciclo);
+                    conexion.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Grupo grupo = new Grupo
+                            {
+                                IdGrupos = Convert.ToInt32(dr["idGrupos"]),
+                                NombreGrupo = dr["nombreGrupo"].ToString(),
+                                Aforo = Convert.ToInt32(dr["aforo"]),
+                                Estado = Convert.ToBoolean(dr["estado"]),
+                               
+                            };
+                            lista.Add(grupo);
+                        }
+                    }
                 }
             }
 
@@ -188,7 +230,7 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
 
-            return exito;
+            return exito=true;
         }
         public List<Grupo> Listar2()
         {
@@ -230,5 +272,30 @@ namespace CapaDatos
             }
             return lista;
         }
+        public bool IncrementarAforo(int idGrupos, int incremento)
+        {
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("IncrementarAforo", conexion))
+                    {
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@idGrupos", idGrupos);
+                        cmd.Parameters.AddWithValue("@incremento", incremento);
+
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+
     }
 }

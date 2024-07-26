@@ -12,6 +12,8 @@ using CapaNegocio;
 using CapaEntidad;
 using System.Globalization;
 using System.Windows.Documents;
+using Microsoft.IdentityModel.Abstractions;
+using System.Security.Cryptography;
 
 
 
@@ -255,7 +257,7 @@ namespace CapaPresentacion
                 int estadoValor = item.Estado ? 1 : 0;
 
                 dataGridView1.Rows.Add(new object[] {
-                    "", item.IdGrupos, item.NombreGrupo, item.Aforo, estadoValor, estadoTexto, item.oCicloinscripcion.idciclo, item.oCicloinscripcion.nombreCiclo
+                    "", item.IdGrupos, item.NombreGrupo, item.Aforo, estadoValor, estadoTexto, item.oCicloinscripcion.idciclo, item.oCicloinscripcion.nombreCiclo,item.InscripcionesRealizadas
                 });
             }
         }
@@ -362,6 +364,52 @@ namespace CapaPresentacion
         private void iconButton4_Click(object sender, EventArgs e)
         {
             CargarGrupos();
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            txtcantidad.Visible = !txtcantidad.Visible;
+            btnsumar.Visible = !btnsumar.Visible;
+            label6.Visible = !label6.Visible;
+            txtaforo.Enabled = !txtaforo.Enabled;
+            txtnombre.Enabled = !txtnombre.Enabled;
+            cboestado.Enabled = !cboestado.Enabled;
+            cbciclo.Enabled = !cbciclo.Enabled;
+        }
+
+        private void btnsumar_Click(object sender, EventArgs e)
+        {
+            int cantidad;
+            int idgrupo;
+
+            if (int.TryParse(txtcantidad.Text, out cantidad) && int.TryParse(txtidgrupo.Text, out idgrupo))
+            {
+               
+
+                if (idgrupo != 0) 
+                {
+                    bool resultado = new CN_Grupo().IncrementarAforo(idgrupo, cantidad);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("El aforo del grupo se incrementó correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarGrupos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hubo un error al intentar incrementar el aforo del grupo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Primero seleccione un grupo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese valores válidos para la cantidad y el ID del grupo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

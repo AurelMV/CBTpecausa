@@ -13,5 +13,6 @@ namespace CapaEntidad
         public int Aforo { get; set; }
         public bool Estado { get; set; }
         public CicloInscripcion oCicloinscripcion { get; set; }
+        public int InscripcionesRealizadas { get; set; }
     }
 }

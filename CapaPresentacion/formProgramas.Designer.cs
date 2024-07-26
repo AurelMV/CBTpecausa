@@ -169,6 +169,7 @@
             this.Name = "formProgramas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formularioProgramas";
+            this.Load += new System.EventHandler(this.formProgramas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

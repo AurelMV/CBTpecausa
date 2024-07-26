@@ -105,5 +105,10 @@ namespace CapaPresentacion
             int alturaTotal = alturaEncabezado + (totalFilas * alturaFila);
             dataGridView1.Height = alturaTotal + 2;
         }
+
+        private void formProgramas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

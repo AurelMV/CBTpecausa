@@ -30,9 +30,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +40,6 @@ namespace CapaPresentacion
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtaforo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aforo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cicloins = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cicloval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -62,6 +54,19 @@ namespace CapaPresentacion
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.Ciclo = new System.Windows.Forms.Label();
             this.cbciclo = new System.Windows.Forms.ComboBox();
+            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aforo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cicloins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cicloval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inscripciones_Realizadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.txtcantidad = new System.Windows.Forms.TextBox();
+            this.btnsumar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +77,7 @@ namespace CapaPresentacion
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 543);
+            this.label1.Size = new System.Drawing.Size(338, 631);
             this.label1.TabIndex = 1;
             // 
             // label2
@@ -127,21 +132,21 @@ namespace CapaPresentacion
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.boton,
@@ -151,84 +156,26 @@ namespace CapaPresentacion
             this.EstadoValor,
             this.Estado,
             this.Cicloins,
-            this.Cicloval});
+            this.Cicloval,
+            this.Inscripciones_Realizadas});
             this.dataGridView1.Location = new System.Drawing.Point(405, 94);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(673, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(807, 315);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
-            // 
-            // boton
-            // 
-            this.boton.HeaderText = "";
-            this.boton.MinimumWidth = 6;
-            this.boton.Name = "boton";
-            this.boton.ReadOnly = true;
-            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "idGrupo";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Aforo
-            // 
-            this.Aforo.HeaderText = "Aforo";
-            this.Aforo.MinimumWidth = 6;
-            this.Aforo.Name = "Aforo";
-            this.Aforo.ReadOnly = true;
-            // 
-            // EstadoValor
-            // 
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.MinimumWidth = 6;
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Cicloins
-            // 
-            this.Cicloins.HeaderText = "Cicloins";
-            this.Cicloins.Name = "Cicloins";
-            this.Cicloins.ReadOnly = true;
-            this.Cicloins.Visible = false;
-            // 
-            // Cicloval
-            // 
-            this.Cicloval.HeaderText = "cicloval";
-            this.Cicloval.Name = "Cicloval";
-            this.Cicloval.ReadOnly = true;
             // 
             // label7
             // 
@@ -400,12 +347,129 @@ namespace CapaPresentacion
             this.cbciclo.Size = new System.Drawing.Size(177, 21);
             this.cbciclo.TabIndex = 29;
             // 
+            // boton
+            // 
+            this.boton.FillWeight = 50F;
+            this.boton.HeaderText = "";
+            this.boton.Name = "boton";
+            this.boton.ReadOnly = true;
+            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "idGrupo";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 109.1463F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Aforo
+            // 
+            this.Aforo.FillWeight = 109.1463F;
+            this.Aforo.HeaderText = "Aforo";
+            this.Aforo.MinimumWidth = 6;
+            this.Aforo.Name = "Aforo";
+            this.Aforo.ReadOnly = true;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.MinimumWidth = 6;
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.FillWeight = 109.1463F;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cicloins
+            // 
+            this.Cicloins.HeaderText = "Cicloins";
+            this.Cicloins.Name = "Cicloins";
+            this.Cicloins.ReadOnly = true;
+            this.Cicloins.Visible = false;
+            // 
+            // Cicloval
+            // 
+            this.Cicloval.FillWeight = 109.1463F;
+            this.Cicloval.HeaderText = "cicloval";
+            this.Cicloval.Name = "Cicloval";
+            this.Cicloval.ReadOnly = true;
+            // 
+            // Inscripciones_Realizadas
+            // 
+            this.Inscripciones_Realizadas.FillWeight = 109.1463F;
+            this.Inscripciones_Realizadas.HeaderText = "Inscripciones_Realizadas";
+            this.Inscripciones_Realizadas.Name = "Inscripciones_Realizadas";
+            this.Inscripciones_Realizadas.ReadOnly = true;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.Location = new System.Drawing.Point(20, 386);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(294, 36);
+            this.iconButton5.TabIndex = 30;
+            this.iconButton5.Text = "Aumentar Aforo";
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // txtcantidad
+            // 
+            this.txtcantidad.Location = new System.Drawing.Point(214, 109);
+            this.txtcantidad.Name = "txtcantidad";
+            this.txtcantidad.Size = new System.Drawing.Size(43, 20);
+            this.txtcantidad.TabIndex = 31;
+            this.txtcantidad.Visible = false;
+            // 
+            // btnsumar
+            // 
+            this.btnsumar.Location = new System.Drawing.Point(263, 109);
+            this.btnsumar.Name = "btnsumar";
+            this.btnsumar.Size = new System.Drawing.Size(75, 23);
+            this.btnsumar.TabIndex = 32;
+            this.btnsumar.Text = "Sumar";
+            this.btnsumar.UseVisualStyleBackColor = true;
+            this.btnsumar.Visible = false;
+            this.btnsumar.Click += new System.EventHandler(this.btnsumar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(187, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 24);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "+";
+            this.label6.Visible = false;
+            // 
             // formGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1118, 543);
+            this.ClientSize = new System.Drawing.Size(1242, 631);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnsumar);
+            this.Controls.Add(this.txtcantidad);
+            this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.cbciclo);
             this.Controls.Add(this.Ciclo);
             this.Controls.Add(this.iconButton4);
@@ -468,5 +532,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cicloins;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cicloval;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inscripciones_Realizadas;
+        private IconButton iconButton5;
+        private System.Windows.Forms.TextBox txtcantidad;
+        private System.Windows.Forms.Button btnsumar;
+        private System.Windows.Forms.Label label6;
     }
 }
