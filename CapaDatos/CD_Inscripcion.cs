@@ -125,7 +125,7 @@ namespace CapaDatos
         }
 
 
-        public bool Agregar(Inscripcion obj, out string Mensaje)
+        public bool Agregar(Inscripcion obj, out string Mensaje, string dni)
         {
             bool exito = false;
             Mensaje = string.Empty;
@@ -151,7 +151,7 @@ namespace CapaDatos
                     {
                         cmd.Parameters.AddWithValue("fechaInscripcion", obj.FechaInscripcion);
                     }
-
+                    cmd.Parameters.AddWithValue("NroDocumento", dni);
                     // Agregar parámetros de salida
                     SqlParameter paramIdInscripcion = new SqlParameter("idInscripcion", SqlDbType.Int);
                     paramIdInscripcion.Direction = ParameterDirection.Output;

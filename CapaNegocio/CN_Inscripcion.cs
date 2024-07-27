@@ -25,9 +25,9 @@ namespace CapaNegocio
             return obj_inscriplis.Modificar(obj, out Mensaje);
         }
 
-        public bool Registrar(Inscripcion obj, out String Mensaje)
+        public bool Registrar(Inscripcion obj, out String Mensaje, string dni)
         {
-            return obj_inscriplis.Agregar(obj, out Mensaje);
+            return obj_inscriplis.Agregar(obj, out Mensaje, dni);
         }
     }
 }

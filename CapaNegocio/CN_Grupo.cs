@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
 using CapadeEntidad;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -15,6 +16,11 @@ namespace CapaNegocio
         public List<Grupo> Listar()
         {
             return objcd_grupo.Listar();
+        }
+
+        public List<Grupo> Listar2(int idciclo)
+        {
+            return objcd_grupo.Listarespecifico(idciclo);
         }
         public List<Grupo> ListarGrupoActivo()
         {
@@ -60,6 +66,15 @@ namespace CapaNegocio
         
         return objcd_grupo.IncrementarAforo(idgrupo, aforo);
         
+        }
+
+        public static DataTable ObtenerInscripcionesPorGrupo(int idGrupo)
+        {
+            return CD_Grupo.ObtenerInscripcionesPorGrupo(idGrupo);
+        }
+        public static DataTable ObtenerInscripcionesPorGrupoDeudores(int idGrupo)
+        {
+            return CD_Grupo.ObtenerInscripcionesPorGrupoDeudores(idGrupo);
         }
     }
 }

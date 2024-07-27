@@ -81,18 +81,18 @@ namespace CapaPresentacion
             }
 
 
-            //List<Grupo> listgrup = new CN_Grupo().Listar();
-            //cbogrupo.Items.Clear();
-            //foreach (Grupo item in listgrup)
-            //{
-            //    cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
-            //}
-            //cbogrupo.DisplayMember = "Texto";
-            //cbogrupo.ValueMember = "Valor";
-            //if (cbogrupo.Items.Count > 0)
-            //{
-            //    cbogrupo.SelectedIndex = 0;
-            //}
+            List<Grupo> listgrup = new CN_Grupo().Listar();
+            cbogrupo.Items.Clear();
+            foreach (Grupo item in listgrup)
+            {
+                cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
+            }
+            cbogrupo.DisplayMember = "Texto";
+            cbogrupo.ValueMember = "Valor";
+            if (cbogrupo.Items.Count > 0)
+            {
+                cbogrupo.SelectedIndex = 0;
+            }
 
 
 
@@ -392,7 +392,7 @@ namespace CapaPresentacion
 
                 // Registrar inscripción
                 string mensajeInscripcion = string.Empty;
-                bool exitoInscripcion = new CN_Inscripcion().Registrar(nuevaInscripcion, out mensajeInscripcion);
+                bool exitoInscripcion = new CN_Inscripcion().Registrar(nuevaInscripcion, out mensajeInscripcion, dni);
 
                 if (!exitoInscripcion)
                 {
