@@ -34,16 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.cbociclo = new System.Windows.Forms.ComboBox();
             this.id_Estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre_Estudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido_Paterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido_Materno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Programa_de_Estudios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ciclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(846, 431);
+            this.label1.Size = new System.Drawing.Size(1216, 654);
             this.label1.TabIndex = 1;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -76,7 +78,7 @@
             // 
             this.cbobusqueda.FormattingEnabled = true;
             this.cbobusqueda.Location = new System.Drawing.Point(12, 56);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(148, 21);
             this.cbobusqueda.TabIndex = 3;
@@ -101,7 +103,7 @@
             this.iconButton1.IconSize = 30;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.iconButton1.Location = new System.Drawing.Point(272, 48);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(116, 35);
             this.iconButton1.TabIndex = 5;
@@ -121,18 +123,55 @@
             this.Nombre_Estudiante,
             this.Apellido_Paterno,
             this.Apellido_Materno,
+            this.Edad,
             this.Pago,
             this.Programa_de_Estudios,
             this.Grupo,
             this.Ciclo});
             this.dataGridView1.Location = new System.Drawing.Point(11, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(1196, 550);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton2.BackColor = System.Drawing.Color.Crimson;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 35;
+            this.iconButton2.Location = new System.Drawing.Point(1059, 40);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(148, 37);
+            this.iconButton2.TabIndex = 7;
+            this.iconButton2.Text = "imprimir";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtbuscar.Location = new System.Drawing.Point(164, 57);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(104, 20);
+            this.txtbuscar.TabIndex = 8;
+            // 
+            // cbociclo
+            // 
+            this.cbociclo.FormattingEnabled = true;
+            this.cbociclo.Location = new System.Drawing.Point(446, 50);
+            this.cbociclo.Name = "cbociclo";
+            this.cbociclo.Size = new System.Drawing.Size(121, 21);
+            this.cbociclo.TabIndex = 9;
+            this.cbociclo.SelectedIndexChanged += new System.EventHandler(this.cbociclo_SelectedIndexChanged);
             // 
             // id_Estudiante
             // 
@@ -159,6 +198,11 @@
             this.Apellido_Materno.MinimumWidth = 6;
             this.Apellido_Materno.Name = "Apellido_Materno";
             // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            // 
             // Pago
             // 
             this.Pago.HeaderText = "Pago";
@@ -183,39 +227,13 @@
             this.Ciclo.MinimumWidth = 6;
             this.Ciclo.Name = "Ciclo";
             // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.Color.Crimson;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 35;
-            this.iconButton2.Location = new System.Drawing.Point(689, 40);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(148, 37);
-            this.iconButton2.TabIndex = 7;
-            this.iconButton2.Text = "imprimir";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbuscar.Location = new System.Drawing.Point(164, 57);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(104, 20);
-            this.txtbuscar.TabIndex = 8;
-            // 
             // formInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(848, 431);
+            this.ClientSize = new System.Drawing.Size(1218, 654);
+            this.Controls.Add(this.cbociclo);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.dataGridView1);
@@ -224,7 +242,7 @@
             this.Controls.Add(this.cbobusqueda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formInfo";
             this.Text = "formInfo";
             this.Load += new System.EventHandler(this.formInfo_Load);
@@ -244,10 +262,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.ComboBox cbociclo;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Estudiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido_Paterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido_Materno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Programa_de_Estudios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grupo;

@@ -15,9 +15,9 @@ namespace CapaNegocio
         {
             return obj_inscriplis.Listar();
         }
-        public List<Inscripcion> Listar2()
+        public List<Inscripcion> Listar2(int idciclo)
         {
-            return obj_inscriplis.Listar2();
+            return obj_inscriplis.Listar2(idciclo);
         }
 
         public bool Editar(Inscripcion obj, out String Mensaje)

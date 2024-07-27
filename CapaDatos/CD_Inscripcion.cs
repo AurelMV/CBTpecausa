@@ -173,7 +173,7 @@ namespace CapaDatos
             return exito;
         }
 
-        public List<Inscripcion> Listar2()
+        public List<Inscripcion> Listar2(int idCiclo)
         {
             List<Inscripcion> lista = new List<Inscripcion>();
 
@@ -181,18 +181,10 @@ namespace CapaDatos
             {
                 try
                 {
-                    StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT e.idEstudiante, e.nombres AS nombres_estudiante, e.aPaterno AS Apellido_Paterno, e.aMaterno AS Apellido_Materno, ");
-                    query.AppendLine("pe.nombre AS nombre_programa, g.nombreGrupo, ci.nombreCiclo ");
-                    query.AppendLine("FROM Inscripcion i ");
-                    query.AppendLine("INNER JOIN estudiantes e ON i.idEstudiante = e.idEstudiante ");
-                    query.AppendLine("INNER JOIN Grupos g ON i.idGrupos = g.idGrupos ");
-                    query.AppendLine("INNER JOIN programaestudios pe ON i.idprogramaestudios = pe.idprogramaestudios ");
-                    query.AppendLine("INNER JOIN cicloInscripcion ci ON i.idciclo = ci.idciclo ");
-                    query.AppendLine("WHERE i.estadopago = 1 AND g.estado = 1");
+                    SqlCommand cmd = new SqlCommand("ListarInscripcionesPorCiclo", conexion);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@IdCiclo", idCiclo);
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
-                    cmd.CommandType = System.Data.CommandType.Text;
                     conexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -206,7 +198,8 @@ namespace CapaDatos
                                     IdEstudiante = dr["idEstudiante"].ToString(),
                                     Nombres = dr["nombres_estudiante"].ToString(),
                                     APaterno = dr["Apellido_Paterno"].ToString(),
-                                    AMaterno = dr["Apellido_Materno"].ToString()
+                                    AMaterno = dr["Apellido_Materno"].ToString(),
+                                    Edad = Convert.ToInt32(dr["Edad"])
                                 },
                                 oProgramaEstudios = new ProgramaEstudios { nombre = dr["nombre_programa"].ToString() },
                                 oGrupo = new Grupo { NombreGrupo = dr["nombreGrupo"].ToString() },
@@ -227,6 +220,8 @@ namespace CapaDatos
 
             return lista;
         }
+
+
 
     }
 }

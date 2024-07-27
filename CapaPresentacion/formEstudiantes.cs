@@ -53,7 +53,16 @@ namespace CapaPresentacion
             txtnacimiento.Format = DateTimePickerFormat.Custom;
             txtnacimiento.CustomFormat = "yyyy-MM-dd";
 
-
+            foreach (DataGridViewColumn columna in dataGridView1.Columns)
+            {
+                if (columna.Visible == true)
+                {
+                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+            cbobusqueda.DisplayMember = "Texto";
+            cbobusqueda.ValueMember = "Valor";
+            cbobusqueda.SelectedIndex = 0;
 
         }
 
@@ -184,6 +193,31 @@ namespace CapaPresentacion
             }
 
         }
+        private byte[] ConvertirImagenAByteArraySeguro(Image imagen)
+        {
+            if (imagen == null)
+            {
+                return null;
+            }
+
+            try
+            {
+                // Clonar la imagen antes de convertirla
+                using (Image clonedImage = new Bitmap(imagen))
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        clonedImage.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        return ms.ToArray();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al convertir la imagen: " + ex.Message, "Error de Conversión de Imagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -196,10 +230,8 @@ namespace CapaPresentacion
                 string dni = txtdeni.Text;
                 string celularapoderado = txtcelularapoderado.Text;
                 string celular = txtcelular.Text;
-                byte[] foto2 = pictureBox1.Image != null ? ConvertirImagenAByteArray(pictureBox1.Image) : null;
-
+                byte[] foto2 = ConvertirImagenAByteArraySeguro(pictureBox1.Image);
                 string email = txtemail.Text;
-           
 
                 Estudiante nuevoEstudiante = new Estudiante
                 {
@@ -212,11 +244,9 @@ namespace CapaPresentacion
                     CelularEstudiante = celular,
                     CelularApoderado = celularapoderado,
                     Email = email
-                    
                 };
 
-                if (!string.IsNullOrEmpty(nuevoEstudiante.IdEstudiante))
-                {
+                
                     bool modificado = new CN_Estudiante().Editar(nuevoEstudiante, out mensaje);
                     if (!modificado)
                     {
@@ -228,17 +258,12 @@ namespace CapaPresentacion
                         MessageBox.Show("Estudiante actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarGrupos();
                     }
-                }
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Error de formato en los datos: " + ex.Message, "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Se produjo un error al guardar el estudiante: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -331,6 +356,32 @@ namespace CapaPresentacion
             else
             {
                 pictureBox1.Image = null; 
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+
+            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string textoBusqueda = txtbusqueda.Text.Trim().ToUpper();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[columnaFiltro].Value != null)
+                {
+                    string valorCelda = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+
+
+                    bool contieneTexto = valorCelda.Contains(textoBusqueda);
+
+
+                    row.Visible = contieneTexto;
+                }
+                else
+                {
+
+                    row.Visible = true;
+                }
             }
         }
     }

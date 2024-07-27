@@ -15,7 +15,7 @@ namespace CapaEntidad
         public string APaterno { get; set; }
         public string AMaterno { get; set; }
         public string TipoDocumento { get; set; }
-      
+
         public string Documneto { get; set; }
         public char Sexo { get; set; }
         public string CelularEstudiante { get; set; }
@@ -28,5 +28,6 @@ namespace CapaEntidad
 
         public byte[] foto { get; set; }
         public Colegio oColegio { get; set; }
+        public int Edad { get; set; }
     }
 }

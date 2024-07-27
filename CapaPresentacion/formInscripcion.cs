@@ -75,10 +75,8 @@ namespace CapaPresentacion
             }
             cboprograma.DisplayMember = "Texto";
             cboprograma.ValueMember = "Valor";
-            if (cboprograma.Items.Count > 0)
-            {
-                cboprograma.SelectedIndex = 0;
-            }
+            cboprograma.SelectedIndex = -1;
+
 
 
             //List<Grupo> listgrup = new CN_Grupo().Listar();
@@ -97,16 +95,36 @@ namespace CapaPresentacion
 
 
             txtnacimiento.Format = DateTimePickerFormat.Custom;
-            txtnacimiento.CustomFormat = "yyyy-MM-dd";
+            txtnacimiento.CustomFormat = " ";
+            txtnacimiento.ValueChanged += (s, ev) =>
+            {
+                txtnacimiento.Format = DateTimePickerFormat.Custom;
+                txtnacimiento.CustomFormat = "yyyy-MM-dd";
+            };
 
             txtañoculminado.Format = DateTimePickerFormat.Custom;
-            txtañoculminado.CustomFormat = "yyyy";
+            txtañoculminado.CustomFormat = " ";
+            txtañoculminado.ValueChanged += (s, ev) =>
+            {
+                txtañoculminado.Format = DateTimePickerFormat.Custom;
+                txtañoculminado.CustomFormat = "yyyy";
+            };
 
             txtfecha.Format = DateTimePickerFormat.Custom;
-            txtfecha.CustomFormat = "yyyy-MM-dd";
+            txtfecha.CustomFormat = " ";
+            txtfecha.ValueChanged += (s, ev) =>
+            {
+                txtfecha.Format = DateTimePickerFormat.Custom;
+                txtfecha.CustomFormat = "yyyy-MM-dd";
+            };
 
             txtfechapago.Format = DateTimePickerFormat.Custom;
-            txtfechapago.CustomFormat = "yyyy-MM-dd";
+            txtfechapago.CustomFormat = " ";
+            txtfechapago.ValueChanged += (s, ev) =>
+            {
+                txtfechapago.Format = DateTimePickerFormat.Custom;
+                txtfechapago.CustomFormat = "yyyy-MM-dd";
+            };
 
             CargarDepartamentos();
 
@@ -120,20 +138,14 @@ namespace CapaPresentacion
             cbosexo.SelectedIndex = -1;
             cbosexo.DisplayMember = "Texto";
             cbosexo.ValueMember = "Valor";
-            if (cbosexo.Items.Count > 0)
-            {
-                cbosexo.SelectedIndex = 0;
-            }
+            
 
             cbomedio.Items.Add(new OpcionCombo() { Valor = "Caja central", Texto = "Caja central" });
             cbomedio.Items.Add(new OpcionCombo() { Valor = "Banco de la Nacion", Texto = "Banco de la Nacion" });
             cbomedio.SelectedIndex = -1;
             cbomedio.DisplayMember = "Texto";
             cbomedio.ValueMember = "Valor";
-            if (cbomedio.Items.Count > 0)
-            {
-                cbomedio.SelectedIndex = 0;
-            }
+       
 
 
         }
@@ -146,10 +158,8 @@ namespace CapaPresentacion
             cbopago.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Deuda" });
             cbopago.DisplayMember = "Texto";
             cbopago.ValueMember = "Valor";
-            if (cbopago.Items.Count > 0)
-            {
-                cbopago.SelectedIndex = 0;
-            }
+            cbopago.SelectedIndex = -1;
+          
 
 
             // Inicializar ComboBox de tipodocumento
@@ -157,10 +167,8 @@ namespace CapaPresentacion
             cbodocumento.Items.Add(new OpcionCombo() { Valor = "Pasaporte", Texto = "Pasaporte" });
             cbodocumento.DisplayMember = "Texto";
             cbodocumento.ValueMember = "Valor";
-            if (cbodocumento.Items.Count > 0)
-            {
-                cbodocumento.SelectedIndex = 0;
-            }
+            cbodocumento.SelectedIndex = -1;
+          
 
 
             //inicializar Combobox 
@@ -169,10 +177,8 @@ namespace CapaPresentacion
             cboturno.Items.Add(new OpcionCombo() { Valor = "noche", Texto = "noche" });
             cboturno.DisplayMember = "Texto";
             cboturno.ValueMember = "Valor";
-            if (cboturno.Items.Count > 0)
-            {
-                cboturno.SelectedIndex = 0;
-            }
+            cboturno.SelectedIndex = -1;
+          
 
          
 

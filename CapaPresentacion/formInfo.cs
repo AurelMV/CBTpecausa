@@ -21,6 +21,7 @@ namespace CapaPresentacion
 {
     public partial class formInfo : Form
     {
+        private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
         public formInfo()
         {
             InitializeComponent();
@@ -42,40 +43,13 @@ namespace CapaPresentacion
 
         private void CargarGrupos()
         {
-            dataGridView1.Rows.Clear();  // Limpiar las filas existentes
-
-            try
-            {
-                List<Inscripcion> listarins = new CN_Inscripcion().Listar2();
-
-                foreach (Inscripcion item in listarins)
-                {
-                    string pagotexto = item.EstadoPago ? "Pagado" : "Deudor";
-
-                    // Añadir fila al DataGridView
-                    dataGridView1.Rows.Add(new object[] {
-                        item.IdInscripcion,
-
-                item.oEstudiante.Nombres, // Nombre del estudiante
-                item.oEstudiante.APaterno, // Apellido paterno del estudiante
-                item.oEstudiante.AMaterno, // Apellido materno del estudiante
-                pagotexto, // Estado de pago (Pagado o Deudor)
-                item.oProgramaEstudios.nombre,
-                item.oGrupo.NombreGrupo   ,// Nombre del programa de estudios
-                item.oCicloInscripcion.nombreCiclo // Nombre del ciclo de inscripción
-                 
-            });
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los grupos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+          
         }
 
         private void formInfo_Load(object sender, EventArgs e)
         {
-            CargarGrupos();
+            
+            cargarciclos();
 
             foreach (DataGridViewColumn columna in dataGridView1.Columns)
             {
@@ -191,6 +165,59 @@ namespace CapaPresentacion
                 }
             }
 
+
+
+        }
+        private void cargarciclos()
+        {
+            List<CicloInscripcion> ciclo = cnciclo.listar();
+            cbociclo.DataSource = ciclo;
+            cbociclo.DisplayMember = "nombreCiclo";
+            cbociclo.ValueMember = "idciclo";
+            cbociclo.SelectedIndex = -1; 
+
+        }
+
+        private void cbociclo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbociclo.SelectedIndex == -1 || cbociclo.SelectedValue == null)
+                return;
+
+            int idciclo;
+            if (!int.TryParse(cbociclo.SelectedValue.ToString(), out idciclo))
+            {
+                MessageBox.Show("Selecciona un ciclo válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dataGridView1.Rows.Clear();
+
+            try
+            {
+                List<Inscripcion> listarins = new CN_Inscripcion().Listar2(idciclo);
+
+                foreach (Inscripcion item in listarins)
+                {
+                    string pagotexto = item.EstadoPago ? "Pagado" : "Deudor";
+
+                    dataGridView1.Rows.Add(new object[] {
+                item.IdInscripcion,
+                item.oEstudiante.Nombres,
+                item.oEstudiante.APaterno,
+                item.oEstudiante.AMaterno,
+                item.oEstudiante.Edad,
+                pagotexto,
+                item.oProgramaEstudios.nombre,
+                item.oGrupo.NombreGrupo,
+                item.oCicloInscripcion.nombreCiclo
+            });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los grupos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
