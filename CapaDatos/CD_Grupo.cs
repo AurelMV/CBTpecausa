@@ -66,6 +66,99 @@ namespace CapaDatos
         }
 
 
+        public List<Grupo> Listarespecifico(int idCiclo)
+        {
+            List<Grupo> lista = new List<Grupo>();
+
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT g.idGrupos, g.nombreGrupo, g.aforo, g.estado, c.idciclo, c.nombreCiclo,");
+                    query.AppendLine("(SELECT COUNT(*) FROM Inscripcion i WHERE i.idGrupos = g.idGrupos) AS inscripcionesRealizadas");
+                    query.AppendLine("FROM Grupos g");
+                    query.AppendLine("INNER JOIN cicloInscripcion c ON g.idciclo = c.idciclo");
+                    query.AppendLine("WHERE g.idciclo = @idCiclo");  // Filtrar por el ID del ciclo
+
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), conexion))
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.Parameters.AddWithValue("@idCiclo", idCiclo);  // Añadir el parámetro
+
+                        conexion.Open();
+
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                Grupo grupo = new Grupo
+                                {
+                                    IdGrupos = Convert.ToInt32(dr["idGrupos"]),
+                                    NombreGrupo = dr["nombreGrupo"].ToString(),
+                                    Aforo = Convert.ToInt32(dr["aforo"]),
+                                    Estado = Convert.ToBoolean(dr["estado"]),
+                                    // Agregar datos del ciclo
+                                    oCicloinscripcion = new CicloInscripcion
+                                    {
+                                        idciclo = Convert.ToInt32(dr["idciclo"]),
+                                        nombreCiclo = dr["nombreCiclo"].ToString()
+                                    },
+                                    // Capturar el nuevo campo inscripcionesRealizadas
+                                    InscripcionesRealizadas = Convert.ToInt32(dr["inscripcionesRealizadas"])
+                                };
+
+                                lista.Add(grupo);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<Grupo>();
+                    // Manejar la excepción según tu aplicación
+                }
+            }
+
+            return lista;
+        }
+
+
+        public static DataTable ObtenerInscripcionesPorGrupo(int idGrupo)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                using (SqlCommand cmd = new SqlCommand("ObtenerInscripcionesPorGrupo", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
+        public static DataTable ObtenerInscripcionesPorGrupoDeudores(int idGrupo)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                using (SqlCommand cmd = new SqlCommand("ObtenerInscripcionesPorGrupoDeudores", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
+
+
+
+
+
 
 
         public List<Grupo> Listargrupconcicloyactivo(int idciclo)
@@ -241,7 +334,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT idGrupos, nombreGrupo, aforo, fechaGrupos, estado FROM Grupos WHERE estado= 1");
+                    query.AppendLine("SELECT idGrupos, nombreGrupo, aforo,  estado FROM Grupos WHERE estado= 1");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -296,6 +389,8 @@ namespace CapaDatos
                 }
             }
         }
+
+
 
     }
 }

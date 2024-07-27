@@ -14,6 +14,7 @@ using System.Globalization;
 using System.Windows.Documents;
 using Microsoft.IdentityModel.Abstractions;
 using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
 
 
 
@@ -26,6 +27,9 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+
+        private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
+        private CN_Grupo cngrupo = new CN_Grupo();
 
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -152,26 +156,14 @@ namespace CapaPresentacion
 
 
 
-            foreach (DataGridViewColumn columna in dataGridView1.Columns)
-            {
-
-                if (columna.Visible == true)
-                {
-                    cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
-
-                }
-               
-
-
-            }
-            cbobusqueda.DisplayMember = "Texto";
-            cbobusqueda.ValueMember = "Valor";
-            cbobusqueda.SelectedIndex = 0;
+          
 
             InicializarComboBox();
             CargarGrupos();
+            cargarciclos();
 
-            
+
+
         }
 
 
@@ -180,7 +172,9 @@ namespace CapaPresentacion
             txtidgrupo.Text = "0";
             txtnombre.Text = "";
             txtaforo.Text = "";
-
+            btnEstuR.Visible = false;
+            BtnEstd.Visible = false;
+            dataGridView2.Visible = false;
 
             cboestado.SelectedIndex=0;
 
@@ -272,6 +266,10 @@ namespace CapaPresentacion
                     int indice = e.RowIndex;
                     if (indice >= 0)
                     {
+
+                        btnEstuR.Visible = true;
+                        BtnEstd.Visible = true;
+                        dataGridView2.Visible = true;
                         txtindice.Text = indice.ToString();
 
                         txtidgrupo.Text = dataGridView1.Rows[indice].Cells["id"].Value?.ToString() ?? string.Empty;
@@ -321,34 +319,34 @@ namespace CapaPresentacion
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            
-            
-                string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
-                string textoBusqueda = txtfechabus2.Text.Trim().ToUpper();
+          
+            int idciclo = Convert.ToInt32(cbociclos2.SelectedValue);     
+            dataGridView1.Rows.Clear();
+      
+            List<Grupo> grupos = cngrupo.Listar2(idciclo);
 
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[columnaFiltro].Value != null)
-                    {
-                        string valorCelda = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
-
-                        
-                        bool contieneTexto = valorCelda.Contains(textoBusqueda);
-
-                    
-                        row.Visible = contieneTexto;
-                    }
-                    else
-                    {
-                       
-                        row.Visible = true;
-                    }
-                }
-            
-            
+            foreach (Grupo item in grupos)
+            {
+                string estadoTexto = item.Estado ? "Activo" : "No Activo";
+                int estadoValor = item.Estado ? 1 : 0;
+              
+                dataGridView1.Rows.Add(new object[] {
+            "", item.IdGrupos, item.NombreGrupo, item.Aforo, estadoValor, estadoTexto, item.oCicloinscripcion.idciclo, item.oCicloinscripcion.nombreCiclo, item.InscripcionesRealizadas
+        });
+            }
         }
 
 
+
+        private void cargarciclos()
+        {
+            List<CicloInscripcion> ciclo = cnciclo.listar();
+            cbociclos2.DataSource = ciclo;
+            cbociclos2.DisplayMember = "nombreCiclo";
+            cbociclos2.ValueMember = "idciclo";
+            cbociclos2.SelectedIndex = -1;
+
+        }
 
 
         private void txtfechabuscar_TextChanged(object sender, EventArgs e)
@@ -410,6 +408,34 @@ namespace CapaPresentacion
                 MessageBox.Show("Ingrese valores válidos para la cantidad y el ID del grupo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            int idGrupo;
+            if (int.TryParse(txtidgrupo.Text, out idGrupo))
+            {
+                DataTable dt = CN_Grupo.ObtenerInscripcionesPorGrupo(idGrupo);
+                dataGridView2.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID de grupo válido.");
+            }
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            int idGrupo;
+            if (int.TryParse(txtidgrupo.Text, out idGrupo))
+            {
+                DataTable dt = CN_Grupo.ObtenerInscripcionesPorGrupoDeudores(idGrupo);
+                dataGridView2.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID de grupo válido.");
+            }
         }
     }
 }

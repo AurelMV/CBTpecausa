@@ -30,9 +30,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,20 +40,6 @@ namespace CapaPresentacion
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtaforo = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboestado = new System.Windows.Forms.ComboBox();
-            this.txtidgrupo = new System.Windows.Forms.TextBox();
-            this.txtindice = new System.Windows.Forms.TextBox();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtfechabus2 = new System.Windows.Forms.TextBox();
-            this.cbobusqueda = new System.Windows.Forms.ComboBox();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.Ciclo = new System.Windows.Forms.Label();
-            this.cbciclo = new System.Windows.Forms.ComboBox();
             this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,11 +49,28 @@ namespace CapaPresentacion
             this.Cicloins = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cicloval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inscripciones_Realizadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboestado = new System.Windows.Forms.ComboBox();
+            this.txtidgrupo = new System.Windows.Forms.TextBox();
+            this.txtindice = new System.Windows.Forms.TextBox();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.Ciclo = new System.Windows.Forms.Label();
+            this.cbciclo = new System.Windows.Forms.ComboBox();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.txtcantidad = new System.Windows.Forms.TextBox();
             this.btnsumar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnEstuR = new FontAwesome.Sharp.IconButton();
+            this.BtnEstd = new FontAwesome.Sharp.IconButton();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cbociclos2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +80,7 @@ namespace CapaPresentacion
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 631);
+            this.label1.Size = new System.Drawing.Size(352, 809);
             this.label1.TabIndex = 1;
             // 
             // label2
@@ -132,21 +135,21 @@ namespace CapaPresentacion
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.boton,
@@ -162,20 +165,90 @@ namespace CapaPresentacion
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(807, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(1130, 315);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
+            // 
+            // boton
+            // 
+            this.boton.FillWeight = 50F;
+            this.boton.HeaderText = "";
+            this.boton.Name = "boton";
+            this.boton.ReadOnly = true;
+            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "idGrupo";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.FillWeight = 109.1463F;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Aforo
+            // 
+            this.Aforo.FillWeight = 109.1463F;
+            this.Aforo.HeaderText = "Aforo";
+            this.Aforo.MinimumWidth = 6;
+            this.Aforo.Name = "Aforo";
+            this.Aforo.ReadOnly = true;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.MinimumWidth = 6;
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.FillWeight = 109.1463F;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Cicloins
+            // 
+            this.Cicloins.HeaderText = "Cicloins";
+            this.Cicloins.Name = "Cicloins";
+            this.Cicloins.ReadOnly = true;
+            this.Cicloins.Visible = false;
+            // 
+            // Cicloval
+            // 
+            this.Cicloval.FillWeight = 109.1463F;
+            this.Cicloval.HeaderText = "cicloval";
+            this.Cicloval.Name = "Cicloval";
+            this.Cicloval.ReadOnly = true;
+            // 
+            // Inscripciones_Realizadas
+            // 
+            this.Inscripciones_Realizadas.FillWeight = 109.1463F;
+            this.Inscripciones_Realizadas.HeaderText = "Inscripciones_Realizadas";
+            this.Inscripciones_Realizadas.Name = "Inscripciones_Realizadas";
+            this.Inscripciones_Realizadas.ReadOnly = true;
             // 
             // label7
             // 
@@ -296,23 +369,6 @@ namespace CapaPresentacion
             this.label8.TabIndex = 24;
             this.label8.Text = "Ingrese la clase de filtrado ";
             // 
-            // txtfechabus2
-            // 
-            this.txtfechabus2.Location = new System.Drawing.Point(609, 68);
-            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtfechabus2.Name = "txtfechabus2";
-            this.txtfechabus2.Size = new System.Drawing.Size(112, 20);
-            this.txtfechabus2.TabIndex = 25;
-            // 
-            // cbobusqueda
-            // 
-            this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(501, 67);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
-            this.cbobusqueda.TabIndex = 26;
-            // 
             // iconButton4
             // 
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
@@ -347,78 +403,9 @@ namespace CapaPresentacion
             this.cbciclo.Size = new System.Drawing.Size(177, 21);
             this.cbciclo.TabIndex = 29;
             // 
-            // boton
-            // 
-            this.boton.FillWeight = 50F;
-            this.boton.HeaderText = "";
-            this.boton.Name = "boton";
-            this.boton.ReadOnly = true;
-            this.boton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.boton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "idGrupo";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.FillWeight = 109.1463F;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Aforo
-            // 
-            this.Aforo.FillWeight = 109.1463F;
-            this.Aforo.HeaderText = "Aforo";
-            this.Aforo.MinimumWidth = 6;
-            this.Aforo.Name = "Aforo";
-            this.Aforo.ReadOnly = true;
-            // 
-            // EstadoValor
-            // 
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.MinimumWidth = 6;
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            // 
-            // Estado
-            // 
-            this.Estado.FillWeight = 109.1463F;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Cicloins
-            // 
-            this.Cicloins.HeaderText = "Cicloins";
-            this.Cicloins.Name = "Cicloins";
-            this.Cicloins.ReadOnly = true;
-            this.Cicloins.Visible = false;
-            // 
-            // Cicloval
-            // 
-            this.Cicloval.FillWeight = 109.1463F;
-            this.Cicloval.HeaderText = "cicloval";
-            this.Cicloval.Name = "Cicloval";
-            this.Cicloval.ReadOnly = true;
-            // 
-            // Inscripciones_Realizadas
-            // 
-            this.Inscripciones_Realizadas.FillWeight = 109.1463F;
-            this.Inscripciones_Realizadas.HeaderText = "Inscripciones_Realizadas";
-            this.Inscripciones_Realizadas.Name = "Inscripciones_Realizadas";
-            this.Inscripciones_Realizadas.ReadOnly = true;
-            // 
             // iconButton5
             // 
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -460,12 +447,61 @@ namespace CapaPresentacion
             this.label6.Text = "+";
             this.label6.Visible = false;
             // 
+            // btnEstuR
+            // 
+            this.btnEstuR.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnEstuR.IconColor = System.Drawing.Color.Black;
+            this.btnEstuR.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEstuR.Location = new System.Drawing.Point(405, 427);
+            this.btnEstuR.Name = "btnEstuR";
+            this.btnEstuR.Size = new System.Drawing.Size(147, 48);
+            this.btnEstuR.TabIndex = 34;
+            this.btnEstuR.Text = "Visualizar Estudiantes registrados ";
+            this.btnEstuR.UseVisualStyleBackColor = true;
+            this.btnEstuR.Visible = false;
+            this.btnEstuR.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
+            // BtnEstd
+            // 
+            this.BtnEstd.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.BtnEstd.IconColor = System.Drawing.Color.Black;
+            this.BtnEstd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnEstd.Location = new System.Drawing.Point(574, 427);
+            this.BtnEstd.Name = "BtnEstd";
+            this.BtnEstd.Size = new System.Drawing.Size(147, 48);
+            this.BtnEstd.TabIndex = 35;
+            this.BtnEstd.Text = "Estudiantes Reegistrados Deudores";
+            this.BtnEstd.UseVisualStyleBackColor = true;
+            this.BtnEstd.Visible = false;
+            this.BtnEstd.Click += new System.EventHandler(this.iconButton7_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(405, 484);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1130, 313);
+            this.dataGridView2.TabIndex = 36;
+            this.dataGridView2.Visible = false;
+            // 
+            // cbociclos2
+            // 
+            this.cbociclos2.FormattingEnabled = true;
+            this.cbociclos2.Location = new System.Drawing.Point(509, 69);
+            this.cbociclos2.Name = "cbociclos2";
+            this.cbociclos2.Size = new System.Drawing.Size(177, 21);
+            this.cbociclos2.TabIndex = 37;
+            // 
             // formGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1242, 631);
+            this.ClientSize = new System.Drawing.Size(1575, 809);
+            this.Controls.Add(this.cbociclos2);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.BtnEstd);
+            this.Controls.Add(this.btnEstuR);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnsumar);
             this.Controls.Add(this.txtcantidad);
@@ -473,8 +509,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.cbciclo);
             this.Controls.Add(this.Ciclo);
             this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.cbobusqueda);
-            this.Controls.Add(this.txtfechabus2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.txtindice);
@@ -496,6 +530,7 @@ namespace CapaPresentacion
             this.Text = "formGrupos";
             this.Load += new System.EventHandler(this.formGrupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,8 +554,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtindice;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtfechabus2;
-        private System.Windows.Forms.ComboBox cbobusqueda;
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Label Ciclo;
         private System.Windows.Forms.ComboBox cbciclo;
@@ -537,5 +570,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox txtcantidad;
         private System.Windows.Forms.Button btnsumar;
         private System.Windows.Forms.Label label6;
+        private IconButton btnEstuR;
+        private IconButton BtnEstd;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox cbociclos2;
     }
 }
