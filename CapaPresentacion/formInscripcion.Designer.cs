@@ -97,6 +97,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -352,7 +353,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 55;
-            this.iconButton1.Location = new System.Drawing.Point(544, 88);
+            this.iconButton1.Location = new System.Drawing.Point(559, 104);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(152, 72);
@@ -827,6 +828,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label32);
             this.panel3.Controls.Add(this.label23);
             this.panel3.Controls.Add(this.cboturno);
             this.panel3.Controls.Add(this.label22);
@@ -867,6 +869,15 @@
             this.button1.Text = "Subir Imagen";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(446, 91);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 71;
+            this.label32.Text = "......................";
             // 
             // formInscripcion
             // 
@@ -972,5 +983,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox cbomedio;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label32;
     }
 }

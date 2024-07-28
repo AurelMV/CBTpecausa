@@ -30,6 +30,7 @@ namespace CapaPresentacion
         private CN_Colegio cnColegio = new CN_Colegio();
         private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
 
+
         private CN_Grupo cngrupo = new CN_Grupo();
 
         private Usuario usuario;
@@ -79,19 +80,7 @@ namespace CapaPresentacion
 
 
 
-            List<Grupo> listgrup = new CN_Grupo().Listar();
-            cbogrupo.Items.Clear();
-            foreach (Grupo item in listgrup)
-            {
-                cbogrupo.Items.Add(new OpcionCombo() { Valor = item.IdGrupos, Texto = item.NombreGrupo });
-            }
-            cbogrupo.DisplayMember = "Texto";
-            cbogrupo.ValueMember = "Valor";
-            if (cbogrupo.Items.Count > 0)
-            {
-                cbogrupo.SelectedIndex = 0;
-            }
-
+           
 
 
             txtnacimiento.Format = DateTimePickerFormat.Custom;
@@ -350,8 +339,6 @@ namespace CapaPresentacion
                     MessageBox.Show("Formato de fecha inválido. Por favor, ingrese la fecha en formato yyyy-MM-dd.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                // Crear nuevo estudiante
                 Estudiante nuevoEstudiante = new Estudiante
                 {
                     Nombres = nombres,
@@ -656,7 +643,26 @@ namespace CapaPresentacion
 
         private void cbogrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (cbogrupo.SelectedIndex == -1 || cbogrupo.SelectedValue == null)
+                return;
+
+            int idGrupo;
+            if (!int.TryParse(cbogrupo.SelectedValue.ToString(), out idGrupo))
+            {
+               return;
+            }
+
+            try
+            {
+                int aforoDisponible = cngrupo.ObtenerAforoDisponible(idGrupo);
+                label32.Text = $"Aforo disponible: {aforoDisponible}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el aforo disponible: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

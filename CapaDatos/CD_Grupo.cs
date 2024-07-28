@@ -390,7 +390,32 @@ namespace CapaDatos
             }
         }
 
+        public int ObtenerAforoDisponible(int idGrupo)
+        {
+            int aforoDisponible = 0;
 
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT aforo FROM Grupos WHERE idGrupos = @idGrupo");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                    cmd.Parameters.AddWithValue("@idGrupo", idGrupo);
+                    conexion.Open();
+
+                    aforoDisponible = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    // Manejar la excepción según tu lógica de negocio
+                    throw new Exception("Error al obtener el aforo disponible: " + ex.Message);
+                }
+            }
+
+            return aforoDisponible;
+        }
 
     }
 }

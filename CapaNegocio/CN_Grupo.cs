@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using CapaDatos;
 using CapadeEntidad;
 using System.Data;
+using System.Data.SqlClient;
+using CapaDatos1;
 
 namespace CapaNegocio
 {
@@ -75,6 +77,12 @@ namespace CapaNegocio
         public static DataTable ObtenerInscripcionesPorGrupoDeudores(int idGrupo)
         {
             return CD_Grupo.ObtenerInscripcionesPorGrupoDeudores(idGrupo);
+        }
+
+
+        public int ObtenerAforoDisponible(int idGrupo)
+        {
+            return objcd_grupo.ObtenerAforoDisponible(idGrupo);
         }
     }
 }
