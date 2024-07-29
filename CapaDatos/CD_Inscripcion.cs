@@ -74,7 +74,94 @@ namespace CapaDatos
             return lista;
         }
 
+        public List<Inscripcion> Listar3(int idciclo)
+{
+            List<Inscripcion> lista = new List<Inscripcion>();
 
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("SELECT i.idInscripcion, i.turno, i.fechaInscripcion, i.estadopago, ");
+                    query.AppendLine("e.idEstudiante, e.nombres AS NombreEstudiante, e.aPaterno, e.aMaterno, ");
+                    query.AppendLine("c.idciclo, c.nombreCiclo AS NombreCiclo, ");
+                    query.AppendLine("p.idprogramaestudios, p.nombre AS NombreProgramaEstudios, ");
+                    query.AppendLine("u.idusuarios, u.nombre AS Usuario, ");
+                    query.AppendLine("g.idGrupos, g.nombreGrupo AS NombreGrupo, ");
+                    query.AppendLine("ISNULL(SUM(pg.monto), 0) AS Monto ");
+                    query.AppendLine("FROM Inscripcion i ");
+                    query.AppendLine("JOIN estudiantes e ON i.idEstudiante = e.idEstudiante ");
+                    query.AppendLine("JOIN cicloInscripcion c ON i.idciclo = c.idciclo ");
+                    query.AppendLine("JOIN programaestudios p ON i.idprogramaestudios = p.idprogramaestudios ");
+                    query.AppendLine("JOIN usuarios u ON i.idusuarios = u.idusuarios ");
+                    query.AppendLine("JOIN Grupos g ON i.idGrupos = g.idGrupos ");
+                    query.AppendLine("LEFT JOIN pagos pg ON i.idInscripcion = pg.idInscripcion ");
+                    query.AppendLine("WHERE c.idciclo = @idciclo ");
+                    query.AppendLine("GROUP BY i.idInscripcion, i.turno, i.fechaInscripcion, i.estadopago, ");
+                    query.AppendLine("e.idEstudiante, e.nombres, e.aPaterno, e.aMaterno, ");
+                    query.AppendLine("c.idciclo, c.nombreCiclo, ");
+                    query.AppendLine("p.idprogramaestudios, p.nombre, ");
+                    query.AppendLine("u.idusuarios, u.nombre, ");
+                    query.AppendLine("g.idGrupos, g.nombreGrupo;");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("@idciclo", idciclo);
+                    conexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            Inscripcion inscripcion = new Inscripcion
+                            {
+                                IdInscripcion = Convert.ToInt32(dr["idInscripcion"]),
+                                Turno = dr["turno"].ToString(),
+                                FechaInscripcion = Convert.ToDateTime(dr["fechaInscripcion"]),
+                                EstadoPago = Convert.ToBoolean(dr["estadopago"]),
+                                Monto = Convert.ToDecimal(dr["Monto"]),
+                                oEstudiante = new Estudiante
+                                {
+                                    IdEstudiante = dr["idEstudiante"].ToString(),
+                                    Nombres = dr["NombreEstudiante"].ToString(),
+                                    APaterno = dr["aPaterno"].ToString(),
+                                    AMaterno = dr["aMaterno"].ToString()
+                                },
+                                oCicloInscripcion = new CicloInscripcion
+                                {
+                                    idciclo = Convert.ToInt32(dr["idciclo"]),
+                                    nombreCiclo = dr["NombreCiclo"].ToString()
+                                },
+                                oProgramaEstudios = new ProgramaEstudios
+                                {
+                                    idprogramaestudios = Convert.ToInt32(dr["idprogramaestudios"]),
+                                    nombre = dr["NombreProgramaEstudios"].ToString()
+                                },
+                                oUsuario = new Usuario
+                                {
+                                    idusuarios = dr["idusuarios"].ToString(),
+                                    nombre = dr["Usuario"].ToString()
+                                },
+                                oGrupo = new Grupo
+                                {
+                                    IdGrupos = Convert.ToInt32(dr["idGrupos"]),
+                                    NombreGrupo = dr["NombreGrupo"].ToString()
+                                }
+                            };
+
+                            lista.Add(inscripcion);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<Inscripcion>();
+                }
+            }
+
+            return lista;
+        }
 
         public bool Modificar(Inscripcion obj, out string Mensaje)
         {

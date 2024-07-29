@@ -95,9 +95,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbomedio = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -139,6 +139,7 @@
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(129, 20);
             this.txtmonto.TabIndex = 27;
+            this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmonto_KeyPress);
             // 
             // label11
             // 
@@ -448,6 +449,7 @@
             this.txtcelular.Name = "txtcelular";
             this.txtcelular.Size = new System.Drawing.Size(162, 20);
             this.txtcelular.TabIndex = 61;
+            this.txtcelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcelular_KeyPress);
             // 
             // txtdeni
             // 
@@ -456,6 +458,7 @@
             this.txtdeni.Name = "txtdeni";
             this.txtdeni.Size = new System.Drawing.Size(160, 20);
             this.txtdeni.TabIndex = 60;
+            this.txtdeni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdeni_KeyPress);
             // 
             // txtamaterno
             // 
@@ -717,6 +720,7 @@
             this.txtnroapoderado.Name = "txtnroapoderado";
             this.txtnroapoderado.Size = new System.Drawing.Size(162, 20);
             this.txtnroapoderado.TabIndex = 77;
+            this.txtnroapoderado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnroapoderado_KeyPress);
             // 
             // label29
             // 
@@ -850,6 +854,15 @@
             this.panel3.Size = new System.Drawing.Size(724, 180);
             this.panel3.TabIndex = 74;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(446, 91);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 71;
+            this.label32.Text = "......................";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -869,15 +882,6 @@
             this.button1.Text = "Subir Imagen";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(446, 91);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(73, 13);
-            this.label32.TabIndex = 71;
-            this.label32.Text = "......................";
             // 
             // formInscripcion
             // 

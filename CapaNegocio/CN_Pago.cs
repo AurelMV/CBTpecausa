@@ -11,9 +11,9 @@ namespace CapaNegocio
     public class CN_Pago
     {
         private CD_Pago obj_pago = new CD_Pago();
-        public List<Pago> Listar()
+        public List<Pago> Listar(int idciclo)
         {
-            return obj_pago.Listar();
+            return obj_pago.Listar(idciclo);
         }
 
         public bool Registrar(Pago obj, out String Mensaje)

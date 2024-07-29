@@ -9,6 +9,7 @@ namespace CapaEntidad
     public class Inscripcion
     {
         public int IdInscripcion { get; set; }
+        public Decimal Monto { get; set; }
         public string Turno { get; set; }
         public DateTime FechaInscripcion { get; set; }
         public bool EstadoPago { get; set; }

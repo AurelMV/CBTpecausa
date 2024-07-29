@@ -15,6 +15,11 @@ namespace CapaNegocio
         {
             return obj_inscriplis.Listar();
         }
+
+        public List<Inscripcion> Listar3(int idciclo)
+        {
+            return obj_inscriplis.Listar3(idciclo);
+        }
         public List<Inscripcion> Listar2(int idciclo)
         {
             return obj_inscriplis.Listar2(idciclo);

@@ -320,6 +320,8 @@ namespace CapaPresentacion
         private void iconButton3_Click(object sender, EventArgs e)
         {
           
+
+
             int idciclo = Convert.ToInt32(cbociclos2.SelectedValue);     
             dataGridView1.Rows.Clear();
       
@@ -435,6 +437,22 @@ namespace CapaPresentacion
             else
             {
                 MessageBox.Show("Por favor, ingrese un ID de grupo válido.");
+            }
+        }
+
+        private void txtaforo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }

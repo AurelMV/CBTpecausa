@@ -173,7 +173,7 @@
             this.txtfecha.CustomFormat = "yyyy-MM-dd";
             this.txtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtfecha.Location = new System.Drawing.Point(20, 91);
-            this.txtfecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(151, 20);
             this.txtfecha.TabIndex = 10;
@@ -182,7 +182,7 @@
             // 
             this.txtestudiante.Enabled = false;
             this.txtestudiante.Location = new System.Drawing.Point(243, 42);
-            this.txtestudiante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtestudiante.Margin = new System.Windows.Forms.Padding(2);
             this.txtestudiante.Name = "txtestudiante";
             this.txtestudiante.Size = new System.Drawing.Size(76, 20);
             this.txtestudiante.TabIndex = 11;
@@ -191,7 +191,7 @@
             // 
             this.cbociclo.FormattingEnabled = true;
             this.cbociclo.Location = new System.Drawing.Point(243, 78);
-            this.cbociclo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbociclo.Margin = new System.Windows.Forms.Padding(2);
             this.cbociclo.Name = "cbociclo";
             this.cbociclo.Size = new System.Drawing.Size(92, 21);
             this.cbociclo.TabIndex = 12;
@@ -200,7 +200,7 @@
             // 
             this.cboprograma.FormattingEnabled = true;
             this.cboprograma.Location = new System.Drawing.Point(302, 115);
-            this.cboprograma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboprograma.Margin = new System.Windows.Forms.Padding(2);
             this.cboprograma.Name = "cboprograma";
             this.cboprograma.Size = new System.Drawing.Size(92, 21);
             this.cboprograma.TabIndex = 13;
@@ -209,7 +209,7 @@
             // 
             this.cbogrupo.FormattingEnabled = true;
             this.cbogrupo.Location = new System.Drawing.Point(412, 52);
-            this.cbogrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbogrupo.Margin = new System.Windows.Forms.Padding(2);
             this.cbogrupo.Name = "cbogrupo";
             this.cbogrupo.Size = new System.Drawing.Size(92, 21);
             this.cbogrupo.TabIndex = 14;
@@ -218,7 +218,7 @@
             // 
             this.cbopago.FormattingEnabled = true;
             this.cbopago.Location = new System.Drawing.Point(34, 145);
-            this.cbopago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbopago.Margin = new System.Windows.Forms.Padding(2);
             this.cbopago.Name = "cbopago";
             this.cbopago.Size = new System.Drawing.Size(92, 21);
             this.cbopago.TabIndex = 15;
@@ -228,7 +228,7 @@
             // 
             this.cboturno.FormattingEnabled = true;
             this.cboturno.Location = new System.Drawing.Point(54, 32);
-            this.cboturno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboturno.Margin = new System.Windows.Forms.Padding(2);
             this.cboturno.Name = "cboturno";
             this.cboturno.Size = new System.Drawing.Size(92, 21);
             this.cboturno.TabIndex = 17;
@@ -268,7 +268,7 @@
             this.idGrupo,
             this.Grupo});
             this.dataGridView1.Location = new System.Drawing.Point(20, 237);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -427,7 +427,7 @@
             // txtindice
             // 
             this.txtindice.Location = new System.Drawing.Point(139, 6);
-            this.txtindice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtindice.Margin = new System.Windows.Forms.Padding(2);
             this.txtindice.Name = "txtindice";
             this.txtindice.Size = new System.Drawing.Size(49, 20);
             this.txtindice.TabIndex = 24;
@@ -437,7 +437,7 @@
             // txtidinscripcion
             // 
             this.txtidinscripcion.Location = new System.Drawing.Point(202, 6);
-            this.txtidinscripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidinscripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtidinscripcion.Name = "txtidinscripcion";
             this.txtidinscripcion.Size = new System.Drawing.Size(76, 20);
             this.txtidinscripcion.TabIndex = 23;
@@ -454,7 +454,7 @@
             this.iconButton1.IconSize = 30;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.Location = new System.Drawing.Point(412, 154);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(294, 29);
             this.iconButton1.TabIndex = 22;
@@ -467,7 +467,7 @@
             // 
             this.txtusuario.Enabled = false;
             this.txtusuario.Location = new System.Drawing.Point(270, 154);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(76, 20);
             this.txtusuario.TabIndex = 25;
@@ -475,7 +475,7 @@
             // txtidusuario
             // 
             this.txtidusuario.Location = new System.Drawing.Point(538, 27);
-            this.txtidusuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidusuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtidusuario.Name = "txtidusuario";
             this.txtidusuario.Size = new System.Drawing.Size(76, 20);
             this.txtidusuario.TabIndex = 26;
@@ -484,7 +484,7 @@
             // txtidestudiante
             // 
             this.txtidestudiante.Location = new System.Drawing.Point(538, 65);
-            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2);
             this.txtidestudiante.Name = "txtidestudiante";
             this.txtidestudiante.Size = new System.Drawing.Size(76, 20);
             this.txtidestudiante.TabIndex = 27;
@@ -493,7 +493,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(145, 217);
+            this.label9.Location = new System.Drawing.Point(25, 214);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 13);
@@ -502,8 +502,8 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(377, 211);
-            this.txtbusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtbusqueda.Location = new System.Drawing.Point(208, 211);
+            this.txtbusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(127, 20);
             this.txtbusqueda.TabIndex = 38;
@@ -511,8 +511,8 @@
             // cbobusqueda
             // 
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(269, 211);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbobusqueda.Location = new System.Drawing.Point(112, 209);
+            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
             this.cbobusqueda.TabIndex = 37;
@@ -524,8 +524,8 @@
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton5.IconSize = 30;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(628, 203);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton5.Location = new System.Drawing.Point(442, 205);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Size = new System.Drawing.Size(87, 30);
             this.iconButton5.TabIndex = 36;
@@ -540,8 +540,8 @@
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton6.IconSize = 30;
-            this.iconButton6.Location = new System.Drawing.Point(524, 203);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButton6.Location = new System.Drawing.Point(339, 205);
+            this.iconButton6.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton6.Name = "iconButton6";
             this.iconButton6.Size = new System.Drawing.Size(99, 30);
             this.iconButton6.TabIndex = 35;
@@ -584,7 +584,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Turno);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formGestionInscripcion";
             this.Text = "GestionInscripcion";
             this.Load += new System.EventHandler(this.formGestionInscripcion_Load);

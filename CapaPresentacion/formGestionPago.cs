@@ -16,6 +16,7 @@ namespace CapaPresentacion
 {
     public partial class formGestionPago : Form
     {
+        private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
         public formGestionPago()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace CapaPresentacion
 
         }
 
+
         private void CargarInscripcion()
         {
             dataGridView2.Rows.Clear();  // Limpiar las filas existentes
@@ -74,33 +76,13 @@ namespace CapaPresentacion
             }
         }
 
+
+
+
+
         private void CargarPago()
         {
-            dataGridView1.Rows.Clear();  // Limpiar las filas existentes
-            List<Pago> listarPagos = new CN_Pago().Listar();
-
-            foreach (Pago item in listarPagos)
-            {
-                string pagotexto = item.oInscripcion.EstadoPago ? "Pagado" : "Deudor";
-                int pagovalor = item.oInscripcion.EstadoPago ? 1 : 0;
-
-                dataGridView1.Rows.Add(new object[] {
-            "",
-            item.IdPago,
-            item.Fecha.ToString("yyyy-MM-dd"),
-            item.Monto,
-            item.MedioPago,
-            item.NroVoucher,
-            item.oInscripcion.IdInscripcion,
-            item.oInscripcion.FechaInscripcion.ToString("yyyy-MM-dd"),
-            pagovalor,
-            pagotexto,
-            item.oInscripcion.oEstudiante.IdEstudiante,
-            item.oInscripcion.oEstudiante.Nombres,
-            item.oInscripcion.oEstudiante.APaterno,
-            item.oInscripcion.oEstudiante.AMaterno
-        });
-            }
+         
         }
 
         private string GenerarIdDinamico(string nroVoucher, DateTime fecha)
@@ -118,8 +100,23 @@ namespace CapaPresentacion
 
         private void formGestionPago_Load(object sender, EventArgs e)
         {
+
+            txtidinscripcion.Clear();
+   
+            txtestudiante.Clear();
+           
+
+
+            txtidestudiante.Clear();
+           
+            txtbusqueda.Clear();
+
+            cbociclo.SelectedIndex = -1;
+   
+            cbobusqueda.SelectedIndex = -1;
             CargarInscripcion();
-            CargarPago();
+            cargarciclos1();
+            cargarciclos2();
             txtfecha.Format = DateTimePickerFormat.Custom;
             txtfecha.CustomFormat = "yyyy-MM-dd";
 
@@ -155,15 +152,7 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool newVisibility = !cbobusqueda2.Visible;
-
-            cbobusqueda2.Visible = newVisibility;
-            dataGridView2.Visible = newVisibility;
-            txtbusqueda2.Visible = newVisibility;
-
-
-            btnbuscar2.Visible = newVisibility;
-            btncargar2.Visible = newVisibility;
+           
         }
 
         private void btncargar2_Click(object sender, EventArgs e)
@@ -329,16 +318,30 @@ namespace CapaPresentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            bool newVisibility = !cbobusqueda2.Visible;
+            iconButton4.Visible = newVisibility;
+            cbobusqueda2.Visible = newVisibility;
+            dataGridView2.Visible = newVisibility;
+            txtbusqueda2.Visible = newVisibility;
+            label2.Visible = newVisibility;
+            dataGridView1.Visible = !dataGridView1.Visible;
+            LimpiarCampos();
+            btnbuscar2.Visible = newVisibility;
+            btncargar2.Visible = newVisibility;
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+
+
             try
             {
-                // Obtener datos del formulario
                 string idPago = txtidpago.Text.Trim();
                 string nroVoucher = txtnrovouche.Text.Trim();
                 DateTime fecha = txtfecha.Value;
                 string medioPago = txtmedio.Text.Trim();
                 int monto = 0;
 
-                // Validaciones de datos
                 if (string.IsNullOrWhiteSpace(nroVoucher))
                 {
                     MessageBox.Show("El número de voucher no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -357,21 +360,16 @@ namespace CapaPresentacion
                     return;
                 }
 
-                // Obtener el ID de inscripción desde txtidinscripcion
                 int idInscripcion = 0;
                 if (!int.TryParse(txtidinscripcion.Text, out idInscripcion))
                 {
                     MessageBox.Show("El ID de inscripción debe ser un número entero válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                // Generar ID dinámico si es un nuevo pago
                 if (string.IsNullOrWhiteSpace(idPago))
                 {
                     idPago = GenerarIdDinamico(nroVoucher, fecha);
                 }
-
-                // Crear objeto Pago
                 Pago nuevoPago = new Pago
                 {
                     IdPago = idPago,
@@ -385,23 +383,16 @@ namespace CapaPresentacion
                 string mensaje = string.Empty;
                 bool exito = false;
 
-                // Verificar si txtidpago tiene un valor (está actualizando) o está vacío (es nuevo)
-                if (string.IsNullOrEmpty(txtidpago.Text))
-                {
-                    // Actualizar pago
-                    exito = new CN_Pago().Registrar(nuevoPago, out mensaje);
-                }
-                else
-                {
-                    // Registrar nuevo pago
-                    exito = new CN_Pago().Editar(nuevoPago, out mensaje);
-                }
+
+
+                exito = new CN_Pago().Registrar(nuevoPago, out mensaje);
+
 
                 if (exito)
                 {
                     MessageBox.Show("Pago registrado/modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarPago(); // Recargar la lista de pagos
-                    LimpiarCampos(); // Limpiar los controles del formulario
+                    CargarPago();
+                    LimpiarCampos();
                 }
                 else
                 {
@@ -438,5 +429,242 @@ namespace CapaPresentacion
         {
             LimpiarCampos();
         }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string idPago = txtidpago.Text.Trim();
+                string nroVoucher = txtnrovouche.Text.Trim();
+                DateTime fecha = txtfecha.Value;
+                string medioPago = txtmedio.Text.Trim();
+                int monto = 0;
+
+                if (string.IsNullOrWhiteSpace(nroVoucher))
+                {
+                    MessageBox.Show("El número de voucher no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(medioPago))
+                {
+                    MessageBox.Show("El medio de pago no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!int.TryParse(txtmonto.Text, out monto))
+                {
+                    MessageBox.Show("El monto debe ser un número entero válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int idInscripcion = 0;
+                if (!int.TryParse(txtidinscripcion.Text, out idInscripcion))
+                {
+                    MessageBox.Show("El ID de inscripción debe ser un número entero válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(idPago))
+                {
+                    idPago = GenerarIdDinamico(nroVoucher, fecha);
+                }
+                Pago nuevoPago = new Pago
+                {
+                    IdPago = idPago,
+                    Fecha = fecha,
+                    Monto = monto,
+                    MedioPago = medioPago,
+                    NroVoucher = nroVoucher,
+                    IdInscripcion = idInscripcion
+                };
+
+                string mensaje = string.Empty;
+                bool exito = false;
+
+
+
+                exito = new CN_Pago().Editar(nuevoPago, out mensaje);
+
+
+                if (exito)
+                {
+                    MessageBox.Show("Pago registrado/modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarPago();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar/modificar el pago: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error de formato en los datos: " + ex.Message, "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        private void cargarciclos1()
+        {
+            List<CicloInscripcion> ciclo = cnciclo.listar();
+            cbociclo.DataSource = ciclo;
+            cbociclo.DisplayMember = "nombreCiclo";
+            cbociclo.ValueMember = "idciclo";
+            cbociclo.SelectedIndex = -1;
+        
+        }
+        private void cargarciclos2()
+        {
+            List<CicloInscripcion> ciclo = cnciclo.listar();
+           
+            cbociclo2.DataSource = ciclo;
+            cbociclo2.DisplayMember = "nombreCiclo";
+            cbociclo2.ValueMember = "idciclo";
+            cbociclo2.SelectedIndex = -1;
+        }
+
+        private void cbociclo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbociclo.SelectedIndex == -1 || cbociclo.SelectedValue == null)
+            {
+               
+                return;
+            }
+
+          
+            int idCiclo;
+            if (cbociclo.SelectedValue != null && int.TryParse(cbociclo.SelectedValue.ToString(), out idCiclo))
+            {
+       
+                dataGridView1.Rows.Clear();
+
+                try
+                {
+                  
+                    List<Pago> listarPagos = new CN_Pago().Listar(idCiclo);
+
+                    if (listarPagos.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron pagos para el ciclo seleccionado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                   
+
+                    foreach (Pago item in listarPagos)
+                    {
+                        string pagotexto = item.oInscripcion.EstadoPago ? "Pagado" : "Deudor";
+                        int pagovalor = item.oInscripcion.EstadoPago ? 1 : 0;
+
+                        dataGridView1.Rows.Add(new object[] {
+                    "",
+                    item.IdPago,
+                    item.Fecha.ToString("yyyy-MM-dd"),
+                    item.Monto,
+                    item.MedioPago,
+                    item.NroVoucher,
+                    item.oInscripcion.IdInscripcion,
+                    item.oInscripcion.FechaInscripcion.ToString("yyyy-MM-dd"),
+                    pagovalor,
+                    pagotexto,
+                    item.oInscripcion.oEstudiante.IdEstudiante,
+                    item.oInscripcion.oEstudiante.Nombres,
+                    item.oInscripcion.oEstudiante.APaterno,
+                    item.oInscripcion.oEstudiante.AMaterno
+                });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los pagos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                CargarInscripcion();
+            }
+
+        }
+
+        private void cbociclo2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            dataGridView2.Rows.Clear();
+
+            if (cbociclo2.SelectedValue == null)
+            {
+               
+                return;
+            }
+
+            int idciclo;
+            if (!int.TryParse(cbociclo2.SelectedValue.ToString(), out idciclo))
+            {
+              
+                return;
+            }
+
+            try
+            {
+                // Listar las inscripciones del ciclo seleccionado
+                List<Inscripcion> listarins = new CN_Inscripcion().Listar3(idciclo);
+
+                // Verificar si hay inscripciones encontradas
+                if (listarins.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron inscripciones para el ciclo seleccionado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Agregar inscripciones al DataGridView
+                foreach (Inscripcion item in listarins)
+                {
+                    string pagotexto = item.EstadoPago ? "Pagado" : "Deudor";
+                    int pagovalor = item.EstadoPago ? 1 : 0;
+
+                    dataGridView2.Rows.Add(new object[] {
+                "",
+                item.IdInscripcion,
+                 item.oEstudiante.IdEstudiante,
+                item.oEstudiante.Nombres,
+                item.oEstudiante.APaterno,
+                item.oEstudiante.AMaterno,
+                item.FechaInscripcion.ToString("yyyy-MM-dd"),
+                  item.Turno,item.Monto,
+                pagovalor,
+                pagotexto,
+               
+                item.oCicloInscripcion.idciclo,
+                item.oCicloInscripcion.nombreCiclo,
+                item.oProgramaEstudios.idprogramaestudios,
+                item.oProgramaEstudios.nombre,
+                item.oUsuario.idusuarios,
+                item.oUsuario.nombre,
+                item.oGrupo.IdGrupos,
+                item.oGrupo.NombreGrupo
+            });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar las inscripciones: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtmonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
-}
+    }
+    
+    
+

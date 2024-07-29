@@ -12,7 +12,7 @@ namespace CapaDatos
 {
     public class CD_Pago
     {
-        public List<Pago> Listar()
+        public List<Pago> Listar(int idCiclo)
         {
             List<Pago> lista = new List<Pago>();
 
@@ -26,10 +26,12 @@ namespace CapaDatos
                     query.AppendLine("e.idEstudiante, e.nombres, e.aPaterno, e.aMaterno ");
                     query.AppendLine("FROM pagos p ");
                     query.AppendLine("INNER JOIN Inscripcion i ON p.idInscripcion = i.idInscripcion ");
-                    query.AppendLine("INNER JOIN estudiantes e ON i.idEstudiante = e.idEstudiante;");
+                    query.AppendLine("INNER JOIN estudiantes e ON i.idEstudiante = e.idEstudiante ");
+                    query.AppendLine("WHERE i.idCiclo = @idCiclo;");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("@idCiclo", idCiclo);
                     conexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -70,6 +72,7 @@ namespace CapaDatos
 
             return lista;
         }
+
 
         public bool Registrar(Pago obj, out String Mensaje)
         {
