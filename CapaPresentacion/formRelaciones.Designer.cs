@@ -72,10 +72,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(340, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 16);
+            this.label1.Size = new System.Drawing.Size(413, 27);
             this.label1.TabIndex = 2;
             this.label1.Text = "Relaciones de Docentes, Cursos y Grupos";
             // 

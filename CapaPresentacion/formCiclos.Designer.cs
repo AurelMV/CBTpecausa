@@ -152,7 +152,7 @@
             // 
             // btnRegistrarCiclo
             // 
-            this.btnRegistrarCiclo.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnRegistrarCiclo.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.btnRegistrarCiclo.FlatAppearance.BorderSize = 0;
             this.btnRegistrarCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarCiclo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

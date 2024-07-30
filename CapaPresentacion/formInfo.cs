@@ -69,53 +69,52 @@ namespace CapaPresentacion
 
         private void ExportDataGridViewToPDF(DataGridView dgv, string fileName)
         {
-            // Crear documento y escritor de PDF
+          
             Document document = new Document(PageSize.A4.Rotate(), 30, 30, 30, 30); // Paisaje y márgenes de 30 unidades
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(fileName, FileMode.Create));
             document.Open();
 
-            // Crear tabla de PDF con el mismo número de columnas que el DataGridView
+        
             PdfPTable pdfTable = new PdfPTable(dgv.ColumnCount);
-            pdfTable.WidthPercentage = 100; // Utilizar todo el ancho disponible
+            pdfTable.WidthPercentage = 100; 
 
-            // Obtener los anchos de las columnas del DataGridView
             float[] columnWidths = new float[dgv.ColumnCount];
             for (int i = 0; i < dgv.ColumnCount; i++)
             {
-                columnWidths[i] = (float)dgv.Columns[i].Width; // Usar el ancho de cada columna del DataGridView
+                columnWidths[i] = (float)dgv.Columns[i].Width; 
             }
             pdfTable.SetWidths(columnWidths);
 
-            // Colores para alternar filas
-            BaseColor rowColor1 = new BaseColor(255, 255, 255); // Color blanco
-            BaseColor rowColor2 = new BaseColor(240, 240, 240); // Color gris claro
+           
+            BaseColor rowColor1 = new BaseColor(255, 255, 255); 
+            BaseColor rowColor2 = new BaseColor(240, 240, 240);
 
-            // Agregar encabezados de columna
+          
             foreach (DataGridViewColumn column in dgv.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                cell.BackgroundColor = new BaseColor(50, 50, 50); // Color de fondo del encabezado
+                cell.BackgroundColor = new BaseColor(50, 50, 50);
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
                 cell.Padding = 5;
                 pdfTable.AddCell(cell);
             }
 
-            // Agregar filas de datos
+          
             bool rowColorToggle = true;
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 foreach (DataGridViewCell dgvCell in row.Cells)
                 {
                     PdfPCell cell = new PdfPCell(new Phrase(dgvCell.Value?.ToString()));
-                    cell.BackgroundColor = rowColorToggle ? rowColor1 : rowColor2; // Alternar color de fondo de las filas
+                    cell.BackgroundColor = rowColorToggle ? rowColor1 : rowColor2;
                     cell.Padding = 5;
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTable.AddCell(cell);
                 }
-                rowColorToggle = !rowColorToggle; // Cambiar el color para la siguiente fila
+                rowColorToggle = !rowColorToggle;
             }
 
-            // Agregar tabla al documento PDF
+          
             document.Add(pdfTable);
             document.Close();
 

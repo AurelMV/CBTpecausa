@@ -77,16 +77,6 @@
             this.Primer_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.segundo_apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtidinscripcion = new System.Windows.Forms.TextBox();
-            this.txtidestudiante = new System.Windows.Forms.TextBox();
-            this.txtapellido = new System.Windows.Forms.TextBox();
-            this.txtapellido2 = new System.Windows.Forms.TextBox();
-            this.cbociclo = new System.Windows.Forms.ComboBox();
-            this.cbociclo2 = new System.Windows.Forms.ComboBox();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.boton2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idinscrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idestudiantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,6 +96,16 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtidinscripcion = new System.Windows.Forms.TextBox();
+            this.txtidestudiante = new System.Windows.Forms.TextBox();
+            this.txtapellido = new System.Windows.Forms.TextBox();
+            this.txtapellido2 = new System.Windows.Forms.TextBox();
+            this.cbociclo = new System.Windows.Forms.ComboBox();
+            this.cbociclo2 = new System.Windows.Forms.ComboBox();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -226,6 +226,7 @@
             // 
             // iconButton1
             // 
+            this.iconButton1.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
@@ -240,7 +241,7 @@
             this.iconButton1.TabIndex = 16;
             this.iconButton1.Text = "Generar un nuevo pago";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // txtfecha
@@ -292,6 +293,7 @@
             // 
             // btnbuscar2
             // 
+            this.btnbuscar2.BackColor = System.Drawing.Color.CadetBlue;
             this.btnbuscar2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnbuscar2.IconColor = System.Drawing.Color.Black;
             this.btnbuscar2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -304,7 +306,7 @@
             this.btnbuscar2.Text = "Buscar";
             this.btnbuscar2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnbuscar2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuscar2.UseVisualStyleBackColor = true;
+            this.btnbuscar2.UseVisualStyleBackColor = false;
             this.btnbuscar2.Visible = false;
             this.btnbuscar2.Click += new System.EventHandler(this.btnbuscar2_Click);
             // 
@@ -327,6 +329,7 @@
             // 
             // iconButton6
             // 
+            this.iconButton6.BackColor = System.Drawing.Color.CadetBlue;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.iconButton6.IconColor = System.Drawing.Color.Black;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -339,7 +342,7 @@
             this.iconButton6.Text = "Buscar";
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.UseVisualStyleBackColor = false;
             this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // txtbusqueda
@@ -641,107 +644,6 @@
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView2_CellPainting);
             // 
-            // txtidinscripcion
-            // 
-            this.txtidinscripcion.Location = new System.Drawing.Point(151, 333);
-            this.txtidinscripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.txtidinscripcion.Name = "txtidinscripcion";
-            this.txtidinscripcion.Size = new System.Drawing.Size(73, 20);
-            this.txtidinscripcion.TabIndex = 42;
-            this.txtidinscripcion.Visible = false;
-            // 
-            // txtidestudiante
-            // 
-            this.txtidestudiante.Location = new System.Drawing.Point(151, 375);
-            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2);
-            this.txtidestudiante.Name = "txtidestudiante";
-            this.txtidestudiante.Size = new System.Drawing.Size(73, 20);
-            this.txtidestudiante.TabIndex = 43;
-            this.txtidestudiante.Visible = false;
-            // 
-            // txtapellido
-            // 
-            this.txtapellido.Location = new System.Drawing.Point(25, 362);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(2);
-            this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(109, 20);
-            this.txtapellido.TabIndex = 44;
-            // 
-            // txtapellido2
-            // 
-            this.txtapellido2.Location = new System.Drawing.Point(25, 385);
-            this.txtapellido2.Margin = new System.Windows.Forms.Padding(2);
-            this.txtapellido2.Name = "txtapellido2";
-            this.txtapellido2.Size = new System.Drawing.Size(109, 20);
-            this.txtapellido2.TabIndex = 45;
-            // 
-            // cbociclo
-            // 
-            this.cbociclo.FormattingEnabled = true;
-            this.cbociclo.Location = new System.Drawing.Point(927, 60);
-            this.cbociclo.Name = "cbociclo";
-            this.cbociclo.Size = new System.Drawing.Size(121, 21);
-            this.cbociclo.TabIndex = 46;
-            this.cbociclo.SelectedIndexChanged += new System.EventHandler(this.cbociclo_SelectedIndexChanged);
-            // 
-            // cbociclo2
-            // 
-            this.cbociclo2.FormattingEnabled = true;
-            this.cbociclo2.Location = new System.Drawing.Point(927, 359);
-            this.cbociclo2.Name = "cbociclo2";
-            this.cbociclo2.Size = new System.Drawing.Size(121, 21);
-            this.cbociclo2.TabIndex = 47;
-            this.cbociclo2.SelectedIndexChanged += new System.EventHandler(this.cbociclo2_SelectedIndexChanged);
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(25, 530);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(185, 58);
-            this.iconButton3.TabIndex = 48;
-            this.iconButton3.Text = "Editar";
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(25, 410);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(185, 43);
-            this.iconButton4.TabIndex = 49;
-            this.iconButton4.Text = "Registrar un nuevo pago ";
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Visible = false;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(537, 327);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 25);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Lista de inscripciones";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(572, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(176, 25);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Lista de Pagos ";
-            // 
             // boton2
             // 
             this.boton2.Frozen = true;
@@ -905,6 +807,109 @@
             this.Grupo.ReadOnly = true;
             this.Grupo.Visible = false;
             this.Grupo.Width = 125;
+            // 
+            // txtidinscripcion
+            // 
+            this.txtidinscripcion.Location = new System.Drawing.Point(151, 333);
+            this.txtidinscripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidinscripcion.Name = "txtidinscripcion";
+            this.txtidinscripcion.Size = new System.Drawing.Size(73, 20);
+            this.txtidinscripcion.TabIndex = 42;
+            this.txtidinscripcion.Visible = false;
+            // 
+            // txtidestudiante
+            // 
+            this.txtidestudiante.Location = new System.Drawing.Point(151, 375);
+            this.txtidestudiante.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidestudiante.Name = "txtidestudiante";
+            this.txtidestudiante.Size = new System.Drawing.Size(73, 20);
+            this.txtidestudiante.TabIndex = 43;
+            this.txtidestudiante.Visible = false;
+            // 
+            // txtapellido
+            // 
+            this.txtapellido.Location = new System.Drawing.Point(25, 362);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(2);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(109, 20);
+            this.txtapellido.TabIndex = 44;
+            // 
+            // txtapellido2
+            // 
+            this.txtapellido2.Location = new System.Drawing.Point(25, 385);
+            this.txtapellido2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtapellido2.Name = "txtapellido2";
+            this.txtapellido2.Size = new System.Drawing.Size(109, 20);
+            this.txtapellido2.TabIndex = 45;
+            // 
+            // cbociclo
+            // 
+            this.cbociclo.FormattingEnabled = true;
+            this.cbociclo.Location = new System.Drawing.Point(927, 60);
+            this.cbociclo.Name = "cbociclo";
+            this.cbociclo.Size = new System.Drawing.Size(121, 21);
+            this.cbociclo.TabIndex = 46;
+            this.cbociclo.SelectedIndexChanged += new System.EventHandler(this.cbociclo_SelectedIndexChanged);
+            // 
+            // cbociclo2
+            // 
+            this.cbociclo2.FormattingEnabled = true;
+            this.cbociclo2.Location = new System.Drawing.Point(927, 359);
+            this.cbociclo2.Name = "cbociclo2";
+            this.cbociclo2.Size = new System.Drawing.Size(121, 21);
+            this.cbociclo2.TabIndex = 47;
+            this.cbociclo2.SelectedIndexChanged += new System.EventHandler(this.cbociclo2_SelectedIndexChanged);
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(25, 530);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(185, 58);
+            this.iconButton3.TabIndex = 48;
+            this.iconButton3.Text = "Editar";
+            this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.BackColor = System.Drawing.Color.SteelBlue;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.Location = new System.Drawing.Point(25, 410);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(185, 43);
+            this.iconButton4.TabIndex = 49;
+            this.iconButton4.Text = "Registrar un nuevo pago ";
+            this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Visible = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(537, 327);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(242, 25);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Lista de inscripciones";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(572, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(176, 25);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Lista de Pagos ";
             // 
             // formGestionPago
             // 

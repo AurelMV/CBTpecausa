@@ -133,7 +133,7 @@
             this.btnIngresar.BackColor = System.Drawing.Color.SkyBlue;
             this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.btnIngresar.IconColor = System.Drawing.Color.Black;

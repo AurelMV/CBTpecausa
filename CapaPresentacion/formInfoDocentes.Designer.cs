@@ -50,10 +50,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(364, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 16);
+            this.label1.Size = new System.Drawing.Size(182, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "LISTA DOCENTES";
             // 

@@ -189,10 +189,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 16);
+            this.label1.Size = new System.Drawing.Size(243, 27);
             this.label1.TabIndex = 20;
             this.label1.Text = "GESTIONAR USUARIOS";
             // 
@@ -250,7 +250,7 @@
             // txtIdUsuario
             // 
             this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(212, 12);
+            this.txtIdUsuario.Location = new System.Drawing.Point(297, 9);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(67, 20);
             this.txtIdUsuario.TabIndex = 29;

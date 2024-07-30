@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtnombrecurso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtacursos = new System.Windows.Forms.DataGridView();
-            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -48,6 +45,9 @@
             this.txtfechabus2 = new System.Windows.Forms.TextBox();
             this.txtindice = new System.Windows.Forms.TextBox();
             this.txtidcurso = new System.Windows.Forms.TextBox();
+            this.boton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtacursos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +65,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(22, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 13);
+            this.label2.Size = new System.Drawing.Size(237, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Curso que ofece el CBT";
             // 
@@ -87,7 +88,7 @@
             // txtnombrecurso
             // 
             this.txtnombrecurso.Location = new System.Drawing.Point(116, 71);
-            this.txtnombrecurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombrecurso.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombrecurso.Name = "txtnombrecurso";
             this.txtnombrecurso.Size = new System.Drawing.Size(142, 20);
             this.txtnombrecurso.TabIndex = 3;
@@ -104,38 +105,38 @@
             // 
             // dtacursos
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtacursos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtacursos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtacursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtacursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtacursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtacursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtacursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.boton,
             this.id,
             this.Nombre});
             this.dtacursos.Location = new System.Drawing.Point(363, 82);
-            this.dtacursos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtacursos.Margin = new System.Windows.Forms.Padding(2);
             this.dtacursos.Name = "dtacursos";
             this.dtacursos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtacursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtacursos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtacursos.RowHeadersWidth = 51;
             this.dtacursos.RowTemplate.Height = 28;
             this.dtacursos.Size = new System.Drawing.Size(372, 226);
@@ -143,8 +144,121 @@
             this.dtacursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dtacursos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dtacursos_CellPainting);
             // 
+            // iconButton4
+            // 
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(658, 39);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(87, 30);
+            this.iconButton4.TabIndex = 31;
+            this.iconButton4.Text = "Recargar Tablero";
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.BackColor = System.Drawing.Color.CadetBlue;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 30;
+            this.iconButton5.Location = new System.Drawing.Point(544, 39);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(99, 30);
+            this.iconButton5.TabIndex = 30;
+            this.iconButton5.Text = "Buscar";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = false;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 30;
+            this.iconButton6.Location = new System.Drawing.Point(71, 155);
+            this.iconButton6.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(256, 32);
+            this.iconButton6.TabIndex = 29;
+            this.iconButton6.Text = "Limpiar una elecion";
+            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 30;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton7.Location = new System.Drawing.Point(73, 107);
+            this.iconButton7.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Size = new System.Drawing.Size(255, 29);
+            this.iconButton7.TabIndex = 28;
+            this.iconButton7.Text = "GUARDAR";
+            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton7.UseVisualStyleBackColor = false;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
+            // 
+            // cbobusqueda
+            // 
+            this.cbobusqueda.FormattingEnabled = true;
+            this.cbobusqueda.Location = new System.Drawing.Point(363, 45);
+            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.cbobusqueda.Name = "cbobusqueda";
+            this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
+            this.cbobusqueda.TabIndex = 33;
+            this.cbobusqueda.SelectedIndexChanged += new System.EventHandler(this.cbobusqueda_SelectedIndexChanged);
+            // 
+            // txtfechabus2
+            // 
+            this.txtfechabus2.Location = new System.Drawing.Point(458, 45);
+            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfechabus2.Name = "txtfechabus2";
+            this.txtfechabus2.Size = new System.Drawing.Size(76, 20);
+            this.txtfechabus2.TabIndex = 32;
+            // 
+            // txtindice
+            // 
+            this.txtindice.Location = new System.Drawing.Point(263, 39);
+            this.txtindice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtindice.Name = "txtindice";
+            this.txtindice.Size = new System.Drawing.Size(49, 20);
+            this.txtindice.TabIndex = 35;
+            this.txtindice.Text = "-1";
+            this.txtindice.Visible = false;
+            // 
+            // txtidcurso
+            // 
+            this.txtidcurso.Location = new System.Drawing.Point(306, 14);
+            this.txtidcurso.Margin = new System.Windows.Forms.Padding(2);
+            this.txtidcurso.Name = "txtidcurso";
+            this.txtidcurso.Size = new System.Drawing.Size(76, 20);
+            this.txtidcurso.TabIndex = 34;
+            this.txtidcurso.Text = "0";
+            this.txtidcurso.Visible = false;
+            // 
             // boton
             // 
+            this.boton.FillWeight = 25F;
             this.boton.HeaderText = "";
             this.boton.MinimumWidth = 6;
             this.boton.Name = "boton";
@@ -167,116 +281,6 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // iconButton4
-            // 
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(658, 39);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(87, 30);
-            this.iconButton4.TabIndex = 31;
-            this.iconButton4.Text = "Recargar Tablero";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.Location = new System.Drawing.Point(544, 39);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(99, 30);
-            this.iconButton5.TabIndex = 30;
-            this.iconButton5.Text = "Buscar";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 30;
-            this.iconButton6.Location = new System.Drawing.Point(71, 155);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(256, 32);
-            this.iconButton6.TabIndex = 29;
-            this.iconButton6.Text = "Limpiar una elecion";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 30;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton7.Location = new System.Drawing.Point(73, 107);
-            this.iconButton7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(255, 29);
-            this.iconButton7.TabIndex = 28;
-            this.iconButton7.Text = "GUARDAR";
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
-            // 
-            // cbobusqueda
-            // 
-            this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(363, 45);
-            this.cbobusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbobusqueda.Name = "cbobusqueda";
-            this.cbobusqueda.Size = new System.Drawing.Size(92, 21);
-            this.cbobusqueda.TabIndex = 33;
-            this.cbobusqueda.SelectedIndexChanged += new System.EventHandler(this.cbobusqueda_SelectedIndexChanged);
-            // 
-            // txtfechabus2
-            // 
-            this.txtfechabus2.Location = new System.Drawing.Point(458, 45);
-            this.txtfechabus2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtfechabus2.Name = "txtfechabus2";
-            this.txtfechabus2.Size = new System.Drawing.Size(76, 20);
-            this.txtfechabus2.TabIndex = 32;
-            // 
-            // txtindice
-            // 
-            this.txtindice.Location = new System.Drawing.Point(173, 14);
-            this.txtindice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtindice.Name = "txtindice";
-            this.txtindice.Size = new System.Drawing.Size(49, 20);
-            this.txtindice.TabIndex = 35;
-            this.txtindice.Text = "-1";
-            this.txtindice.Visible = false;
-            // 
-            // txtidcurso
-            // 
-            this.txtidcurso.Location = new System.Drawing.Point(253, 14);
-            this.txtidcurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtidcurso.Name = "txtidcurso";
-            this.txtidcurso.Size = new System.Drawing.Size(76, 20);
-            this.txtidcurso.TabIndex = 34;
-            this.txtidcurso.Text = "0";
-            this.txtidcurso.Visible = false;
-            // 
             // formCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,7 +300,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formCurso";
             this.Text = "formCurso";
             this.Load += new System.EventHandler(this.formCurso_Load);

@@ -61,11 +61,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 21);
+            this.label1.Size = new System.Drawing.Size(191, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos del Docente";
             // 
@@ -216,7 +216,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(224, 13);
+            this.iconButton1.Location = new System.Drawing.Point(247, 11);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(43, 36);
             this.iconButton1.TabIndex = 26;
@@ -256,6 +256,7 @@
             // 
             // btnGuardarDocente
             // 
+            this.btnGuardarDocente.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnGuardarDocente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarDocente.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             this.btnGuardarDocente.IconColor = System.Drawing.Color.Black;
@@ -269,7 +270,7 @@
             this.btnGuardarDocente.Text = "Guardar";
             this.btnGuardarDocente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardarDocente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardarDocente.UseVisualStyleBackColor = true;
+            this.btnGuardarDocente.UseVisualStyleBackColor = false;
             this.btnGuardarDocente.Click += new System.EventHandler(this.btnGuardarDocente_Click);
             // 
             // fechaNacimientoDocente
