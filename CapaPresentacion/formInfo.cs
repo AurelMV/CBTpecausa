@@ -202,7 +202,7 @@ namespace CapaPresentacion
 
                 foreach (Inscripcion item in listarins)
                 {
-                    string pagotexto = item.EstadoPago ? "Pagado" : "Deudor";
+                    string pagotexto = item.EstadoPago ? "Deudor" : "Pagado";
 
                     dataGridView1.Rows.Add(new object[] {
                 item.IdInscripcion,
