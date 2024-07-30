@@ -53,6 +53,9 @@ namespace CapaPresentacion
 
             txtnacimiento.MaxDate = DateTime.Today;
 
+            txtfecha.Format = DateTimePickerFormat.Custom;
+            txtfecha.CustomFormat = "yyyy-MM-dd";
+
             //List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
             //cbociclo.Items.Clear();
             //foreach (CicloInscripcion item in listaCiclo)
@@ -99,13 +102,7 @@ namespace CapaPresentacion
                 txtañoculminado.CustomFormat = "yyyy";
             };
 
-            txtfecha.Format = DateTimePickerFormat.Custom;
-            txtfecha.CustomFormat = " ";
-            txtfecha.ValueChanged += (s, ev) =>
-            {
-                txtfecha.Format = DateTimePickerFormat.Custom;
-                txtfecha.CustomFormat = "yyyy-MM-dd";
-            };
+            
 
             txtfechapago.Format = DateTimePickerFormat.Custom;
             txtfechapago.CustomFormat = " ";
