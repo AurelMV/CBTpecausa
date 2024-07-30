@@ -235,10 +235,10 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(457, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(759, 20);
+            this.label4.Size = new System.Drawing.Size(767, 20);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Solo se mostraran los estudaintes regitrados en sierto ciclo en especifico y que " +
-    "hayan realizado sus pagos ";
+            this.label4.Text = "Solo se mostrarán los estudiantes registrados en cierto ciclo en específico y que" +
+    " hayan realizado sus pagos ";
             // 
             // formInfo
             // 

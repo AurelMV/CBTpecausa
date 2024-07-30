@@ -198,7 +198,7 @@ namespace CapaPresentacion
 
         private void formDocente_Load(object sender, EventArgs e)
         {
-
+            fechaNacimientoDocente.MaxDate = DateTime.Today;
         }
     }
 }

@@ -22,6 +22,8 @@ namespace CapaPresentacion
     public partial class formInfo : Form
     {
         private CN_CicloInscripcion cnciclo = new CN_CicloInscripcion();
+        private bool isFormLoading = true;
+
         public formInfo()
         {
             InitializeComponent();
@@ -63,7 +65,7 @@ namespace CapaPresentacion
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-
+            isFormLoading = false;
         }
 
 
@@ -179,6 +181,8 @@ namespace CapaPresentacion
 
         private void cbociclo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (isFormLoading)
+                return;
 
             if (cbociclo.SelectedIndex == -1 || cbociclo.SelectedValue == null)
                 return;

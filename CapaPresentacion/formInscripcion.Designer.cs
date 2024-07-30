@@ -433,6 +433,7 @@
             this.txtnacimiento.Name = "txtnacimiento";
             this.txtnacimiento.Size = new System.Drawing.Size(178, 20);
             this.txtnacimiento.TabIndex = 63;
+            this.txtnacimiento.Value = new System.DateTime(2024, 7, 29, 0, 0, 0, 0);
             // 
             // txtemail
             // 

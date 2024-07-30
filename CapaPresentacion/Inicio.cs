@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapadeEntidad;
 using CapaEntidad;
 using FontAwesome.Sharp;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace CapaPresentacion
 {
@@ -26,10 +28,56 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            label3.Text = "Usuario: "+usuarioActual.nombre+" "+usuarioActual.aPaterno+" "+usuarioActual.aMaterno;
+            label3.Text = usuarioActual.nombre+" "+usuarioActual.aPaterno+" "+usuarioActual.aMaterno;
+            AjustarLabel3();
+            if (usuarioActual.oRol.idrol == 1)
+            {
+                label2.Text = "ADMINISTRADOR";
+                AjustarLabel2();
+            }
             if (usuarioActual.oRol.idrol == 2)
             {
+                label2.Text = "USUARIO";
+                AjustarLabel2();
                 menuusuario.Visible = false;
+            }
+        }
+
+        private void AjustarLabel3()
+        {
+            int formWidth = this.ClientSize.Width;
+            int maxLabelWidth = formWidth - 10;
+            int desiredWidth = TextRenderer.MeasureText(label3.Text, label3.Font).Width;
+            if (desiredWidth > maxLabelWidth)
+            {
+                label3.Width = maxLabelWidth;
+                label3.Left = formWidth - maxLabelWidth - 10;
+                label3.AutoEllipsis = true;
+            }
+            else
+            {
+                label3.Width = desiredWidth;
+                label3.Left = formWidth - desiredWidth - 10;
+                label3.AutoEllipsis = false;
+            }
+        }
+
+        private void AjustarLabel2()
+        {
+            int formWidth = this.ClientSize.Width;
+            int maxLabelWidth = formWidth - 10;
+            int desiredWidth = TextRenderer.MeasureText(label2.Text, label2.Font).Width;
+            if (desiredWidth > maxLabelWidth)
+            {
+                label2.Width = maxLabelWidth;
+                label2.Left = formWidth - maxLabelWidth - 10;
+                label2.AutoEllipsis = true;
+            }
+            else
+            {
+                label2.Width = desiredWidth;
+                label2.Left = formWidth - desiredWidth - 10;
+                label2.AutoEllipsis = false;
             }
         }
 

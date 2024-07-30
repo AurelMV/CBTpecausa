@@ -51,7 +51,7 @@ namespace CapaPresentacion
             txtidusuario.Text = usuario.idusuarios;
             txtnombreusuario.Text = usuario.nombre;
 
-
+            txtnacimiento.MaxDate = DateTime.Today;
 
             //List<CicloInscripcion> listaCiclo = new CN_CicloInscripcion().listar();
             //cbociclo.Items.Clear();

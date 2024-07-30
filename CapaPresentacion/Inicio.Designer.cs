@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,21 +140,21 @@
             // inscripcionDocentesToolStripMenuItem
             // 
             this.inscripcionDocentesToolStripMenuItem.Name = "inscripcionDocentesToolStripMenuItem";
-            this.inscripcionDocentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscripcionDocentesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.inscripcionDocentesToolStripMenuItem.Text = "Registrar";
             this.inscripcionDocentesToolStripMenuItem.Click += new System.EventHandler(this.inscripcionDocentesToolStripMenuItem_Click);
             // 
             // datosDocentesToolStripMenuItem
             // 
             this.datosDocentesToolStripMenuItem.Name = "datosDocentesToolStripMenuItem";
-            this.datosDocentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datosDocentesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.datosDocentesToolStripMenuItem.Text = "Datos";
             this.datosDocentesToolStripMenuItem.Click += new System.EventHandler(this.datosDocentesToolStripMenuItem_Click);
             // 
             // relacionesToolStripMenuItem
             // 
             this.relacionesToolStripMenuItem.Name = "relacionesToolStripMenuItem";
-            this.relacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.relacionesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.relacionesToolStripMenuItem.Text = "Relaciones";
             this.relacionesToolStripMenuItem.Click += new System.EventHandler(this.relacionesToolStripMenuItem_Click);
             // 
@@ -276,22 +277,35 @@
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Brown;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(829, 11);
+            this.label3.Location = new System.Drawing.Point(1166, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "lduser";
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.Brown;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(1166, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "lduser";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 648);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.label1);
@@ -338,6 +352,7 @@
         private System.Windows.Forms.ToolStripMenuItem datosDocentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
     }
 }
 
